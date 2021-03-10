@@ -348,7 +348,8 @@
                                 <div class="sign-button-container">
                                     <a href="#" class="back-page w-button">Từ chối</a>
                                  <%--   <a href="#" id="sign-button1" onclick="clicked()" class="sign-button w-button">Gửi yêu cầu ký</a>--%>
-                                    <a href="#" onclick="UpdateSign()" class="sign-button w-button">Ký</a>
+                                    <%--<button href="#" onclick="UpdateSign()" class="sign-button w-button">Ký</button>--%>
+                                    <input type="submit" name="sign-now" value="Ký" onclick="UpdateSign()" class="sign-button disable-button w-button" disabled/>
                                 </div>
                             </div>
                         </div>
