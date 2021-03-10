@@ -514,7 +514,8 @@
         <div class="footer-button">
             <div class="add-receiver-button add-width">
                 <a href="add-receiver.html" class="back-button w-button">Quay lại</a>
-                <a href="#" id="btnTiepTuc" onclick="SignDoc()" class="next-button w-button">Tiếp tục</a>
+                <%--<a href="#" id="btnTiepTuc" onclick="SignDoc()" class="next-button w-button">Tiếp tục</a>--%>
+                <input id="btnTiepTuc" type="submit" name="sign-now" value="Ký" onclick="SignDoc()" class="sign-button disable-button w-button" disabled/>
             </div>
         </div>
 

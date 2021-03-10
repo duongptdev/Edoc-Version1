@@ -1112,14 +1112,25 @@ textarea.w-select {
     background: #dddddd;
     display: none;
     min-width: 100%;
+    right: 0;
+    margin-top: 5px;
+    box-shadow: 0px 2px 4px rgba(4, 80, 193, 0.1);
 }
 .w-dropdown-list.w--open {
     display: block;
 }
 .w-dropdown-link {
+    background-color: white;
     padding: 10px 20px;
     display: block;
-    color: #222222;
+    color: #505F79;
+    border-bottom: 1px solid #E3E3E3;
+    font-family: "Helvetica neue", sans-serif;
+    font-size: 12px;
+    font-weight: 400;
+}
+.w-dropdown-link:last-child {
+    border-bottom: none;
 }
 .w-dropdown-link.w--current {
     color: #0082f3;

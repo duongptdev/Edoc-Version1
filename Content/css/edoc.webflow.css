@@ -1330,6 +1330,7 @@ body {
 .div-block-5 {
     display: block;
     width: 800px;
+    margin-bottom: 40px;
     padding: 88px 130px 69px;
     -webkit-box-orient: vertical;
     -webkit-box-direction: normal;
@@ -2971,6 +2972,7 @@ body {
     color: #97A0AF;
     font-size: 13px;
     font-weight: 400;
+    text-align: center;
 }
 
 .card-pdf {

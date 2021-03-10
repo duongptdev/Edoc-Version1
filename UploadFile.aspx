@@ -187,8 +187,9 @@
                                 </div>
                             </div>
                         </div>
+                        <div class="file-warning">*Kích thước tệp tối đa 50MB</div>
                     </div>
-                    <div class="file-warning">*Kích thước tệp tối đa 50MB</div>
+                    
                     <div id="card-pdf" class="card-pdf">
                         <div class="card-ui">
                             <div class="pdf-content">
@@ -207,9 +208,13 @@
                                             loading="lazy" alt="function">
                                     </div>
                                     <nav class="w-dropdown-list">
-                                        <a href="#" id="renamefile" class="w-dropdown-link">Đổi tên tài liệu</a>
-                                        <a href="#" class="w-dropdown-link">Xóa tài liệu</a>
+                                        <a href="#" class="w-dropdown-link">Tải lên bản thay thế</a>
+                                        <a href="#" class="w-dropdown-link">Xem tài liệu</a>
+                                        <a href="#" id="renamefile" class="w-dropdown-link">Đổi tên</a>
+                                        <a href="#" class="w-dropdown-link">Tải xuống</a>
                                         <a href="#" onclick="window.location.href='UploadFile.aspx'" class="w-dropdown-link">Tải lại tài liệu</a>
+                                        <a href="#" class="w-dropdown-link">Xoá</a>
+
                                     </nav>
                                 </div>
                             </div>
