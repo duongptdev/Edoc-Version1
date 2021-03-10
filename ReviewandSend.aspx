@@ -23,12 +23,43 @@ data-wf-site="5fc9e8d6d24a3a09aec5cdc3">
 
     <link href="Content/images/favicon.png" rel="shortcut icon" type="image/x-icon" />
     <link href="Content/images/webclip.png" rel="apple-touch-icon" />
+    <script src="Scripts/jquery-3.3.1.min.js"></script>
+    <script>
+         $(document).ready(function () {
+                     var name = sessionStorage.getItem("name");
+                    var  email=sessionStorage.getItem("email");
+            document.getElementById("name").innerHTML = name;
+            document.getElementById("gmail").innerHTML = email;
+        });
+        function Logout() {
+            cplogout.PerformCallback();
+        }
+        function EndLogout(s, e) {
+            localStorage.clear();
+            sessionStorage.clear();
+            window.location.href = "Signin.aspx";
+        }
+        function showUserMenu() {
+
+            var userMenuToggle = document.querySelector(".nav-user");
+            var userMenu = document.querySelector(".user-dropdown");
+
+            userMenuToggle.addEventListener("click", function () {
+                if (userMenu.style.display === "none") {
+                    userMenu.style.display = "block";
+                }
+                else {
+                    userMenu.style.display = "none";
+                }
+            });
+        };
+    </script>
 </head>
 <body>
     <form id="form1" runat="server">
         <header id="nav" class="sticky-nav">
             <div class="close">
-                <a href="index.html" class="back-to-home w-inline-block">
+                <a href="Index.aspx" class="back-to-home w-inline-block">
                     <img src="Content/images/Icons-Close-16px.svg" loading="lazy" alt="" /></a>
             </div>
             <div class="step-tab">
@@ -66,20 +97,46 @@ data-wf-site="5fc9e8d6d24a3a09aec5cdc3">
                     <div class="next-step">Xác nhận và hoàn tất</div>
                 </div>
             </div>
-            <div class="nav-right">
+          <div class="nav-right">
+                <div class="nav-notification">
+                    <img src="Content/images/Mask-Group-653.png" loading="lazy" alt="Notification" />
+                </div>
                 <div class="nav-divider"></div>
                 <div class="nav-user">
-                    <div data-hover="" data-delay="0" class="w-dropdown">
-                        <div class="w-dropdown-toggle">
-                            <div class="w-icon-dropdown-toggle"></div>
-                            <div class="text-block-3">Dropdown</div>
-                            <img src="Content/images/Group-15056.png" loading="lazy" alt="user" />
+                    <div class="user-avatar">
+                        <div class="first-word-name" onclick="showUserMenu()">K</div>
+                    </div>
+                    <img src="Content/images/Drop Default.svg" loading="lazy" alt="" class="drop-default" />
+                    <img src="Content/images/Drop Hover.svg" loading="lazy" alt="" class="drop-hover" />
+                    <img src="Content/images/Drop Clicked.svg" loading="lazy" alt="" class="drop-clicked" />
+                    <div class="user-dropdown">
+                        <div class="user-drop-card">
+                            <div class="user-name-card" id="name"></div>
+                            <div class="user-email-card" id="gmail"></div>
+                            <div class="card-divider add-margin"></div>
+                            <a href="SettingAccount.aspx" class="option-button w-inline-block">
+                                <img
+                                    src="Content/images/Account Setting.svg" loading="lazy" alt="" class="icon-option">
+                                <div class="option-text">Cài đặt tài khoản</div>
+                            </a>
+                            <a href="../setting/plan-and-billing.html" class="option-button w-inline-block">
+                                <img
+                                    src="Content/images/Plan.svg" loading="lazy" alt="" class="icon-option">
+                                <div class="option-text">Gói dịch vụ</div>
+                            </a>
+                            <a href="#" class="option-button w-inline-block">
+                                <img src="Content/images/Help.svg" loading="lazy"
+                                    alt="" class="icon-option">
+                                <div class="option-text">Trợ giúp và hỗ trợ</div>
+                            </a>
+                            <div class="card-divider"></div>
+                            <%--  <asp:Button ID="Button1" runat="server" CssClass="option-button remove-padding w-inline-block" Text="Đăng xuất" OnClick="btnDangxuat_Click" />--%>
+                            <a href="#" class="option-button remove-padding w-inline-block" onclick="Logout()">
+                                <img src="Content/images/Log Out.svg"
+                                    loading="lazy" alt="" class="icon-option">
+                                <div class="option-text">Đăng xuất</div>
+                            </a>
                         </div>
-                        <nav class="w-dropdown-list">
-                            <asp:Button ID="btnDangxuat" runat="server" CssClass="w-dropdown-link border" Text="Đăng xuất" OnClick="btnDangxuat_Click" />
-                            <a href="#" class="w-dropdown-link">Link 2</a>
-                            <a href="#" class="w-dropdown-link">Link 3</a>
-                        </nav>
                     </div>
                 </div>
             </div>
@@ -179,6 +236,9 @@ data-wf-site="5fc9e8d6d24a3a09aec5cdc3">
 
             </div>
         </div>
+            <dx:ASPxCallback ID="cplogout" runat="server" OnCallback="cplogout_Callback" ClientInstanceName="cplogout">
+                <ClientSideEvents CallbackComplete="EndLogout" />
+            </dx:ASPxCallback>
         <script src="https://d3e54v103j8qbb.cloudfront.net/js/jquery-3.5.1.min.dc5e7f18c8.js?site=5fc9e8d6d24a3a09aec5cdc3"
             type="text/javascript"
             integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0="

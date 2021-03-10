@@ -647,6 +647,20 @@
           </s:sequence>
         </s:complexType>
       </s:element>
+      <s:element name="GetLinkFilePDF">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="code" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetLinkFilePDFResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetLinkFilePDFResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
       <s:element name="string" nillable="true" type="s:string" />
       <s:element name="int" type="s:int" />
     </s:schema>
@@ -902,6 +916,12 @@
   </wsdl:message>
   <wsdl:message name="GetIDCTSFromDevIDSoapOut">
     <wsdl:part name="parameters" element="tns:GetIDCTSFromDevIDResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetLinkFilePDFSoapIn">
+    <wsdl:part name="parameters" element="tns:GetLinkFilePDF" />
+  </wsdl:message>
+  <wsdl:message name="GetLinkFilePDFSoapOut">
+    <wsdl:part name="parameters" element="tns:GetLinkFilePDFResponse" />
   </wsdl:message>
   <wsdl:message name="insertCKSdidongHttpGetIn">
     <wsdl:part name="loaicts" type="s:string" />
@@ -1212,6 +1232,12 @@
     <wsdl:part name="devid" type="s:string" />
   </wsdl:message>
   <wsdl:message name="GetIDCTSFromDevIDHttpGetOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="GetLinkFilePDFHttpGetIn">
+    <wsdl:part name="code" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetLinkFilePDFHttpGetOut">
     <wsdl:part name="Body" element="tns:string" />
   </wsdl:message>
   <wsdl:message name="insertCKSdidongHttpPostIn">
@@ -1525,6 +1551,12 @@
   <wsdl:message name="GetIDCTSFromDevIDHttpPostOut">
     <wsdl:part name="Body" element="tns:string" />
   </wsdl:message>
+  <wsdl:message name="GetLinkFilePDFHttpPostIn">
+    <wsdl:part name="code" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetLinkFilePDFHttpPostOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
   <wsdl:portType name="ServiceSoap">
     <wsdl:operation name="insertCKSdidong">
       <wsdl:input message="tns:insertCKSdidongSoapIn" />
@@ -1693,6 +1725,10 @@
     <wsdl:operation name="GetIDCTSFromDevID">
       <wsdl:input message="tns:GetIDCTSFromDevIDSoapIn" />
       <wsdl:output message="tns:GetIDCTSFromDevIDSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetLinkFilePDF">
+      <wsdl:input message="tns:GetLinkFilePDFSoapIn" />
+      <wsdl:output message="tns:GetLinkFilePDFSoapOut" />
     </wsdl:operation>
   </wsdl:portType>
   <wsdl:portType name="ServiceHttpGet">
@@ -1864,6 +1900,10 @@
       <wsdl:input message="tns:GetIDCTSFromDevIDHttpGetIn" />
       <wsdl:output message="tns:GetIDCTSFromDevIDHttpGetOut" />
     </wsdl:operation>
+    <wsdl:operation name="GetLinkFilePDF">
+      <wsdl:input message="tns:GetLinkFilePDFHttpGetIn" />
+      <wsdl:output message="tns:GetLinkFilePDFHttpGetOut" />
+    </wsdl:operation>
   </wsdl:portType>
   <wsdl:portType name="ServiceHttpPost">
     <wsdl:operation name="insertCKSdidong">
@@ -2033,6 +2073,10 @@
     <wsdl:operation name="GetIDCTSFromDevID">
       <wsdl:input message="tns:GetIDCTSFromDevIDHttpPostIn" />
       <wsdl:output message="tns:GetIDCTSFromDevIDHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetLinkFilePDF">
+      <wsdl:input message="tns:GetLinkFilePDFHttpPostIn" />
+      <wsdl:output message="tns:GetLinkFilePDFHttpPostOut" />
     </wsdl:operation>
   </wsdl:portType>
   <wsdl:binding name="ServiceSoap" type="tns:ServiceSoap">
@@ -2408,6 +2452,15 @@
     </wsdl:operation>
     <wsdl:operation name="GetIDCTSFromDevID">
       <soap:operation soapAction="http://tempuri.org/GetIDCTSFromDevID" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetLinkFilePDF">
+      <soap:operation soapAction="http://tempuri.org/GetLinkFilePDF" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>
@@ -2796,6 +2849,15 @@
         <soap12:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
+    <wsdl:operation name="GetLinkFilePDF">
+      <soap12:operation soapAction="http://tempuri.org/GetLinkFilePDF" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
   </wsdl:binding>
   <wsdl:binding name="ServiceHttpGet" type="tns:ServiceHttpGet">
     <http:binding verb="GET" />
@@ -3177,6 +3239,15 @@
         <mime:mimeXml part="Body" />
       </wsdl:output>
     </wsdl:operation>
+    <wsdl:operation name="GetLinkFilePDF">
+      <http:operation location="/GetLinkFilePDF" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
   </wsdl:binding>
   <wsdl:binding name="ServiceHttpPost" type="tns:ServiceHttpPost">
     <http:binding verb="POST" />
@@ -3551,6 +3622,15 @@
     </wsdl:operation>
     <wsdl:operation name="GetIDCTSFromDevID">
       <http:operation location="/GetIDCTSFromDevID" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetLinkFilePDF">
+      <http:operation location="/GetLinkFilePDF" />
       <wsdl:input>
         <mime:content type="application/x-www-form-urlencoded" />
       </wsdl:input>

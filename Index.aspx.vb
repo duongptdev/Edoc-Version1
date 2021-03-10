@@ -87,8 +87,8 @@ Partial Class Index
         Dim tkk As String = res.Taikhoanky
         Dim trangthaiky As Integer = res.Trangthaiky
         Dim checkdl As Integer = res.CheckDL
-        Dim link As String = duongdanfile.Replace("D:\EDOC_TEST\WEBEDOC\Edoc0103", "http://27.71.231.212:8001")
-        'Dim link As String = duongdanfile.Replace("D:\Web\Edoc", "http://localhost:58988/")
+        '   Dim link As String = duongdanfile.Replace("D:\EDOC_TEST\WEBEDOC\Edoc0103", "http://27.71.231.212:8001")
+        Dim link As String = duongdanfile.Replace("D:\Web\Edoc", "http://localhost:58988")
 
         Session("idf") = idfile
         Session("ttk") = ttk
@@ -103,8 +103,16 @@ Partial Class Index
         btn.JSProperties("cp_trangthaiky") = trangthaiky
         btn.JSProperties("cp_urlFile") = link
         btn.JSProperties("cp_tenvb") = tenvb
-
-
+        Dim data As New DataTable
+        data = serv.LayTTVB(idfile)
+        btn.JSProperties("cp_taikhoantao") = taikhoan
+        btn.JSProperties("cp_ngaytao") = data.Rows(0)(3)
+        btn.JSProperties("cp_tieudemail") = data.Rows(0)(6)
+        btn.JSProperties("cp_chudemail") = data.Rows(0)(7)
+        btn.JSProperties("cp_taikhoanky") = data.Rows(0)(9)
+        btn.JSProperties("cp_hinhthucky") = data.Rows(0)(11)
+        btn.JSProperties("cp_trangthaigui") = data.Rows(0)(12)
+        btn.JSProperties("cp_thoigiangui") = data.Rows(0)(13)
     End Sub
     Protected Sub gridDanhsach_HtmlDataCellPrepared(sender As Object, e As ASPxGridViewTableDataCellEventArgs)
         'If e.DataColumn.FieldName = "Trinhtuky" Then

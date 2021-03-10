@@ -14,7 +14,7 @@ Partial Class UploadFile
     Public fn As String
     Public sConString As String = ConfigurationManager.ConnectionStrings("ConnectionString").ConnectionString
     Protected Sub UploadFile_Load(ByVal sender As Object, ByVal e As System.EventArgs) Handles Me.Load
-        gridBangluong.Visible = False
+
     End Sub
     Protected Sub btnUpload_Click(sender As Object, e As EventArgs)
 
@@ -182,10 +182,7 @@ Partial Class UploadFile
                 'Next
                 ' Response.Redirect("Index.aspx")
 
-                gridBangluong.DataSource = clsBangluong
-                gridBangluong.DataBind()
-                pnUpLoad.Visible = False
-                gridBangluong.Visible = True
+
 
             Else
                 '  Dim rl As String = ul.Replace("http://192.168.2.108:8001", "http://27.71.213.212:8001")
@@ -417,5 +414,8 @@ Partial Class UploadFile
             e.Result = ex.Message
         End Try
 
+    End Sub
+    Protected Sub cplogout_Callback(source As Object, e As DevExpress.Web.CallbackEventArgs)
+        Session.Clear()
     End Sub
 End Class

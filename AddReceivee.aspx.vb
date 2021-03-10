@@ -72,6 +72,9 @@ Partial Class AddReceivee
         '    Response.Redirect("AddSigntureField.aspx")
         'End If
     End Sub
+    Protected Sub cplogout_Callback(source As Object, e As DevExpress.Web.CallbackEventArgs)
+        Session.Clear()
+    End Sub
     Protected Sub btnDangxuat_Click(sender As Object, e As EventArgs)
         Session.Clear()
         Response.Redirect("Signin.aspx")

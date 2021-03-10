@@ -21,22 +21,39 @@
             var idfile = s.cp_idfile;
             var tkk = s.cp_tkk;
             var ttk = s.cp_ttk;
-            var htk = s.cp_htk;
+            var hinhthucky = s.cp_hinhthucky;
             var checkdl = s.cp_checkdl;
             var urlfile = s.cp_urlFile;
             var tenvb = s.cp_tenvb;
             var info = s.cp_info;
             var email = s.cp_email;
             var name = s.cp_name;
+            var taikhoantao = s.cp_taikhoantao;
+            var ngaytao = s.cp_ngaytao;
+            var tieudemail = s.cp_tieudemail;
+            var chudemail = s.cp_chudemail;
+            var taikhoanky = s.cp_taikhoanky;
+            var trangthaigui = s.cp_trangthaigui;
+            var thoigiangui = s.cp_thoigiangui;
             var trangthaivb = s.cp_trangthaivb;
             var trangthaiky = s.cp_trangthaiky;
+            var taikhoantao = s.cp_taikhoantao;
             sessionStorage.setItem("signInfo", info);
             sessionStorage.setItem("tenvb", tenvb);
             sessionStorage.setItem("trangthaiky", trangthaiky);
+            sessionStorage.setItem("hinhthucky", hinhthucky);
             sessionStorage.setItem("checkdl", checkdl);
             sessionStorage.setItem("email", email);
             sessionStorage.setItem("name", name);
             sessionStorage.setItem("trangthaivb", trangthaivb);
+            sessionStorage.setItem("taikhoantao", taikhoantao);
+            sessionStorage.setItem("ngaytao", ngaytao);
+            sessionStorage.setItem("tieudemail", tieudemail);
+            sessionStorage.setItem("chudemail", chudemail);
+            sessionStorage.setItem("taikhoanky", taikhoanky);
+            sessionStorage.setItem("trangthaigui", trangthaigui);
+            sessionStorage.setItem("thoigiangui", thoigiangui);
+            sessionStorage.setItem("taikhoantao", taikhoantao);
 
             var ptk ='<%= Session("ptKy") %>';
 
@@ -277,6 +294,7 @@
                                 <dx:ASPxButton ID="btnXem" runat="server" Text="Xem" OnInit="btnXem_Init" RenderMode="Link" ClientEnabled="true" AutoPostBack="false">
                                     <ClientSideEvents Click="Viewfile" />
                                 </dx:ASPxButton>
+
                             </DataItemTemplate>
                         </dx:GridViewDataColumn>
                     </Columns>

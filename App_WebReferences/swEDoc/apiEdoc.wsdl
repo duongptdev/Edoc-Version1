@@ -358,6 +358,27 @@
           </s:sequence>
         </s:complexType>
       </s:element>
+      <s:element name="LayTTVB">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="idFile" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="LayTTVBResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="LayTTVBResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:any minOccurs="0" maxOccurs="unbounded" namespace="http://www.w3.org/2001/XMLSchema" processContents="lax" />
+                  <s:any minOccurs="1" namespace="urn:schemas-microsoft-com:xml-diffgram-v1" processContents="lax" />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
       <s:element name="LayDSVB">
         <s:complexType>
           <s:sequence>
@@ -638,6 +659,18 @@
           </s:sequence>
         </s:complexType>
       </s:element>
+      <s:element name="Capnhattieudeguimail">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="idFile" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="tieude" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="subject" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CapnhattieudeguimailResponse">
+        <s:complexType />
+      </s:element>
       <s:element name="string" nillable="true" type="s:string" />
       <s:element name="int" type="s:int" />
       <s:element name="clTTTaikhoan" nillable="true" type="tns:clTTTaikhoan" />
@@ -768,6 +801,12 @@
   <wsdl:message name="KyVBSoapOut">
     <wsdl:part name="parameters" element="tns:KyVBResponse" />
   </wsdl:message>
+  <wsdl:message name="LayTTVBSoapIn">
+    <wsdl:part name="parameters" element="tns:LayTTVB" />
+  </wsdl:message>
+  <wsdl:message name="LayTTVBSoapOut">
+    <wsdl:part name="parameters" element="tns:LayTTVBResponse" />
+  </wsdl:message>
   <wsdl:message name="LayDSVBSoapIn">
     <wsdl:part name="parameters" element="tns:LayDSVB" />
   </wsdl:message>
@@ -851,6 +890,12 @@
   </wsdl:message>
   <wsdl:message name="Checkky_TaikhoanSoapOut">
     <wsdl:part name="parameters" element="tns:Checkky_TaikhoanResponse" />
+  </wsdl:message>
+  <wsdl:message name="CapnhattieudeguimailSoapIn">
+    <wsdl:part name="parameters" element="tns:Capnhattieudeguimail" />
+  </wsdl:message>
+  <wsdl:message name="CapnhattieudeguimailSoapOut">
+    <wsdl:part name="parameters" element="tns:CapnhattieudeguimailResponse" />
   </wsdl:message>
   <wsdl:message name="SendMailHttpGetIn">
     <wsdl:part name="emailnhan" type="s:string" />
@@ -1000,6 +1045,12 @@
   <wsdl:message name="KyVBHttpGetOut">
     <wsdl:part name="Body" element="tns:int" />
   </wsdl:message>
+  <wsdl:message name="LayTTVBHttpGetIn">
+    <wsdl:part name="idFile" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="LayTTVBHttpGetOut">
+    <wsdl:part name="Body" element="tns:DataTable" />
+  </wsdl:message>
   <wsdl:message name="LayDSVBHttpGetIn">
     <wsdl:part name="Email" type="s:string" />
     <wsdl:part name="tieuchi" type="s:string" />
@@ -1096,6 +1147,12 @@
   <wsdl:message name="Checkky_TaikhoanHttpGetOut">
     <wsdl:part name="Body" element="tns:clThietlapnguoiky" />
   </wsdl:message>
+  <wsdl:message name="CapnhattieudeguimailHttpGetIn">
+    <wsdl:part name="idFile" type="s:string" />
+    <wsdl:part name="tieude" type="s:string" />
+    <wsdl:part name="subject" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="CapnhattieudeguimailHttpGetOut" />
   <wsdl:message name="SendMailHttpPostIn">
     <wsdl:part name="emailnhan" type="s:string" />
     <wsdl:part name="Subject" type="s:string" />
@@ -1244,6 +1301,12 @@
   <wsdl:message name="KyVBHttpPostOut">
     <wsdl:part name="Body" element="tns:int" />
   </wsdl:message>
+  <wsdl:message name="LayTTVBHttpPostIn">
+    <wsdl:part name="idFile" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="LayTTVBHttpPostOut">
+    <wsdl:part name="Body" element="tns:DataTable" />
+  </wsdl:message>
   <wsdl:message name="LayDSVBHttpPostIn">
     <wsdl:part name="Email" type="s:string" />
     <wsdl:part name="tieuchi" type="s:string" />
@@ -1340,6 +1403,12 @@
   <wsdl:message name="Checkky_TaikhoanHttpPostOut">
     <wsdl:part name="Body" element="tns:clThietlapnguoiky" />
   </wsdl:message>
+  <wsdl:message name="CapnhattieudeguimailHttpPostIn">
+    <wsdl:part name="idFile" type="s:string" />
+    <wsdl:part name="tieude" type="s:string" />
+    <wsdl:part name="subject" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="CapnhattieudeguimailHttpPostOut" />
   <wsdl:portType name="apiEdocSoap">
     <wsdl:operation name="SendMail">
       <wsdl:input message="tns:SendMailSoapIn" />
@@ -1417,6 +1486,10 @@
       <wsdl:input message="tns:KyVBSoapIn" />
       <wsdl:output message="tns:KyVBSoapOut" />
     </wsdl:operation>
+    <wsdl:operation name="LayTTVB">
+      <wsdl:input message="tns:LayTTVBSoapIn" />
+      <wsdl:output message="tns:LayTTVBSoapOut" />
+    </wsdl:operation>
     <wsdl:operation name="LayDSVB">
       <wsdl:input message="tns:LayDSVBSoapIn" />
       <wsdl:output message="tns:LayDSVBSoapOut" />
@@ -1472,6 +1545,10 @@
     <wsdl:operation name="Checkky_Taikhoan">
       <wsdl:input message="tns:Checkky_TaikhoanSoapIn" />
       <wsdl:output message="tns:Checkky_TaikhoanSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Capnhattieudeguimail">
+      <wsdl:input message="tns:CapnhattieudeguimailSoapIn" />
+      <wsdl:output message="tns:CapnhattieudeguimailSoapOut" />
     </wsdl:operation>
   </wsdl:portType>
   <wsdl:portType name="apiEdocHttpGet">
@@ -1543,6 +1620,10 @@
       <wsdl:input message="tns:KyVBHttpGetIn" />
       <wsdl:output message="tns:KyVBHttpGetOut" />
     </wsdl:operation>
+    <wsdl:operation name="LayTTVB">
+      <wsdl:input message="tns:LayTTVBHttpGetIn" />
+      <wsdl:output message="tns:LayTTVBHttpGetOut" />
+    </wsdl:operation>
     <wsdl:operation name="LayDSVB">
       <wsdl:input message="tns:LayDSVBHttpGetIn" />
       <wsdl:output message="tns:LayDSVBHttpGetOut" />
@@ -1598,6 +1679,10 @@
     <wsdl:operation name="Checkky_Taikhoan">
       <wsdl:input message="tns:Checkky_TaikhoanHttpGetIn" />
       <wsdl:output message="tns:Checkky_TaikhoanHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Capnhattieudeguimail">
+      <wsdl:input message="tns:CapnhattieudeguimailHttpGetIn" />
+      <wsdl:output message="tns:CapnhattieudeguimailHttpGetOut" />
     </wsdl:operation>
   </wsdl:portType>
   <wsdl:portType name="apiEdocHttpPost">
@@ -1669,6 +1754,10 @@
       <wsdl:input message="tns:KyVBHttpPostIn" />
       <wsdl:output message="tns:KyVBHttpPostOut" />
     </wsdl:operation>
+    <wsdl:operation name="LayTTVB">
+      <wsdl:input message="tns:LayTTVBHttpPostIn" />
+      <wsdl:output message="tns:LayTTVBHttpPostOut" />
+    </wsdl:operation>
     <wsdl:operation name="LayDSVB">
       <wsdl:input message="tns:LayDSVBHttpPostIn" />
       <wsdl:output message="tns:LayDSVBHttpPostOut" />
@@ -1724,6 +1813,10 @@
     <wsdl:operation name="Checkky_Taikhoan">
       <wsdl:input message="tns:Checkky_TaikhoanHttpPostIn" />
       <wsdl:output message="tns:Checkky_TaikhoanHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Capnhattieudeguimail">
+      <wsdl:input message="tns:CapnhattieudeguimailHttpPostIn" />
+      <wsdl:output message="tns:CapnhattieudeguimailHttpPostOut" />
     </wsdl:operation>
   </wsdl:portType>
   <wsdl:binding name="apiEdocSoap" type="tns:apiEdocSoap">
@@ -1899,6 +1992,15 @@
         <soap:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
+    <wsdl:operation name="LayTTVB">
+      <soap:operation soapAction="http://tempuri.org/LayTTVB" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
     <wsdl:operation name="LayDSVB">
       <soap:operation soapAction="http://tempuri.org/LayDSVB" style="document" />
       <wsdl:input>
@@ -2018,6 +2120,15 @@
     </wsdl:operation>
     <wsdl:operation name="Checkky_Taikhoan">
       <soap:operation soapAction="http://tempuri.org/Checkky_Taikhoan" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Capnhattieudeguimail">
+      <soap:operation soapAction="http://tempuri.org/Capnhattieudeguimail" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>
@@ -2199,6 +2310,15 @@
         <soap12:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
+    <wsdl:operation name="LayTTVB">
+      <soap12:operation soapAction="http://tempuri.org/LayTTVB" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
     <wsdl:operation name="LayDSVB">
       <soap12:operation soapAction="http://tempuri.org/LayDSVB" style="document" />
       <wsdl:input>
@@ -2318,6 +2438,15 @@
     </wsdl:operation>
     <wsdl:operation name="Checkky_Taikhoan">
       <soap12:operation soapAction="http://tempuri.org/Checkky_Taikhoan" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Capnhattieudeguimail">
+      <soap12:operation soapAction="http://tempuri.org/Capnhattieudeguimail" style="document" />
       <wsdl:input>
         <soap12:body use="literal" />
       </wsdl:input>
@@ -2481,6 +2610,15 @@
         <mime:mimeXml part="Body" />
       </wsdl:output>
     </wsdl:operation>
+    <wsdl:operation name="LayTTVB">
+      <http:operation location="/LayTTVB" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
     <wsdl:operation name="LayDSVB">
       <http:operation location="/LayDSVB" />
       <wsdl:input>
@@ -2606,6 +2744,13 @@
       <wsdl:output>
         <mime:mimeXml part="Body" />
       </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Capnhattieudeguimail">
+      <http:operation location="/Capnhattieudeguimail" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output />
     </wsdl:operation>
   </wsdl:binding>
   <wsdl:binding name="apiEdocHttpPost" type="tns:apiEdocHttpPost">
@@ -2763,6 +2908,15 @@
         <mime:mimeXml part="Body" />
       </wsdl:output>
     </wsdl:operation>
+    <wsdl:operation name="LayTTVB">
+      <http:operation location="/LayTTVB" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
     <wsdl:operation name="LayDSVB">
       <http:operation location="/LayDSVB" />
       <wsdl:input>
@@ -2888,6 +3042,13 @@
       <wsdl:output>
         <mime:mimeXml part="Body" />
       </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Capnhattieudeguimail">
+      <http:operation location="/Capnhattieudeguimail" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output />
     </wsdl:operation>
   </wsdl:binding>
   <wsdl:service name="apiEdoc">

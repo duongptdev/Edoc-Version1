@@ -145,6 +145,9 @@ Partial Class ElectronicSigning
 
         Return res
     End Function
+    Protected Sub cplogout_Callback(source As Object, e As DevExpress.Web.CallbackEventArgs)
+        Session.Clear()
+    End Sub
     Private Function GetIDThietlap(idfile As String, user As String) As Integer
         Dim idthietlap As Integer = 0
         Dim conn As New SqlConnection

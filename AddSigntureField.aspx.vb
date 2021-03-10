@@ -126,6 +126,9 @@ Partial Class AddSigntureField
     Protected Sub cpky_Callback(source As Object, e As DevExpress.Web.CallbackEventArgs)
 
     End Sub
+    Protected Sub cplogout_Callback(source As Object, e As DevExpress.Web.CallbackEventArgs)
+        Session.Clear()
+    End Sub
     Protected Sub cpSigndoc_Callback(source As Object, e As DevExpress.Web.CallbackEventArgs)
         Dim arr As String() = e.Parameter.Split("|")
         Dim linkfile As String = arr(0)

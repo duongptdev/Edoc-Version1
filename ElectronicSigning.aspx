@@ -92,8 +92,30 @@
         }
 
 
+                    function Logout() {
+            cplogout.PerformCallback();
+        }
+        function EndLogout(s, e) {
+            localStorage.clear();
+            sessionStorage.clear();
+            window.location.href = "Signin.aspx";
+        }
+        function showUserMenu() {
 
+            var userMenuToggle = document.querySelector(".nav-user");
+            var userMenu = document.querySelector(".user-dropdown");
+
+            userMenuToggle.addEventListener("click", function () {
+                if (userMenu.style.display === "none") {
+                    userMenu.style.display = "block";
+                }
+                else {
+                    userMenu.style.display = "none";
+                }
+            });
+        };
     </script>
+
 </head>
 <body>
 
@@ -104,16 +126,13 @@
 
 
 
-        <dx:ASPxPopupControl ID="pop" ClientInstanceName="pop" runat="server" Width="400px" PopupHorizontalAlign="WindowCenter" PopupVerticalAlign="WindowCenter">
+        <dx:ASPxPopupControl ID="pop" ClientInstanceName="pop" runat="server" Width="500px" 
+            PopupHorizontalAlign="WindowCenter" PopupVerticalAlign="WindowCenter">
             <ContentCollection>
                 <dx:PopupControlContentControl>
-                    <div class="background-modal" style="display: normal!important">
-                        <div class="modal-form" style="display: normal">
-                            <div class="heading-modal align-right">
-                                <div class="close-button">
-                                    <img src="Content/images/Path-30115.png" loading="lazy" alt="Close Modal" onclick="Closepop()">
-                                </div>
-                            </div>
+                    <div class="" >
+                        <div class="modal-form" >
+                     
                             <div class="title-dialog">Ký Số</div>
                             <div class="digital-content">
                                 <div class="sign-method">
@@ -131,6 +150,8 @@
 
                         </div>
                     </div>
+
+                 
                 </dx:PopupControlContentControl>
             </ContentCollection>
         </dx:ASPxPopupControl>
@@ -141,22 +162,49 @@
                 <div class="file-name" id="name-file">Hợp đồng dịch vụ VMI-NACENCOMM 13.7.20.docx.</div>
             </div>
             <div class="nav-right">
-                <div>
-                    <div class="request-state" id="trangthaivb"></div>
+                                   <div>
+                <div class="request-state" id="trangthaivb">Đang tiến hành</div>
+            </div>
+                <div class="nav-notification">
+                    <img src="Content/images/Mask-Group-653.png" loading="lazy" alt="Notification" />
                 </div>
+
                 <div class="nav-divider"></div>
                 <div class="nav-user">
-                    <div data-hover="" data-delay="0" class="w-dropdown">
-                        <div class="w-dropdown-toggle">
-                            <div class="w-icon-dropdown-toggle"></div>
-                            <div class="text-block-3">Dropdown</div>
-                            <img src="Content/images/Group-15056.png" loading="lazy" alt="user">
+                    <div class="user-avatar">
+                        <div class="first-word-name" onclick="showUserMenu()">K</div>
+                    </div>
+                    <img src="Content/images/Drop Default.svg" loading="lazy" alt="" class="drop-default" />
+                    <img src="Content/images/Drop Hover.svg" loading="lazy" alt="" class="drop-hover" />
+                    <img src="Content/images/Drop Clicked.svg" loading="lazy" alt="" class="drop-clicked" />
+                    <div class="user-dropdown">
+                        <div class="user-drop-card">
+                            <div class="user-name-card" id="name"></div>
+                            <div class="user-email-card" id="gmail"></div>
+                            <div class="card-divider add-margin"></div>
+                            <a href="SettingAccount.aspx" class="option-button w-inline-block">
+                                <img
+                                    src="Content/images/Account Setting.svg" loading="lazy" alt="" class="icon-option">
+                                <div class="option-text">Cài đặt tài khoản</div>
+                            </a>
+                            <a href="../setting/plan-and-billing.html" class="option-button w-inline-block">
+                                <img
+                                    src="Content/images/Plan.svg" loading="lazy" alt="" class="icon-option">
+                                <div class="option-text">Gói dịch vụ</div>
+                            </a>
+                            <a href="#" class="option-button w-inline-block">
+                                <img src="Content/images/Help.svg" loading="lazy"
+                                    alt="" class="icon-option">
+                                <div class="option-text">Trợ giúp và hỗ trợ</div>
+                            </a>
+                            <div class="card-divider"></div>
+                            <%--  <asp:Button ID="Button1" runat="server" CssClass="option-button remove-padding w-inline-block" Text="Đăng xuất" OnClick="btnDangxuat_Click" />--%>
+                            <a href="#" class="option-button remove-padding w-inline-block" onclick="Logout()">
+                                <img src="Content/images/Log Out.svg"
+                                    loading="lazy" alt="" class="icon-option">
+                                <div class="option-text">Đăng xuất</div>
+                            </a>
                         </div>
-                        <nav class="w-dropdown-list">
-                            <a href="#" class="w-dropdown-link">Link 1</a>
-                            <a href="#" class="w-dropdown-link">Link 2</a>
-                            <a href="#" class="w-dropdown-link">Link 3</a>
-                        </nav>
                     </div>
                 </div>
             </div>
@@ -191,7 +239,7 @@
                             </div>
                             <div class="footer-button w-clearfix">
                                 <div class="sign-button-container">
-                                    <a href="#" class="back-page w-button">Từ chối</a>
+                                    <a href="#" class="back-page w-button" id="tuchoi">Từ chối</a>
                                     <%--   <a href="#" id="sign-button1" onclick="clicked()" class="sign-button w-button">Gửi yêu cầu ký</a>--%>
                                     <a href="#" onclick="Getptk()" id="kyvb" class="sign-button w-button">Ký</a>
 
@@ -439,7 +487,9 @@
                 </div>
             </div>
         </div>
-
+         <dx:ASPxCallback ID="cplogout" runat="server" OnCallback="cplogout_Callback" ClientInstanceName="cplogout">
+                <ClientSideEvents CallbackComplete="EndLogout" />
+            </dx:ASPxCallback>
         <dx:ASPxHiddenField ID="hdurl" runat="server" ClientInstanceName="hdurl"></dx:ASPxHiddenField>
         <dx:ASPxLoadingPanel ID="loading" runat="server" ClientInstanceName="loading" Text="Đang xử lý" Modal="true" />
         <dx:ASPxCallback ID="cpsign" runat="server" OnCallback="cpsign_Callback" ClientInstanceName="cpsign">
@@ -490,16 +540,28 @@
                 }
             });
             $(document).ready(function () {
+                pop.Hide();
+                var tieudemail = sessionStorage.getItem("tieudemail");
+                var idfile = localStorage.getItem("idFile");
+                var tenvanban = sessionStorage.getItem("tenvb");
+                var nguoigui = sessionStorage.getItem("taikhoantao");
+                var ngaytao = sessionStorage.getItem("ngaytao");
+                var ngaygui = sessionStorage.getItem("thoigiangui");
                 var trangthaiky = sessionStorage.getItem("trangthaiky");
                 var blurBackground = document.querySelector(".hide-background");
                 var checkdl = sessionStorage.getItem("checkdl");
                 if (trangthaiky == 1) {
                     blurBackground.style.display = "none";
+                    document.getElementById('kyvb').style.opacity = 0;
+                    document.getElementById('tuchoi').style.opacity = 0;
 
                 }
-                if (checkdl == 0) {
-                    document.getElementById('kyvb').style.opacity = 0;
-                }
+               
+
+                 var name = sessionStorage.getItem("name");
+                    var  email=sessionStorage.getItem("email");
+            document.getElementById("name").innerHTML = name;
+            document.getElementById("gmail").innerHTML = email;
                 var tenvb = sessionStorage.getItem("tenvb");
                 document.getElementById("name-file").innerHTML = tenvb;
                 var trangthaivb = sessionStorage.getItem("trangthaivb");
@@ -534,7 +596,7 @@
                         WebViewer(
                             {
                                 //    path: 'http://localhost:8001/lib/',
-                                path: 'http://27.71.231.212:8001/lib/',
+                                path: 'http://localhost:58988/lib/',
                                 //pdftronServer: 'http://localhost:8001',
                                 initialDoc: doc,
                             },
@@ -652,7 +714,7 @@
 
 
             });
-
+   
 
         </script>
         <!-- [if lte IE 9]><script src="https://cdnjs.cloudflare.com/ajax/libs/placeholders/3.0.2/placeholders.min.js"></script><![endif] -->
