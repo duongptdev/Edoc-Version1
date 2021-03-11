@@ -38,13 +38,15 @@
             }
             else {
                 loading.Hide();
-                var linkfile = localStorage.getItem('urlFile');
+
                 var code = new Date().YYYYMMDDHHMMSS();
                 var linkfile = localStorage.getItem("urlFile");
                 var info = sessionStorage.getItem("signInfo")
-
+                var idfile = localStorage.getItem("idFile");
+                var taikhoanky = localStorage.getItem("Taikhoanky");
+                var trinhtuky = sessionStorage.getItem("trinhtuky");
                 if (info != null) {
-                    cpupdate.PerformCallback(linkfile + "|" + code + "|" + info)
+                    cpupdate.PerformCallback(linkfile + "|" + code + "|" + info + "|" + phuongthuc + "|" + idfile + "|" + taikhoanky + "|" + trinhtuky);
 
 
                 }
@@ -76,32 +78,31 @@
                 alert(e.result);
             }
         }
-        function UpdateSign() {
+   <%--     function UpdateSign() {
             var linkfile = localStorage.getItem('urlFile');
             var code = new Date().YYYYMMDDHHMMSS();
             var tk ='<%= Session("Login") %>';
             var info = sessionStorage.getItem("signInfo");
             var idfile = localStorage.getItem("idFile");
             var ptk = sessionStorage.getItem("pthucky");
-
             cpupdate.PerformCallback(idfile + "|" + ptk + "|" + linkfile + "|" + code + "|" + tk);
-        }
+        }--%>
+
         function UpdateSignDoc(s, e) {
             alert(e.result);
             window.location.href = "Index.aspx";
         }
 
-
-                    function Logout() {
+        function Logout() {
             cplogout.PerformCallback();
         }
+
         function EndLogout(s, e) {
             localStorage.clear();
             sessionStorage.clear();
             window.location.href = "Signin.aspx";
         }
         function showUserMenu() {
-
             var userMenuToggle = document.querySelector(".nav-user");
             var userMenu = document.querySelector(".user-dropdown");
 
@@ -126,13 +127,13 @@
 
 
 
-        <dx:ASPxPopupControl ID="pop" ClientInstanceName="pop" runat="server" Width="500px" 
+        <dx:ASPxPopupControl ID="pop" ClientInstanceName="pop" runat="server" Width="500px"
             PopupHorizontalAlign="WindowCenter" PopupVerticalAlign="WindowCenter">
             <ContentCollection>
                 <dx:PopupControlContentControl>
-                    <div class="" >
-                        <div class="modal-form" >
-                     
+                    <div class="">
+                        <div class="modal-form">
+
                             <div class="title-dialog">Ký Số</div>
                             <div class="digital-content">
                                 <div class="sign-method">
@@ -151,7 +152,7 @@
                         </div>
                     </div>
 
-                 
+
                 </dx:PopupControlContentControl>
             </ContentCollection>
         </dx:ASPxPopupControl>
@@ -162,9 +163,9 @@
                 <div class="file-name" id="name-file">Hợp đồng dịch vụ VMI-NACENCOMM 13.7.20.docx.</div>
             </div>
             <div class="nav-right">
-                                   <div>
-                <div class="request-state" id="trangthaivb">Đang tiến hành</div>
-            </div>
+                <div>
+                    <div class="request-state" id="trangthaivb">Đang tiến hành</div>
+                </div>
                 <div class="nav-notification">
                     <img src="Content/images/Mask-Group-653.png" loading="lazy" alt="Notification" />
                 </div>
@@ -265,33 +266,24 @@
                                         <div class="request-text">
                                             <div class="info-wrapper">
                                                 <div class="title-info">Tiêu đề Mail</div>
-                                                <div class="subtitle-info">Hợp đồng dịch vụ VMI-NACENCOMM 13.7.20.docx.</div>
+                                                <div class="subtitle-info" id="tieudemail">Hợp đồng dịch vụ VMI-NACENCOMM 13.7.20.docx.</div>
                                             </div>
                                             <div class="info-wrapper">
                                                 <div class="title-info">ID Văn bản</div>
-                                                <div class="subtitle-info">647b1951-4d66-416f-8b84-5ac5e7a01d14</div>
+                                                <div class="subtitle-info" id="idvanban">647b1951-4d66-416f-8b84-5ac5e7a01d14</div>
                                             </div>
                                             <div class="info-wrapper">
                                                 <div class="title-info">Ngày tạo văn bản</div>
-                                                <div class="subtitle-info">15:05 13/12/2020</div>
+                                                <div class="subtitle-info" id="ngaytaovb">15:05 13/12/2020</div>
                                             </div>
                                             <div class="info-wrapper">
                                                 <div class="title-info">Ngày gửi</div>
-                                                <div class="subtitle-info">15:05 15/12/2020</div>
+                                                <div class="subtitle-info" id="ngaygui">15:05 15/12/2020</div>
                                             </div>
-                                            <div class="info-wrapper">
+                                            <div class="info-wrapper" id="getinfo">
                                                 <div class="title-info add-margin">Người nhận</div>
-                                                <div class="recipient-info">
-                                                    <div class="recipient-text">
-                                                        <div class="subtitle-info">Nguyễn Thu Hồng</div>
-                                                        <div class="hint-text">hongktqd@nacencomm.vn</div>
-                                                    </div>
-                                                    <div class="recipient-role">
-                                                        <img src="Content/images/Sign.png" loading="lazy" alt="" class="image-11">
-                                                        <div class="subtitle-info">Ký tài liệu</div>
-                                                    </div>
-                                                </div>
-                                                <div class="recipient-info">
+
+                                                <%--   <div class="recipient-info">
                                                     <div class="recipient-text">
                                                         <div class="subtitle-info">Trần Thu Thảo</div>
                                                         <div class="hint-text">thaotomnic@nacencomm.vn</div>
@@ -310,22 +302,22 @@
                                                         <img src="Content/images/Sign.png" loading="lazy" alt="" class="image-11">
                                                         <div class="subtitle-info">Ký tài liệu</div>
                                                     </div>
-                                                </div>
+                                                </div>--%>
                                             </div>
                                         </div>
                                         <div class="request-text">
                                             <div class="info-wrapper">
                                                 <div class="title-info">Tên văn bản</div>
-                                                <div class="subtitle-info">Hợp đồng dịch vụ VMI-NACENCOMM 13.7.20.docx.</div>
+                                                <div class="subtitle-info" id="tenvb">Hợp đồng dịch vụ VMI-NACENCOMM 13.7.20.docx.</div>
                                             </div>
                                             <div class="info-wrapper">
                                                 <div class="title-info">Người gửi</div>
-                                                <div class="subtitle-info">Nguyễn Trần Văn Khanh</div>
-                                                <div class="hint-text">nguyentranvankhanh123@gmail.com</div>
+                                                <div class="subtitle-info" id="tennguoigui">Nguyễn Trần Văn Khanh</div>
+                                                <div class="hint-text" id="emailnguoigui">nguyentranvankhanh123@gmail.com</div>
                                             </div>
                                             <div class="info-wrapper">
                                                 <div class="title-info">Trạng thái</div>
-                                                <div class="request-state regular">Đang tiến hành</div>
+                                                <div class="request-state regular" id="trangthaivanban">Đang tiến hành</div>
                                             </div>
                                         </div>
                                     </div>
@@ -487,9 +479,9 @@
                 </div>
             </div>
         </div>
-         <dx:ASPxCallback ID="cplogout" runat="server" OnCallback="cplogout_Callback" ClientInstanceName="cplogout">
-                <ClientSideEvents CallbackComplete="EndLogout" />
-            </dx:ASPxCallback>
+        <dx:ASPxCallback ID="cplogout" runat="server" OnCallback="cplogout_Callback" ClientInstanceName="cplogout">
+            <ClientSideEvents CallbackComplete="EndLogout" />
+        </dx:ASPxCallback>
         <dx:ASPxHiddenField ID="hdurl" runat="server" ClientInstanceName="hdurl"></dx:ASPxHiddenField>
         <dx:ASPxLoadingPanel ID="loading" runat="server" ClientInstanceName="loading" Text="Đang xử lý" Modal="true" />
         <dx:ASPxCallback ID="cpsign" runat="server" OnCallback="cpsign_Callback" ClientInstanceName="cpsign">
@@ -550,35 +542,79 @@
                 var trangthaiky = sessionStorage.getItem("trangthaiky");
                 var blurBackground = document.querySelector(".hide-background");
                 var checkdl = sessionStorage.getItem("checkdl");
-                if (trangthaiky == 1) {
-                    blurBackground.style.display = "none";
-                    document.getElementById('kyvb').style.opacity = 0;
-                    document.getElementById('tuchoi').style.opacity = 0;
+                var trangthaibutton = sessionStorage.getItem("trangthaibutton");
+                var hinhthucky = sessionStorage.getItem("hinhthucky");
+                var taikhoanky = sessionStorage.getItem("taikhoanky");
+                var taikhoan = taikhoanky.split(",");
+                var hinhthuc = hinhthucky.split(",");
+                for (var i = 0; i < taikhoan.length; i++) {
+                    if (hinhthuc[i] == 0) {
+                        $("#getinfo").append('<div class="recipient-info"><div class="recipient-text"><div class="subtitle-info" id="tennguoinhan">Nguyễn Thu Hồng</div><div class="hint-text" id="emailnguoinhan">' + taikhoan[i] + '</div></div><div class="recipient-role"><img src="Content/images/Sign.png" loading="lazy" alt="" class="image-11"><div class="subtitle-info">' + hinhthuc[i] + '</div></div></div>');
+                    } else if (hinhthuc[i] == 1) {
+                        $("#getinfo").append('<div class="recipient-info"><div class="recipient-text"><div class="subtitle-info" id="tennguoinhan">Nguyễn Thu Hồng</div><div class="hint-text" id="emailnguoinhan">' + taikhoan[i] + '</div></div><div class="recipient-role"><img src="Content/images/Sign.png" loading="lazy" alt="" class="image-11"><div class="subtitle-info">Ký số</div></div></div>');
+
+                    } else if (hinhthuc[i] == 2) {
+                        $("#getinfo").append('<div class="recipient-info"><div class="recipient-text"><div class="subtitle-info" id="tennguoinhan">Nguyễn Thu Hồng</div><div class="hint-text" id="emailnguoinhan">' + taikhoan[i] + '</div></div><div class="recipient-role"><img src="Content/images/Sign.png" loading="lazy" alt="" class="image-11"><div class="subtitle-info">Nhận bản sao</div></div></div>');
+
+                    }
 
                 }
-               
+                var noidunglog = sessionStorage.getItem("noidunglog");
+                var thoigianthuchien = sessionStorage.getItem("thoigianthuchien");
+                var thoigianlam = thoigianthuchien.split(",");
+                    new Date(sessionStorage.getItem("thoigianthuchien"));
+                var thoigianth = thoigianthuchien.getHours() + ":" + thoigianthuchien.getMinutes() + " " + thoigianthuchien.getDay() + "/" + thoigianthuchien.getMonth() + "/" + thoigianthuchien.getFullYear();
+                var taikhoanthuchien = sessionStorage.getItem("taikhoanthuchien");
+                var noidung = noidunglog.split(",");
+                var taikhoanth = taikhoanthuchien.split(",");
+                if (trangthaiky == 1) {
+                    blurBackground.style.display = "none";
+                }
+                if (trangthaibutton == 2) {
+                    document.getElementById('kyvb').style.opacity = 0;
+                    document.getElementById('tuchoi').style.opacity = 0;
+                }
+                var datesend = new Date(ngaygui);
+                var daterecei = new Date(ngaytao);
+                var ngayguivanban = datesend.getHours() + ":" + datesend.getMinutes() + " " + datesend.getDay() + "/" + datesend.getMonth() + "/" + datesend.getFullYear();
+                var ngaytaovanban = daterecei.getHours() + ":" + daterecei.getMinutes() + " " + daterecei.getDay() + "/" + daterecei.getMonth() + "/" + daterecei.getFullYear();
+                document.getElementById("tieudemail").innerHTML = tieudemail;
+                document.getElementById("idvanban").innerHTML = idfile;
+                document.getElementById("tenvb").innerHTML = tenvanban;
+                document.getElementById("tennguoigui").innerHTML = nguoigui;
+                document.getElementById("ngaytaovb").innerHTML = ngaytaovanban;
+                document.getElementById("ngaygui").innerHTML = ngayguivanban;
+                document.getElementById("tieudemail").innerHTML = tieudemail;
+                document.getElementById("emailnguoigui").innerHTML = nguoigui;
 
-                 var name = sessionStorage.getItem("name");
-                    var  email=sessionStorage.getItem("email");
-            document.getElementById("name").innerHTML = name;
-            document.getElementById("gmail").innerHTML = email;
+                var name = sessionStorage.getItem("name");
+                var email = sessionStorage.getItem("email");
+                document.getElementById("name").innerHTML = name;
+                document.getElementById("gmail").innerHTML = email;
                 var tenvb = sessionStorage.getItem("tenvb");
                 document.getElementById("name-file").innerHTML = tenvb;
                 var trangthaivb = sessionStorage.getItem("trangthaivb");
-                
+
                 if (trangthaivb == 1) {
                     document.getElementById("trangthaivb").innerHTML = "Nháp";
+                    document.getElementById("trangthaivanban").innerHTML = "Nháp";
                 } else if (trangthaivb == 2) {
                     document.getElementById("trangthaivb").innerHTML = "Chờ ký";
+                    document.getElementById("trangthaivanban").innerHTML = "Chờ ký";
                 } else if (trangthaivb == 3) {
                     document.getElementById("trangthaivb").innerHTML = "Ký hoàn tất";
+                    document.getElementById("trangthaivanban").innerHTML = "Ký hoàn tất";
                 } else if (trangthaivb == 4) {
                     document.getElementById("trangthaivb").innerHTML = "Từ chối";
+                    document.getElementById("trangthaivanban").innerHTML = "Từ chối";
                 } else if (trangthaivb == 5) {
                     document.getElementById("trangthaivb").innerHTML = "Thu hồi";
+                    document.getElementById("trangthaivanban").innerHTML = "Thu hồi";
                 } else if (trangthaivb == 6) {
-                     document.getElementById("trangthaivb").innerHTML = "Xóa";
+                    document.getElementById("trangthaivb").innerHTML = "Xóa";
+                    document.getElementById("trangthaivanban").innerHTML = "Xóa";
                 }
+
                 var duongdan = localStorage.getItem("urlFile");
                 var doc = duongdan;
                 hdurl.Set('value', doc);
@@ -714,7 +750,7 @@
 
 
             });
-   
+
 
         </script>
         <!-- [if lte IE 9]><script src="https://cdnjs.cloudflare.com/ajax/libs/placeholders/3.0.2/placeholders.min.js"></script><![endif] -->

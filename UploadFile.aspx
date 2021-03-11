@@ -246,8 +246,8 @@
                                     </div>
                                     <nav class="w-dropdown-list">
                                         <a href="#" id="renamefile" class="w-dropdown-link">Đổi tên tài liệu</a>
-                                        <a href="#" class="w-dropdown-link">Xóa tài liệu</a>
-                                        <a href="#" onclick="window.location.href='UploadFile.aspx'" class="w-dropdown-link">Tải lại tài liệu</a>
+                                        <a href="UploadFile.aspx" class="w-dropdown-link">Xóa tài liệu</a>
+                                        <a href="UploadFile.aspx" onclick="window.location.href='UploadFile.aspx'" class="w-dropdown-link">Tải lại tài liệu</a>
                                     </nav>
                                 </div>
                             </div>

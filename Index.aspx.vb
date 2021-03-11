@@ -81,38 +81,74 @@ Partial Class Index
         Dim trangthaivb As String = gridDanhsach.GetRowValues(container.VisibleIndex, "TrangthaiVB")
         Dim res As New swEDoc.clThietlapnguoiky
         Dim serv As New swEDoc.apiEdoc
-        res = serv.Checkky_Taikhoan(idfile, taikhoan)
+        res = serv.Checkky_Taikhoan(idfile, Session("Login"))
         Dim info As String = res.Info
-        Dim ttk As Integer = res.Trinhtuky
         Dim tkk As String = res.Taikhoanky
         Dim trangthaiky As Integer = res.Trangthaiky
+        Dim trinhtuky As Integer = res.Trinhtuky
         Dim checkdl As Integer = res.CheckDL
         '   Dim link As String = duongdanfile.Replace("D:\EDOC_TEST\WEBEDOC\Edoc0103", "http://27.71.231.212:8001")
         Dim link As String = duongdanfile.Replace("D:\Web\Edoc", "http://localhost:58988")
-
         Session("idf") = idfile
-        Session("ttk") = ttk
         btn.JSProperties("cp_idfile") = idfile
         btn.JSProperties("cp_tkk") = tkk
-        btn.JSProperties("cp_ttk") = ttk
+        btn.JSProperties("cp_info") = info
         btn.JSProperties("cp_checkdl") = checkdl
         btn.JSProperties("cp_trangthaivb") = trangthaivb
         btn.JSProperties("cp_email") = Session("Login")
         btn.JSProperties("cp_name") = Session("Ten")
-
         btn.JSProperties("cp_trangthaiky") = trangthaiky
         btn.JSProperties("cp_urlFile") = link
         btn.JSProperties("cp_tenvb") = tenvb
+        btn.JSProperties("cp_trinhtuky") = trinhtuky
         Dim data As New DataTable
         data = serv.LayTTVB(idfile)
+        btn.JSProperties("cp_ttk") = data.Rows(0)(10)
+        Session("ttk") = data.Rows(0)(10)
         btn.JSProperties("cp_taikhoantao") = taikhoan
         btn.JSProperties("cp_ngaytao") = data.Rows(0)(3)
         btn.JSProperties("cp_tieudemail") = data.Rows(0)(6)
         btn.JSProperties("cp_chudemail") = data.Rows(0)(7)
-        btn.JSProperties("cp_taikhoanky") = data.Rows(0)(9)
-        btn.JSProperties("cp_hinhthucky") = data.Rows(0)(11)
+        Dim listky As New List(Of String)
+        For i = 0 To data.Rows.Count - 1
+            listky.Add(data.Rows(i)(9))
+        Next
+
+        btn.JSProperties("cp_taikhoanky") = listky
+        Dim listhtk As New List(Of Integer)
+        For j = 0 To data.Rows.Count - 1
+            listhtk.Add(data.Rows(j)(11))
+        Next
+
+        btn.JSProperties("cp_hinhthucky") = listhtk
         btn.JSProperties("cp_trangthaigui") = data.Rows(0)(12)
         btn.JSProperties("cp_thoigiangui") = data.Rows(0)(13)
+
+        Dim trangthai As Integer = checkttky(idfile, trinhtuky - 1)
+
+        If trinhtuky = 1 And trangthaiky = 0 Then
+            btn.JSProperties("cp_trinhtu") = 1
+        Else
+            If trangthai = 1 Then
+                btn.JSProperties("cp_trinhtu") = 1
+            Else
+                btn.JSProperties("cp_trinhtu") = 2
+            End If
+        End If
+        Dim logvb As New DataTable
+        Dim listnoidung As New List(Of String)
+        Dim listthoigian As New List(Of String)
+        Dim listtkthuchien As New List(Of String)
+
+        logvb = serv.LaylogVB(idfile)
+        For k = 0 To logvb.Rows.Count - 1
+            listnoidung.Add(logvb.Rows(k)(2))
+            listthoigian.Add(logvb.Rows(k)(3))
+            listtkthuchien.Add(logvb.Rows(k)(4))
+        Next
+        btn.JSProperties("cp_noidunglog") = listnoidung
+        btn.JSProperties("cp_thoigianlog") = listthoigian
+        btn.JSProperties("cp_tkthuchien") = listtkthuchien
     End Sub
     Protected Sub gridDanhsach_HtmlDataCellPrepared(sender As Object, e As ASPxGridViewTableDataCellEventArgs)
         'If e.DataColumn.FieldName = "Trinhtuky" Then

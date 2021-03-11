@@ -38,6 +38,15 @@
             var trangthaivb = s.cp_trangthaivb;
             var trangthaiky = s.cp_trangthaiky;
             var taikhoantao = s.cp_taikhoantao;
+            var trinhtuky = s.cp_trinhtuky;
+            var trangthaibutton = s.cp_trinhtu;
+            var noidunglog = s.cp_noidunglog;
+            var thoigianthuchien = s.cp_thoigianlog;
+            var taikhoanthuchien = s.cp_tkthuchien;
+            sessionStorage.setItem("trangthaibutton", trangthaibutton);
+            sessionStorage.setItem("noidunglog", noidunglog);
+            sessionStorage.setItem("thoigianthuchien", thoigianthuchien);
+            sessionStorage.setItem("taikhoanthuchien", taikhoanthuchien);
             sessionStorage.setItem("signInfo", info);
             sessionStorage.setItem("tenvb", tenvb);
             sessionStorage.setItem("trangthaiky", trangthaiky);
@@ -54,6 +63,7 @@
             sessionStorage.setItem("trangthaigui", trangthaigui);
             sessionStorage.setItem("thoigiangui", thoigiangui);
             sessionStorage.setItem("taikhoantao", taikhoantao);
+            sessionStorage.setItem("trinhtuky", trinhtuky);
 
             var ptk ='<%= Session("ptKy") %>';
 
@@ -62,14 +72,14 @@
             localStorage.setItem("Phuongthucky", ptk);
             localStorage.setItem("trinhtuky", ttk);
             localStorage.setItem("urlFile", urlfile);
-            if (ptk == 1) {
+            //if (ptk == 1) {
                  window.location.href = "ElectronicSigning.aspx";
                 cpgetinfo.PerformCallback();
                
-            }  else {
-                 window.location.href = "DigitalSigning.aspx";
-                cpgetinfo.PerformCallback();
-            }
+            //}  else {
+            //     window.location.href = "DigitalSigning.aspx";
+            //    cpgetinfo.PerformCallback();
+            //}
         }
     </script>
     <style>

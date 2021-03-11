@@ -96,15 +96,15 @@ Partial Class ElectronicSigning
         Dim linkfile As String = arr(0)
         Dim code As String = arr(1)
         Dim info As String = arr(2)
+        Dim phuongthuc As String = arr(3)
+        Dim idfile As Integer = arr(4)
+        Dim taikhoanky As String = arr(5)
+        Dim trinhtuky As Integer = arr(6)
         Dim res As Integer = 0
         res = serv.TaoYCKy(code, Session("Login"), linkfile, info)
         If res > 0 Then
             Dim rec As Integer = 0
-            Dim idfile As Integer = Session("idf")
-            Dim ttk As Integer = Session("ttk")
-            Dim user As String = Session("Login")
-            Dim ptk As String = Session("Login")
-            rec = serv.KyVB(idfile, user, Session("ptKy"), ttk)
+            rec = serv.KyVB(idfile, taikhoanky, phuongthuc, trinhtuky)
             If rec = 1 Then
                 e.Result = "Gửi yêu cầu ký thành công."
             ElseIf rec = 0 Then

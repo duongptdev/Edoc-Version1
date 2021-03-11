@@ -79,7 +79,7 @@
                             <a id="contacts" href="contacts.html" class="nav-link">Danh bạ</a>
                         </li>
                         <li>
-                            <a id="SettingAccount.aspx" href="settings.html" class="nav-link">Cài đặt</a>
+                            <a id="" href="SettingAccount.aspx" class="nav-link">Cài đặt</a>
                         </li>
                     </ul>
                 </div>

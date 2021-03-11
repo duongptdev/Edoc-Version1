@@ -38,7 +38,7 @@
             cpmobileidcts.PerformCallback(idctsmobile);
         }
         function Endusbtoken(s, e) {
-            if (e.result == 1) {
+            if (e.result >0) {
                 alert("Thiết lập thành công");
                 window.location.href = "DigitalSignture.aspx";
 
@@ -53,7 +53,7 @@
             }
         }
         function Endmobileserial(s, e) {
-            if (e.result == 1) {
+            if (e.result >0) {
                 alert("Thiết lập thành công");
                 window.location.href = "DigitalSignture.aspx";
 
@@ -68,7 +68,7 @@
             }
         }
         function Endmobileidcts(s, e) {
-            if (e.result == 1) {
+            if (e.result >0) {
                 alert("Thiết lập thành công");
                 window.location.href = "DigitalSignture.aspx";
 
