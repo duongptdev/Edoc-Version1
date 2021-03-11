@@ -1,6 +1,9 @@
 {
   "ExpandedNodes": [
-    ""
+    "",
+    "\\Content",
+    "\\Content\\css"
   ],
+  "SelectedNode": "\\Content\\css\\edoc.webflow.css",
   "PreviewInSolutionExplorer": false
 }

@@ -81,6 +81,7 @@
             //    cpgetinfo.PerformCallback();
             //}
         }
+
     </script>
     <style>
         .aligntext {
@@ -89,6 +90,64 @@
 
         #btnAll {
             border: none;
+        }
+
+        .table-index {
+            border-spacing: 0 12px;
+            min-width: 100%;
+            border-collapse: separate;
+        }
+
+        .table-index tbody tr {
+            box-shadow: 0px 1px 4px rgba(4, 80, 193, 0.1);
+        }
+
+        .table-index td {
+            padding: 13px 10px;
+            border-right: none;
+            font-family: "Helvetica neue", sans-serif;
+        }
+
+        .table-index th {
+            padding: 0 10px;
+            border-right: none;
+            background-color: transparent;
+            font-family: "Helvetica neue", sans-serif;
+            font-size: 13px;
+            font-weight: 400;
+            color: #7A869A;
+        }
+
+        .table-index tbody tr {
+            border-radius: 2px;
+            overflow: hidden;
+        }
+
+        .table-index td:first-child {
+            padding-left: 20px;
+        }
+
+        .table-index td:last-child {
+            text-align: right;
+            padding-right: 20px;
+        }
+
+        .file-name-index {
+            color: #253858;
+            font-size: 13px;
+            font-weight: 500;
+        }
+
+        .user-name-index {
+            color: #B3BAC5;
+            font-size: 13px;
+            font-weight: 400;
+        }
+
+        .day-created-index {
+            color: #253858;
+            font-size: 13px;
+            font-weight: 400;
         }
     </style>
 
@@ -262,18 +321,81 @@
                         </div>
                         <button type="button" class="close" onclick="Close()" data-dismiss="alert">&times;</button>
                     </div>--%>
+                    <div class="search-and-filter">
+                         <div class="search-block">
+                             
+                            <input type="search" class="search-input-block w-input" name="query" placeholder="Tìm kiếm tài liệu" id="search">
+                                <a href="" class="search-icon-button"><img src="Content/images/search-icon.png" alt=""></a>
+                        </div>
 
+                        <div class="divider-search"></div>
+                        <div id="filter-button" class="filter-block">
+                            <img src="Content/images/Filter Icon.png" loading="lazy" alt="" class="filter-icon">
+                            <div class="filter-text">Bộ lọc</div>
+                        </div>
+                    </div>
                 </div>
 
-                <div class="ad-block">
+                <div class="filter-dropdown">
+                    <div class="state-filter">
+                        <div class="state-filter-text">Trạng thái</div>
+                        <select class="filter-select">
+                            <option value="waiting-state">Chờ ký</option>
+                            <option value="finish-state">Ký hoàn tất</option>
+                            <option value="reject-state">Từ chối</option>
+                            <option value="voided-state">Thu hồi</option>
+                            <option value="delete-state">Đã xoá</option>
+                            <option value="draft-state">Nháp</option>
+                        </select>
+                    </div>
+                    <div class="sender-filter">
+                        <div class="state-filter-text">Người gửi</div>
+                        <div class="sender-radio">
+                            <input id="all" type="radio" name="filter" value="all" />
+                            <label for="all" class="radio-label">Tất cả</label>
+                            <div class="radio-block">
+                                <input id="sender" type="radio" name="filter" value="sender" />
+                                <label for="sender" class="radio-label">Gửi từ tôi</label>
+                            </div>
+                            <div class="radio-block">
+                                <input id="recipient" type="radio" name="filter" value="recipient" />
+                                <label for="recipient" class="radio-label">Gửi từ người khác</label>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="date-filter">
+                        <div class="state-filter-text">Thời gian</div>
+                        <select class="filter-select">
+                            <option value="waiting-state">6 tháng trước</option>
+                            <option value="finish-state">Tuỳ chỉnh</option>
+                        </select>
+                        <div class="date-custom">
+                            <div class="from-to-block">
+                                <div class="state-filter-text">Từ ngày</div>
+                                <input class="date-input" type="date" name="from" value="" />
+                            </div>
+                            <div class="date-divider"></div>
+                            <div class="from-to-block">
+                                <div class="state-filter-text">Đến ngày</div>
+                                <input class="date-input" type="date" name="to" value="" />
+                            </div>
+                        </div>
+                    </div>
+                    <div class="button-filter">
+                        <a href="" aria-current="page" class="back-button w-button w--current">Bỏ qua</a>
+                        <button type="submit" class="button-4 w-button">Áp dụng</button>
+                    </div>
+                </div>
+
+                <div class="ad-card">
                     <div class="image-card">
-                        <img src="Content/images/Clock.png" loading="lazy" alt="">
+                        <img src="Content/images/Create New File.svg" loading="lazy" width="1547" alt="" class="image-15">
                     </div>
                     <div class="image-card">
-                        <img src="Content/images/Use-Templates.svg" loading="lazy" alt="">
+                        <img src="Content/images/Use Templates.svg" loading="lazy" width="1281" alt="">
                     </div>
                     <div class="image-card">
-                        <img src="Content/images/Watch-Tutorial.svg" loading="lazy" alt="">
+                        <img src="Content/images/Watch-Tutorial.svg" loading="lazy" width="1183" alt="">
                     </div>
                 </div>
 
@@ -322,6 +444,123 @@
                 </dx:ASPxGridView>
 
 
+                <div>
+                    <table class="table-index">
+
+                            <colgroup>
+                                <col width="50" />
+                                <col width="450" />
+                                <col width="200" />
+                                <col width="250" />
+                                <col width="100" />
+                            </colgroup>
+
+                        <thead>
+                            <tr>
+                                <th></th>
+                                <th>Tiêu đề</th>
+                                <th>Cập nhật</th>
+                                <th>Trạng thái</th>
+                                <th></th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><input type="checkbox" name="" id=""></td>
+                                <td>
+                                    <div class="file-name-index">Hợp đồng dịch vụ VMI-NACENCOMM 13.7.20.docx</div>                     
+                                    <div class="user-name-index">Từ: Nguyễn Trần Văn Khanh</div>
+                                </td>
+                                <td>
+                                    <div class="day-created-index">07/12/2020</div>
+                                    <div class="user-name-index">03:32:35 PM</div>
+                                </td>
+                                <td>
+                                    <div class="card-state wait-state">
+                                        <img src="Content/images/Group-14876.svg" loading="lazy" alt="" class="icon-state" />
+                                        <div class="text-state wait-text">Đang chờ</div>
+                                    </div>
+                                </td>
+                                <td><a href="#"><img src="Content/images/Group-15086_1.png" alt="" /></a></td>
+                            </tr>
+
+                            <tr>
+                                <td><input type="checkbox" name="" id=""></td>
+                                <td>
+                                    <div class="file-name-index">Hợp đồng dịch vụ VMI-NACENCOMM 13.7.20.docx</div>                     
+                                    <div class="user-name-index">Từ: Nguyễn Trần Văn Khanh</div>
+                                </td>
+                                <td>
+                                    <div class="day-created-index">07/12/2020</div>
+                                    <div class="user-name-index">03:32:35 PM</div>
+                                </td>
+                                <td>
+                                    <div class="card-state reject-state">
+                                        <img src="Content/images/Group-15087_1.png" loading="lazy" alt="" class="icon-state" />
+                                        <div class="text-state reject-text">Bị từ chối</div>
+                                    </div>
+                                </td>
+                                <td><a href="#"><img src="Content/images/Group-15086_1.png" alt="" /></a></td>
+                            </tr>
+
+                            <tr>
+                                <td><input type="checkbox" name="" id=""></td>
+                                <td>
+                                    <div class="file-name-index">Hợp đồng dịch vụ VMI-NACENCOMM 13.7.20.docx</div>                     
+                                    <div class="user-name-index">Từ: Nguyễn Trần Văn Khanh</div>
+                                </td>
+                                <td>
+                                    <div class="day-created-index">07/12/2020</div>
+                                    <div class="user-name-index">03:32:35 PM</div>
+                                </td>
+                                <td>
+                                    <div class="card-state done-state">
+                                        <img src="Content/images/Group-15088_1.png" loading="lazy" alt="" class="icon-state" />
+                                        <div class="text-state done-text">Hoàn thành</div>
+                                    </div>
+                                </td>
+                                <td><a href="#"><img src="Content/images/Group-15086_1.png" alt="" /></a></td>
+                            </tr>
+
+                            <tr>
+                                <td><input type="checkbox" name="" id=""></td>
+                                <td>
+                                    <div class="file-name-index">Hợp đồng dịch vụ VMI-NACENCOMM 13.7.20.docx</div>                     
+                                    <div class="user-name-index">Từ: Nguyễn Trần Văn Khanh</div>
+                                </td>
+                                <td>
+                                    <div class="day-created-index">07/12/2020</div>
+                                    <div class="user-name-index">03:32:35 PM</div>
+                                </td>
+                                <td>
+                                    <div class="card-state voided-state">
+                                        <img src="Content/images/Group-14877.svg" loading="lazy" alt="" class="icon-state" />
+                                        <div class="text-state voided-text">Đã thu hồi</div>
+                                    </div>
+                                </td>
+                                <td><a href="#"><img src="Content/images/Group-15086_1.png" alt="" /></a></td>
+                            </tr>
+
+                            <tr>
+                                <td><input type="checkbox" name="" id=""></td>
+                                <td>
+                                    <div class="file-name-index">Hợp đồng dịch vụ VMI-NACENCOMM 13.7.20.docx</div>                     
+                                    <div class="user-name-index">Từ: Nguyễn Trần Văn Khanh</div>
+                                </td>
+                                <td>
+                                    <div class="day-created-index">07/12/2020</div>
+                                    <div class="user-name-index">03:32:35 PM</div>
+                                </td>
+                                <td>
+                                    <div class="card-state draft-state">
+                                        <img src="Content/images/Group-15090.png" loading="lazy" alt="" class="icon-state" />
+                                        <div class="text-state draft-text">Bản nháp</div>
+                                    </div>
+                                </td>
+                                <td><a href="#"><img src="Content/images/Group-15086_1.png" alt="" /></a></td>
+                            </tr>
+                        </tbody>
+                    </table>
             </div>
 
         </asp:Panel>
@@ -338,7 +577,7 @@
                         <img src="Content/images/Use Templates.svg" loading="lazy" width="1281" alt="">
                     </div>
                     <div class="image-card">
-                        <img src="Content/images/Watch Tutorial.svg" loading="lazy" width="1183" alt="">
+                        <img src="Content/images/Watch-Tutorial.svg" loading="lazy" width="1183" alt="">
                     </div>
                 </div>
                 <div class="empty-text">
@@ -358,16 +597,12 @@
         <dx:ASPxTextBox ID="txtptk" ClientInstanceName="txtptk" runat="server" Width="170px" ClientVisible="false"></dx:ASPxTextBox>
         <dx:ASPxTextBox ID="txtttk" ClientInstanceName="txtttk" runat="server" Width="170px" ClientVisible="false"></dx:ASPxTextBox>
         <script src="Scripts/jquery-3.3.1.min.js"></script>
+        <script src="Scripts/js/e-dropdown.js"></script>
         <script>
             $(document).ready(function () {
                 $("#flip").click(function () {
                     $("#panel").slideToggle("slow");
-               
-           
                 });
-            
-
-
             });
 
             function Close() {

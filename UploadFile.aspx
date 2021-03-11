@@ -123,6 +123,7 @@
                     <img src="Content/images/Mask-Group-653.png" loading="lazy" alt="Notification" />
                 </div>
                 <div class="nav-divider"></div>
+<<<<<<< HEAD
                 <div class="nav-user">
                     <div class="user-avatar">
                         <div class="first-word-name" onclick="showUserMenu()">K</div>
@@ -158,8 +159,40 @@
                                 <div class="option-text">Đăng xuất</div>
                             </a>
                         </div>
+=======
+                            <div class="nav-user">
+                <div class="user-avatar">
+                    <div class="first-word-name">K</div>
+                </div><img src="Content/images/Drop Default.svg" loading="lazy" alt="" class="drop-default"><img
+                    src="../images/Drop-Hover.svg" loading="lazy" alt="" class="drop-hover"><img
+                    src="../images/Drop-Clicked.svg" loading="lazy" alt="" class="drop-clicked">
+                <div class="user-dropdown">
+                    <div class="user-drop-card">
+                        <div class="user-name-card">Nguyễn Trần Văn Khanh</div>
+                        <div class="user-email-card">nguyentranvankhanh123@gmail.com</div>
+                        <div class="card-divider add-margin"></div>
+                        <a href="../settings.html" class="option-button w-inline-block"><img
+                                src="Content/images/Account-Setting.svg" loading="lazy" alt="" class="icon-option">
+                            <div class="option-text">Cài đặt tài khoản</div>
+                        </a>
+                        <a href="../setting/plan-and-billing.html" class="option-button w-inline-block"><img
+                                src="Content/images/Plan.svg" loading="lazy" alt="" class="icon-option">
+                            <div class="option-text">Gói dịch vụ</div>
+                        </a>
+                        <a href="#" class="option-button w-inline-block"><img src="Content/images/Help.svg" loading="lazy"
+                                alt="" class="icon-option">
+                            <div class="option-text">Trợ giúp và hỗ trợ</div>
+                        </a>
+                        <div class="card-divider"></div>
+                        <a href="#" class="option-button remove-padding w-inline-block">
+                            <img src="Content/images/Log-Out.svg"
+                                loading="lazy" alt="" class="icon-option">
+                            <asp:Button ID="btnDangxuat" runat="server" CssClass="log-out-button" Text="Đăng xuất" OnClick="btnDangxuat_Click" />
+                        </a>
+>>>>>>> 17085596cadec5ce755e986c15c08fd693195194
                     </div>
                 </div>
+            </div>
             </div>
         </header>
       
@@ -226,7 +259,9 @@
                                 </div>
                             </div>
                         </div>
+                        <div class="file-warning">*Kích thước tệp tối đa 50MB</div>
                     </div>
+                    
                     <div id="card-pdf" class="card-pdf">
                         <div class="card-ui">
                             <div class="pdf-content">
@@ -245,9 +280,19 @@
                                             loading="lazy" alt="function">
                                     </div>
                                     <nav class="w-dropdown-list">
+<<<<<<< HEAD
                                         <a href="#" id="renamefile" class="w-dropdown-link">Đổi tên tài liệu</a>
                                         <a href="UploadFile.aspx" class="w-dropdown-link">Xóa tài liệu</a>
                                         <a href="UploadFile.aspx" onclick="window.location.href='UploadFile.aspx'" class="w-dropdown-link">Tải lại tài liệu</a>
+=======
+                                        <a href="#" class="w-dropdown-link">Tải lên bản thay thế</a>
+                                        <a href="#" class="w-dropdown-link">Xem tài liệu</a>
+                                        <a href="#" id="renamefile" class="w-dropdown-link">Đổi tên</a>
+                                        <a href="#" class="w-dropdown-link">Tải xuống</a>
+                                        <a href="#" onclick="window.location.href='UploadFile.aspx'" class="w-dropdown-link">Tải lại tài liệu</a>
+                                        <a href="#" class="w-dropdown-link">Xoá</a>
+
+>>>>>>> 17085596cadec5ce755e986c15c08fd693195194
                                     </nav>
                                 </div>
                             </div>
