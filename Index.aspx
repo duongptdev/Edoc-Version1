@@ -3,7 +3,7 @@
 <%@ Register Assembly="DevExpress.Web.v16.2, Version=16.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" Namespace="DevExpress.Web" TagPrefix="dx" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="ContentPlaceHolder1" runat="Server">
-   
+
     <style>
         .bg-white {
             background-color: white;
@@ -43,6 +43,10 @@
             var noidunglog = s.cp_noidunglog;
             var thoigianthuchien = s.cp_thoigianlog;
             var taikhoanthuchien = s.cp_tkthuchien;
+            var tennguoitao = s.cp_tennguoitao;
+            var tennguoiky = s.cp_tennguoiky;
+            sessionStorage.setItem("tennguoitao", tennguoitao);
+            sessionStorage.setItem("tennguoiky", tennguoiky);
             sessionStorage.setItem("trangthaibutton", trangthaibutton);
             sessionStorage.setItem("noidunglog", noidunglog);
             sessionStorage.setItem("thoigianthuchien", thoigianthuchien);
@@ -73,9 +77,9 @@
             localStorage.setItem("trinhtuky", ttk);
             localStorage.setItem("urlFile", urlfile);
             //if (ptk == 1) {
-                 window.location.href = "ElectronicSigning.aspx";
-                cpgetinfo.PerformCallback();
-               
+            window.location.href = "ElectronicSigning.aspx";
+            cpgetinfo.PerformCallback();
+
             //}  else {
             //     window.location.href = "DigitalSigning.aspx";
             //    cpgetinfo.PerformCallback();
@@ -98,39 +102,39 @@
             border-collapse: separate;
         }
 
-        .table-index tbody tr {
-            box-shadow: 0px 1px 4px rgba(4, 80, 193, 0.1);
-        }
+            .table-index tbody tr {
+                box-shadow: 0px 1px 4px rgba(4, 80, 193, 0.1);
+            }
 
-        .table-index td {
-            padding: 13px 10px;
-            border-right: none;
-            font-family: "Helvetica neue", sans-serif;
-        }
+            .table-index td {
+                padding: 13px 10px;
+                border-right: none;
+                font-family: "Helvetica neue", sans-serif;
+            }
 
-        .table-index th {
-            padding: 0 10px;
-            border-right: none;
-            background-color: transparent;
-            font-family: "Helvetica neue", sans-serif;
-            font-size: 13px;
-            font-weight: 400;
-            color: #7A869A;
-        }
+            .table-index th {
+                padding: 0 10px;
+                border-right: none;
+                background-color: transparent;
+                font-family: "Helvetica neue", sans-serif;
+                font-size: 13px;
+                font-weight: 400;
+                color: #7A869A;
+            }
 
-        .table-index tbody tr {
-            border-radius: 2px;
-            overflow: hidden;
-        }
+            .table-index tbody tr {
+                border-radius: 2px;
+                overflow: hidden;
+            }
 
-        .table-index td:first-child {
-            padding-left: 20px;
-        }
+            .table-index td:first-child {
+                padding-left: 20px;
+            }
 
-        .table-index td:last-child {
-            text-align: right;
-            padding-right: 20px;
-        }
+            .table-index td:last-child {
+                text-align: right;
+                padding-right: 20px;
+            }
 
         .file-name-index {
             color: #253858;
@@ -314,7 +318,7 @@
             <div class="work-area">
                 <div class="heading-container">
                     <div class="heading-text">Tất cả tài liệu</div>
-                  <%--  <div id="sendnotifi" class="fade">
+                    <%--  <div id="sendnotifi" class="fade">
                         <div class="alert alert-success alert-dismissible fade" id="notifi" style="width: 500px;">
                             <strong>Thành công!</strong>
 
@@ -322,10 +326,11 @@
                         <button type="button" class="close" onclick="Close()" data-dismiss="alert">&times;</button>
                     </div>--%>
                     <div class="search-and-filter">
-                         <div class="search-block">
-                             
+                        <div class="search-block">
+
                             <input type="search" class="search-input-block w-input" name="query" placeholder="Tìm kiếm tài liệu" id="search">
-                                <a href="" class="search-icon-button"><img src="Content/images/search-icon.png" alt=""></a>
+                            <a href="" class="search-icon-button">
+                                <img src="Content/images/search-icon.png" alt=""></a>
                         </div>
 
                         <div class="divider-search"></div>
@@ -445,124 +450,40 @@
 
 
                 <div>
-                    <table class="table-index">
+               <%--     <dx:ASPxGridView ID="grvDsvb" runat="server" Border-BorderStyle="None" Width="100%"   OnCustomColumnDisplayText="gridDanhsach_CustomColumnDisplayText">
+                        <Templates>
+                            <DataRow>
+                                <table class="table-index">
+                                   
 
-                            <colgroup>
-                                <col width="50" />
-                                <col width="450" />
-                                <col width="200" />
-                                <col width="250" />
-                                <col width="100" />
-                            </colgroup>
+                                    <tr>
+                                        <td>
+                                            <input type="checkbox" name="" id=""></td>
+                                        <td>
+                                            <div class="file-name-index"><%# Eval("TenVBGoc") %></div>
+                                        
+                                        </td>
+                                        <td>
+                                          <div class="file-name-index"><%# Eval("Ngaytao") %></div>
+                                        
+                                           
+                                        </td>
+                                         <td>
+                                          <div class="file-name-index"><%# Eval("TrangthaiVB") %></div>
+                                        
+                                           
+                                        </td>
+                                       
+                                        <td><a href="#">
+                                            <img src="Content/images/Group-15086_1.png" alt="" /></a></td>
+                                    </tr>
+                                </table>
+                            </DataRow>
+                        </Templates>
+                        <Settings ShowColumnHeaders="false" />
+                    </dx:ASPxGridView>--%>
 
-                        <thead>
-                            <tr>
-                                <th></th>
-                                <th>Tiêu đề</th>
-                                <th>Cập nhật</th>
-                                <th>Trạng thái</th>
-                                <th></th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <td><input type="checkbox" name="" id=""></td>
-                                <td>
-                                    <div class="file-name-index">Hợp đồng dịch vụ VMI-NACENCOMM 13.7.20.docx</div>                     
-                                    <div class="user-name-index">Từ: Nguyễn Trần Văn Khanh</div>
-                                </td>
-                                <td>
-                                    <div class="day-created-index">07/12/2020</div>
-                                    <div class="user-name-index">03:32:35 PM</div>
-                                </td>
-                                <td>
-                                    <div class="card-state wait-state">
-                                        <img src="Content/images/Group-14876.svg" loading="lazy" alt="" class="icon-state" />
-                                        <div class="text-state wait-text">Đang chờ</div>
-                                    </div>
-                                </td>
-                                <td><a href="#"><img src="Content/images/Group-15086_1.png" alt="" /></a></td>
-                            </tr>
-
-                            <tr>
-                                <td><input type="checkbox" name="" id=""></td>
-                                <td>
-                                    <div class="file-name-index">Hợp đồng dịch vụ VMI-NACENCOMM 13.7.20.docx</div>                     
-                                    <div class="user-name-index">Từ: Nguyễn Trần Văn Khanh</div>
-                                </td>
-                                <td>
-                                    <div class="day-created-index">07/12/2020</div>
-                                    <div class="user-name-index">03:32:35 PM</div>
-                                </td>
-                                <td>
-                                    <div class="card-state reject-state">
-                                        <img src="Content/images/Group-15087_1.png" loading="lazy" alt="" class="icon-state" />
-                                        <div class="text-state reject-text">Bị từ chối</div>
-                                    </div>
-                                </td>
-                                <td><a href="#"><img src="Content/images/Group-15086_1.png" alt="" /></a></td>
-                            </tr>
-
-                            <tr>
-                                <td><input type="checkbox" name="" id=""></td>
-                                <td>
-                                    <div class="file-name-index">Hợp đồng dịch vụ VMI-NACENCOMM 13.7.20.docx</div>                     
-                                    <div class="user-name-index">Từ: Nguyễn Trần Văn Khanh</div>
-                                </td>
-                                <td>
-                                    <div class="day-created-index">07/12/2020</div>
-                                    <div class="user-name-index">03:32:35 PM</div>
-                                </td>
-                                <td>
-                                    <div class="card-state done-state">
-                                        <img src="Content/images/Group-15088_1.png" loading="lazy" alt="" class="icon-state" />
-                                        <div class="text-state done-text">Hoàn thành</div>
-                                    </div>
-                                </td>
-                                <td><a href="#"><img src="Content/images/Group-15086_1.png" alt="" /></a></td>
-                            </tr>
-
-                            <tr>
-                                <td><input type="checkbox" name="" id=""></td>
-                                <td>
-                                    <div class="file-name-index">Hợp đồng dịch vụ VMI-NACENCOMM 13.7.20.docx</div>                     
-                                    <div class="user-name-index">Từ: Nguyễn Trần Văn Khanh</div>
-                                </td>
-                                <td>
-                                    <div class="day-created-index">07/12/2020</div>
-                                    <div class="user-name-index">03:32:35 PM</div>
-                                </td>
-                                <td>
-                                    <div class="card-state voided-state">
-                                        <img src="Content/images/Group-14877.svg" loading="lazy" alt="" class="icon-state" />
-                                        <div class="text-state voided-text">Đã thu hồi</div>
-                                    </div>
-                                </td>
-                                <td><a href="#"><img src="Content/images/Group-15086_1.png" alt="" /></a></td>
-                            </tr>
-
-                            <tr>
-                                <td><input type="checkbox" name="" id=""></td>
-                                <td>
-                                    <div class="file-name-index">Hợp đồng dịch vụ VMI-NACENCOMM 13.7.20.docx</div>                     
-                                    <div class="user-name-index">Từ: Nguyễn Trần Văn Khanh</div>
-                                </td>
-                                <td>
-                                    <div class="day-created-index">07/12/2020</div>
-                                    <div class="user-name-index">03:32:35 PM</div>
-                                </td>
-                                <td>
-                                    <div class="card-state draft-state">
-                                        <img src="Content/images/Group-15090.png" loading="lazy" alt="" class="icon-state" />
-                                        <div class="text-state draft-text">Bản nháp</div>
-                                    </div>
-                                </td>
-                                <td><a href="#"><img src="Content/images/Group-15086_1.png" alt="" /></a></td>
-                            </tr>
-                        </tbody>
-                    </table>
-            </div>
-
+                </div>
         </asp:Panel>
         <asp:Panel ID="pnEmpty" runat="server">
             <div class="work-area">
@@ -571,6 +492,7 @@
                 </div>
                 <div class="ad-card">
                     <div class="image-card">
+
                         <img src="Content/images/Create New File.svg" loading="lazy" width="1547" alt="" class="image-15">
                     </div>
                     <div class="image-card">

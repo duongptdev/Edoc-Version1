@@ -7,6 +7,10 @@ Imports DevExpress.Web
 Partial Class ElectronicSigning
     Inherits System.Web.UI.Page
     Public sConString As String = ConfigurationManager.ConnectionStrings("ConnectionString").ConnectionString
+    Protected Sub ElectronicSigning_Load(ByVal sender As Object, ByVal e As System.EventArgs) Handles Me.Load
+        grLogvb.DataSource = Session("Logvb")
+        grLogvb.DataBind()
+    End Sub
     Protected Sub cpsign_Callback(source As Object, e As CallbackEventArgs)
         Dim arr1 As String() = e.Parameter.Split("|")
         Dim pageno As Integer = arr1(0)

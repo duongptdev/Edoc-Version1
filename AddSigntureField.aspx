@@ -57,6 +57,7 @@
         }
         function Getpthuck() {
             sessionStorage.setItem("ptky", "1");
+            $("#btnTiepTuc").removeAttr("disabled").removeClass("disable-button");
             ptsign.push(1);
              var info = sessionStorage.getItem("signInfo");
             infosign.push(info);

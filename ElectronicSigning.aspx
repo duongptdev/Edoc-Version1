@@ -21,7 +21,82 @@
     <script type="text/javascript">!function (o, c) { var n = c.documentElement, t = " w-mod-"; n.className += t + "js", ("ontouchstart" in o || o.DocumentTouch && c instanceof DocumentTouch) && (n.className += t + "touch") }(window, document);</script>
     <link href="Content/images/favicon.png" rel="shortcut icon" type="image/x-icon">
     <link href="Content/images/webclip.png" rel="apple-touch-icon">
+    <link href="Content/bootstrap.min.css" rel="stylesheet" />
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <style>
+       
+        .aligntext {
+            text-align: left
+        }
+
+        #btnAll {
+            border: none;
+        }
+
+        .table-index {
+            border-spacing: 0 12px;
+            min-width: 100%;
+            border-collapse: separate;
+        }
+
+            .table-index tbody tr {
+                box-shadow: 0px 1px 4px rgba(4, 80, 193, 0.1);
+            }
+
+            .table-index td {
+                padding: 13px 10px;
+                border-right: none;
+                font-family: "Helvetica neue", sans-serif;
+            }
+
+            .table-index th {
+                padding: 0 10px;
+                border-right: none;
+                background-color: transparent;
+                font-family: "Helvetica neue", sans-serif;
+                font-size: 13px;
+                font-weight: 400;
+                color: #7A869A;
+            }
+
+            .table-index tbody tr {
+                border-radius: 2px;
+                overflow: hidden;
+            }
+
+            .table-index td:first-child {
+                padding-left: 20px;
+            }
+
+            .table-index td:last-child {
+                text-align: right;
+                padding-right: 20px;
+            }
+
+        .file-name-index {
+            color: #253858;
+            font-size: 13px;
+            font-weight: 500;
+        }
+
+        .user-name-index {
+            color: #B3BAC5;
+            font-size: 13px;
+            font-weight: 400;
+        }
+
+        .day-created-index {
+            color: #253858;
+            font-size: 13px;
+            font-weight: 400;
+        }
+
+        .boder-none {
+            border: none;
+        }
+  
+
+    </style>
     <script>
         function SignDoc() {
             //var idfile = localStorage.getItem("idFile");
@@ -322,6 +397,7 @@
                                         </div>
                                     </div>
                                 </div>
+
                                 <div class="request-activity">
                                     <div class="activity-title">
                                         <div class="info-heading">Lịch sử hoạt động</div>
@@ -330,149 +406,65 @@
                                             <img src="Content/images/Sign Map.png" loading="lazy" alt="">
                                         </a>
                                     </div>
-                                    <div class="w-layout-grid title-grid">
-                                        <div class="username">
-                                            <div class="name-text">Người dùng</div>
-                                        </div>
-                                        <div class="time">
-                                            <div class="name-text">Thời gian</div>
-                                            <img src="Content/images/Sort Icon.png" loading="lazy" alt="" class="image-12">
-                                        </div>
-                                        <div class="activity">
-                                            <div class="name-text">Hoạt động</div>
-                                        </div>
-                                        <div class="state">
-                                            <div class="name-text">Trạng thái</div>
-                                        </div>
-                                    </div>
-                                    <div class="table-background">
-                                        <div class="w-layout-grid title-grid">
-                                            <div class="username">
-                                                <div class="subtitle-info">Nguyễn Trần Văn Khanh</div>
-                                                <div class="hint-text">nguyentranvankhanh123@gmail.com</div>
-                                            </div>
-                                            <div class="time block">
-                                                <div class="subtitle-info">17/12/2020</div>
-                                                <div class="hint-text">10:25:25 AM</div>
-                                            </div>
-                                            <div class="activity">
-                                                <div class="subtitle-info">Tạo văn bản</div>
-                                                <div class="hint-text">Nguyễn Trần Văn Khanh đã tạo văn bản ( Hợp đồng dịch vụ VMI-NACENCOMM 13.7.20.docx. )</div>
-                                            </div>
-                                            <div class="state">
-                                                <div class="request-state regular">Đang tiến hành</div>
-                                            </div>
-                                        </div>
-                                        <div class="row-divider"></div>
-                                        <div class="w-layout-grid title-grid">
-                                            <div class="username">
-                                                <div class="subtitle-info">Nguyễn Trần Văn Khanh</div>
-                                                <div class="hint-text">nguyentranvankhanh123@gmail.com</div>
-                                            </div>
-                                            <div class="time block">
-                                                <div class="subtitle-info">17/12/2020</div>
-                                                <div class="hint-text">10:35:13 AM</div>
-                                            </div>
-                                            <div class="activity">
-                                                <div class="subtitle-info">Gửi văn bản</div>
-                                                <div class="hint-text">Nguyễn Trần Văn Khanh đã gửi yêu cầu ký</div>
-                                            </div>
-                                            <div class="state">
-                                                <div class="request-state regular">Đang tiến hành</div>
-                                            </div>
-                                        </div>
-                                        <div class="row-divider"></div>
-                                        <div class="w-layout-grid title-grid">
-                                            <div class="username">
-                                                <div class="subtitle-info">Nguyễn Thu Hồng</div>
-                                                <div class="hint-text">hongktqd@nacencomm.vn</div>
-                                            </div>
-                                            <div class="time block">
-                                                <div class="subtitle-info">18/12/2020</div>
-                                                <div class="hint-text">09:25:15 AM</div>
-                                            </div>
-                                            <div class="activity">
-                                                <div class="subtitle-info">Mở văn bản</div>
-                                                <div class="hint-text">Nguyễn Thu Hồng đã xem văn bản ( Hợp đồng dịch vụ VMI-NACENCOMM 13.7.20.docx. )</div>
-                                            </div>
-                                            <div class="state">
-                                                <div class="request-state regular">Đang tiến hành</div>
-                                            </div>
-                                        </div>
-                                        <div class="row-divider"></div>
-                                        <div class="w-layout-grid title-grid">
-                                            <div class="username">
-                                                <div class="subtitle-info">Nguyễn Thu Hồng</div>
-                                                <div class="hint-text">hongktqd@nacencomm.vn</div>
-                                            </div>
-                                            <div class="time block">
-                                                <div class="subtitle-info">18/12/2020</div>
-                                                <div class="hint-text">09:27:16 AM</div>
-                                            </div>
-                                            <div class="activity">
-                                                <div class="subtitle-info">Đã ký</div>
-                                                <div class="hint-text">Nguyễn Thu Hồng đã ký thành công văn bản ( Hợp đồng dịch vụ VMI -NACENCOMM 13.7.20.docx. )</div>
-                                            </div>
-                                            <div class="state">
-                                                <div class="request-state regular">Đang tiến hành</div>
-                                            </div>
-                                        </div>
-                                        <div class="row-divider"></div>
-                                        <div class="w-layout-grid title-grid">
-                                            <div class="username">
-                                                <div class="subtitle-info">Trần Thu Thảo</div>
-                                                <div class="hint-text">thaotomnic@nacencomm.vn</div>
-                                            </div>
-                                            <div class="time block">
-                                                <div class="subtitle-info">18/12/2020</div>
-                                                <div class="hint-text">10:15:23 AM</div>
-                                            </div>
-                                            <div class="activity">
-                                                <div class="subtitle-info">Mở văn bản</div>
-                                                <div class="hint-text">Trần Thu Thảo đã xem văn bản ( Hợp đồng dịch vụ VMI-NACENCOMM 13.7.20.docx. )</div>
-                                            </div>
-                                            <div class="state">
-                                                <div class="request-state regular">Đang tiến hành</div>
-                                            </div>
-                                        </div>
-                                        <div class="row-divider"></div>
-                                        <div class="w-layout-grid title-grid">
-                                            <div class="username">
-                                                <div class="subtitle-info">Nguyễn Hoàng Hải</div>
-                                                <div class="hint-text">hainh@nacencomm.vn</div>
-                                            </div>
-                                            <div class="time block">
-                                                <div class="subtitle-info">18/12/2020</div>
-                                                <div class="hint-text">03:27:16 PM</div>
-                                            </div>
-                                            <div class="activity">
-                                                <div class="subtitle-info">Mở văn bản</div>
-                                                <div class="hint-text">Nguyễn Hoàng Hải đã xem văn bản ( Hợp đồng dịch vụ VMI-NACENCOMM 13.7.20.docx. )</div>
-                                            </div>
-                                            <div class="state">
-                                                <div class="request-state regular">Đang tiến hành</div>
-                                            </div>
-                                        </div>
-                                        <div class="row-divider"></div>
-                                        <div class="w-layout-grid title-grid">
-                                            <div class="username">
-                                                <div class="subtitle-info">Nguyễn Hoàng Hải</div>
-                                                <div class="hint-text">hainh@nacencomm.vn</div>
-                                            </div>
-                                            <div class="time block">
-                                                <div class="subtitle-info">18/12/2020</div>
-                                                <div class="hint-text">04:27:16 PM</div>
-                                            </div>
-                                            <div class="activity">
-                                                <div class="subtitle-info">Đã ký</div>
-                                                <div class="hint-text">Nguyễn Hoàng Hải đã ký thành công văn bản ( Hợp đồng dịch vụ VMI-NACENCOMM 13.7.20.docx. )</div>
-                                            </div>
-                                            <div class="state">
-                                                <div class="request-state regular">Đang tiến hành</div>
-                                            </div>
-                                        </div>
-                                    </div>
+
+
+
                                 </div>
+                               <table class="table-index">
+                                    <tr>
+                                        <td>
+                                            <div class="username">
+                                                <div class="name-text">Người dùng</div>
+                                            </div>
+                                        </td>
+
+                                        <td>
+                                            <div class="username">
+                                                <div class="name-text">Thời gian</div>
+                                            </div>
+                                        </td>
+
+                                        <td>
+                                            <div class="username">
+                                                <div class="name-text">Hoạt động</div>
+                                            </div>
+                                        </td>
+                                       <%--  <td>
+                                            <div class="username">
+                                                <div class="name-text">Trạng thái</div>
+                                            </div>
+                                        </td>--%>
+
+                                    </tr>
+                                </table>
+                                <dx:ASPxGridView ID="grLogvb" runat="server" Width="100%" Theme="Default"  CssClass="boder-none" Border-BorderStyle="None">
+                               
+                                    <Templates>
+                                        <DataRow>
+                                              
+                                            <table class="table-index">
+
+                                                <tr>
+                                                    <td style="width: 25%">
+                                                        <%# Eval("Taikhoanthuchien") %>
+                                                    </td>
+                                                    <td style="width: 25%">
+                                                        <%# Eval("Thoigian") %>
+                                                                  
+                                                    </td>
+                                                    <td style="width: 30%;">
+                                                        <%# Eval("Noidung") %>
+                                                                   
+                                                    </td>
+                                                    
+                                                </tr>
+                                            </table>
+
+                                        </DataRow>
+                                    </Templates>
+                                    <Settings ShowColumnHeaders="false" />
+                                </dx:ASPxGridView>
+
                             </div>
                         </div>
                     </div>
@@ -545,28 +537,24 @@
                 var trangthaibutton = sessionStorage.getItem("trangthaibutton");
                 var hinhthucky = sessionStorage.getItem("hinhthucky");
                 var taikhoanky = sessionStorage.getItem("taikhoanky");
+                var tennguoitao = sessionStorage.getItem("tennguoitao");
+                var tennguoiky = sessionStorage.getItem("tennguoiky");
+                var tenky = tennguoiky.split(",");
                 var taikhoan = taikhoanky.split(",");
                 var hinhthuc = hinhthucky.split(",");
                 for (var i = 0; i < taikhoan.length; i++) {
                     if (hinhthuc[i] == 0) {
-                        $("#getinfo").append('<div class="recipient-info"><div class="recipient-text"><div class="subtitle-info" id="tennguoinhan">Nguyễn Thu Hồng</div><div class="hint-text" id="emailnguoinhan">' + taikhoan[i] + '</div></div><div class="recipient-role"><img src="Content/images/Sign.png" loading="lazy" alt="" class="image-11"><div class="subtitle-info">' + hinhthuc[i] + '</div></div></div>');
+                        $("#getinfo").append('<div class="recipient-info"><div class="recipient-text"><div class="subtitle-info" id="tennguoinhan">' + tenky[i] + '</div><div class="hint-text" id="emailnguoinhan">' + taikhoan[i] + '</div></div><div class="recipient-role"><img src="Content/images/Sign.png" loading="lazy" alt="" class="image-11"><div class="subtitle-info">' + hinhthuc[i] + '</div></div></div>');
                     } else if (hinhthuc[i] == 1) {
-                        $("#getinfo").append('<div class="recipient-info"><div class="recipient-text"><div class="subtitle-info" id="tennguoinhan">Nguyễn Thu Hồng</div><div class="hint-text" id="emailnguoinhan">' + taikhoan[i] + '</div></div><div class="recipient-role"><img src="Content/images/Sign.png" loading="lazy" alt="" class="image-11"><div class="subtitle-info">Ký số</div></div></div>');
+                        $("#getinfo").append('<div class="recipient-info"><div class="recipient-text"><div class="subtitle-info" id="tennguoinhan">' + tenky[i] + '</div><div class="hint-text" id="emailnguoinhan">' + taikhoan[i] + '</div></div><div class="recipient-role"><img src="Content/images/Sign.png" loading="lazy" alt="" class="image-11"><div class="subtitle-info">Ký số</div></div></div>');
 
                     } else if (hinhthuc[i] == 2) {
-                        $("#getinfo").append('<div class="recipient-info"><div class="recipient-text"><div class="subtitle-info" id="tennguoinhan">Nguyễn Thu Hồng</div><div class="hint-text" id="emailnguoinhan">' + taikhoan[i] + '</div></div><div class="recipient-role"><img src="Content/images/Sign.png" loading="lazy" alt="" class="image-11"><div class="subtitle-info">Nhận bản sao</div></div></div>');
+                        $("#getinfo").append('<div class="recipient-info"><div class="recipient-text"><div class="subtitle-info" id="tennguoinhan">' + tenky[i] + '</div><div class="hint-text" id="emailnguoinhan">' + taikhoan[i] + '</div></div><div class="recipient-role"><img src="Content/images/Sign.png" loading="lazy" alt="" class="image-11"><div class="subtitle-info">Nhận bản sao</div></div></div>');
 
                     }
 
                 }
-                var noidunglog = sessionStorage.getItem("noidunglog");
-                var thoigianthuchien = sessionStorage.getItem("thoigianthuchien");
-                var thoigianlam = thoigianthuchien.split(",");
-                    new Date(sessionStorage.getItem("thoigianthuchien"));
-                var thoigianth = thoigianthuchien.getHours() + ":" + thoigianthuchien.getMinutes() + " " + thoigianthuchien.getDay() + "/" + thoigianthuchien.getMonth() + "/" + thoigianthuchien.getFullYear();
-                var taikhoanthuchien = sessionStorage.getItem("taikhoanthuchien");
-                var noidung = noidunglog.split(",");
-                var taikhoanth = taikhoanthuchien.split(",");
+
                 if (trangthaiky == 1) {
                     blurBackground.style.display = "none";
                 }
@@ -581,7 +569,7 @@
                 document.getElementById("tieudemail").innerHTML = tieudemail;
                 document.getElementById("idvanban").innerHTML = idfile;
                 document.getElementById("tenvb").innerHTML = tenvanban;
-                document.getElementById("tennguoigui").innerHTML = nguoigui;
+                document.getElementById("tennguoigui").innerHTML = tennguoitao;
                 document.getElementById("ngaytaovb").innerHTML = ngaytaovanban;
                 document.getElementById("ngaygui").innerHTML = ngayguivanban;
                 document.getElementById("tieudemail").innerHTML = tieudemail;
@@ -598,21 +586,27 @@
                 if (trangthaivb == 1) {
                     document.getElementById("trangthaivb").innerHTML = "Nháp";
                     document.getElementById("trangthaivanban").innerHTML = "Nháp";
+               
                 } else if (trangthaivb == 2) {
                     document.getElementById("trangthaivb").innerHTML = "Chờ ký";
                     document.getElementById("trangthaivanban").innerHTML = "Chờ ký";
+                  
                 } else if (trangthaivb == 3) {
                     document.getElementById("trangthaivb").innerHTML = "Ký hoàn tất";
                     document.getElementById("trangthaivanban").innerHTML = "Ký hoàn tất";
+                   
                 } else if (trangthaivb == 4) {
                     document.getElementById("trangthaivb").innerHTML = "Từ chối";
                     document.getElementById("trangthaivanban").innerHTML = "Từ chối";
+                   
                 } else if (trangthaivb == 5) {
                     document.getElementById("trangthaivb").innerHTML = "Thu hồi";
                     document.getElementById("trangthaivanban").innerHTML = "Thu hồi";
+                  
                 } else if (trangthaivb == 6) {
                     document.getElementById("trangthaivb").innerHTML = "Xóa";
                     document.getElementById("trangthaivanban").innerHTML = "Xóa";
+                   
                 }
 
                 var duongdan = localStorage.getItem("urlFile");

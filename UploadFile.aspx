@@ -24,13 +24,13 @@
     <link href="Content/images/webclip.png" rel="apple-touch-icon">
     <script src="Scripts/jquery-3.3.1.min.js"></script>
     <script>
-             $(document).ready(function () {
-                     var name = sessionStorage.getItem("name");
-                    var  email=sessionStorage.getItem("email");
+        $(document).ready(function () {
+            var name = sessionStorage.getItem("name");
+            var email = sessionStorage.getItem("email");
             document.getElementById("name").innerHTML = name;
             document.getElementById("gmail").innerHTML = email;
         });
-          function showUserMenu() {
+        function showUserMenu() {
 
             var userMenuToggle = document.querySelector(".nav-user");
             var userMenu = document.querySelector(".user-dropdown");
@@ -64,7 +64,7 @@
                 alert('error:' + res);
             }
         }
-          function Logout() {
+        function Logout() {
             cplogout.PerformCallback();
         }
         function EndLogout(s, e) {
@@ -118,12 +118,12 @@
                     <div class="body-text-13 grey">Xác nhận và hoàn tất</div>
                 </div>
             </div>
-        <div class="nav-right">
+            <div class="nav-right">
                 <div class="nav-notification">
                     <img src="Content/images/Mask-Group-653.png" loading="lazy" alt="Notification" />
                 </div>
                 <div class="nav-divider"></div>
-<<<<<<< HEAD
+
                 <div class="nav-user">
                     <div class="user-avatar">
                         <div class="first-word-name" onclick="showUserMenu()">K</div>
@@ -159,8 +159,8 @@
                                 <div class="option-text">Đăng xuất</div>
                             </a>
                         </div>
-=======
-                            <div class="nav-user">
+
+                        <%--                     <div class="nav-user">
                 <div class="user-avatar">
                     <div class="first-word-name">K</div>
                 </div><img src="Content/images/Drop Default.svg" loading="lazy" alt="" class="drop-default"><img
@@ -189,20 +189,20 @@
                                 loading="lazy" alt="" class="icon-option">
                             <asp:Button ID="btnDangxuat" runat="server" CssClass="log-out-button" Text="Đăng xuất" OnClick="btnDangxuat_Click" />
                         </a>
->>>>>>> 17085596cadec5ce755e986c15c08fd693195194
+
                     </div>
                 </div>
-            </div>
-            </div>
+            </div>--%>
+                    </div>
         </header>
-      
-      
-   
+
+
+
         <dx:ASPxCallback ID="cplogout" runat="server" OnCallback="cplogout_Callback" ClientInstanceName="cplogout">
-                <ClientSideEvents CallbackComplete="EndLogout" />
-            </dx:ASPxCallback>
-         
-                
+            <ClientSideEvents CallbackComplete="EndLogout" />
+        </dx:ASPxCallback>
+
+
         <div class="main-div" id="maindiv">
             <div class="div-block-17">
 
@@ -261,7 +261,7 @@
                         </div>
                         <div class="file-warning">*Kích thước tệp tối đa 50MB</div>
                     </div>
-                    
+
                     <div id="card-pdf" class="card-pdf">
                         <div class="card-ui">
                             <div class="pdf-content">
@@ -280,37 +280,37 @@
                                             loading="lazy" alt="function">
                                     </div>
                                     <nav class="w-dropdown-list">
-<<<<<<< HEAD
+
                                         <a href="#" id="renamefile" class="w-dropdown-link">Đổi tên tài liệu</a>
                                         <a href="UploadFile.aspx" class="w-dropdown-link">Xóa tài liệu</a>
                                         <a href="UploadFile.aspx" onclick="window.location.href='UploadFile.aspx'" class="w-dropdown-link">Tải lại tài liệu</a>
-=======
-                                        <a href="#" class="w-dropdown-link">Tải lên bản thay thế</a>
-                                        <a href="#" class="w-dropdown-link">Xem tài liệu</a>
-                                        <a href="#" id="renamefile" class="w-dropdown-link">Đổi tên</a>
-                                        <a href="#" class="w-dropdown-link">Tải xuống</a>
-                                        <a href="#" onclick="window.location.href='UploadFile.aspx'" class="w-dropdown-link">Tải lại tài liệu</a>
-                                        <a href="#" class="w-dropdown-link">Xoá</a>
 
->>>>>>> 17085596cadec5ce755e986c15c08fd693195194
+                                        <a href="#" class="w-dropdown-link" onclick="window.location.href='UploadFile.aspx'">Tải lên bản thay thế</a>
+                                        <a href="#" class="w-dropdown-link">Xem tài liệu</a>
+
+                                        <a href="#" class="w-dropdown-link">Tải xuống</a>
+
+
+
+
                                     </nav>
                                 </div>
                             </div>
                         </div>
                     </div>
-                    
+
                 </asp:Panel>
-         
-                 
-                  
-          
+
+
+
+
                 <div class="upload-file-button">
                     <a href="upload-file.html" aria-current="page" class="back-button hiding w-button w--current">Quay
                         lại</a>
                     <asp:Button ID="btnUpload" runat="server" Text="Tiếp tục" CssClass="button-4 w-button" OnClick="btnUpload_Click" />
                     <%-- <asp:Button ID="btnSaveBL" runat="server" Text="Tiếp tục" CssClass="button-4 w-button" OnClick="btnUpload_Click" />
                        <asp:Button ID="btnKy" runat="server" Text="Tiếp tục" CssClass="button-4 w-button" OnClick="btnUpload_Click" />--%>
-                <%--    <input id="btnSaveBL" type="button" value="Ký tất cả" onclick="SaveSign()" class="button-4 w-button" style="margin-left: 5px" />
+                    <%--    <input id="btnSaveBL" type="button" value="Ký tất cả" onclick="SaveSign()" class="button-4 w-button" style="margin-left: 5px" />
                     <input id="btnKy" type="button" value="Lưu bảng lương" onclick="SaveBL()" class="button-4 w-button" style="margin-left: 5px" />--%>
                     <%--  <dx:ASPxButton ID="btnSaveBL" runat="server" Text="Lưu bảng lương" CssClass="button-4 w-button">
                         <ClientSideEvents Click="SaveBL" />

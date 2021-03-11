@@ -16,7 +16,8 @@ Partial Class Index
         Dim serv As New swEDoc.apiEdoc
         Dim data As DataTable = New DataTable()
         data = serv.LayDSVB(email, 0)
-
+        'grvDsvb.DataSource = data
+        'grvDsvb.DataBind()
         gridDanhsach.DataSource = data
         gridDanhsach.DataBind()
         If data.Rows.Count > 0 Then
@@ -103,26 +104,32 @@ Partial Class Index
         btn.JSProperties("cp_trinhtuky") = trinhtuky
         Dim data As New DataTable
         data = serv.LayTTVB(idfile)
-        btn.JSProperties("cp_ttk") = data.Rows(0)(10)
-        Session("ttk") = data.Rows(0)(10)
+        btn.JSProperties("cp_ttk") = data.Rows(0)(13)
+        Session("ttk") = data.Rows(0)(13)
         btn.JSProperties("cp_taikhoantao") = taikhoan
-        btn.JSProperties("cp_ngaytao") = data.Rows(0)(3)
-        btn.JSProperties("cp_tieudemail") = data.Rows(0)(6)
-        btn.JSProperties("cp_chudemail") = data.Rows(0)(7)
+        btn.JSProperties("cp_tennguoitao") = data.Rows(0)(3)
+        btn.JSProperties("cp_ngaytao") = data.Rows(0)(4)
+        btn.JSProperties("cp_tieudemail") = data.Rows(0)(7)
+        btn.JSProperties("cp_chudemail") = data.Rows(0)(8)
+        Dim listtennguoiky As New List(Of String)
+        For i = 0 To data.Rows.Count - 1
+            listtennguoiky.Add(data.Rows(i)(11))
+        Next
+        btn.JSProperties("cp_tennguoiky") = listtennguoiky
         Dim listky As New List(Of String)
         For i = 0 To data.Rows.Count - 1
-            listky.Add(data.Rows(i)(9))
+            listky.Add(data.Rows(i)(10))
         Next
 
         btn.JSProperties("cp_taikhoanky") = listky
         Dim listhtk As New List(Of Integer)
         For j = 0 To data.Rows.Count - 1
-            listhtk.Add(data.Rows(j)(11))
+            listhtk.Add(data.Rows(j)(13))
         Next
 
         btn.JSProperties("cp_hinhthucky") = listhtk
-        btn.JSProperties("cp_trangthaigui") = data.Rows(0)(12)
-        btn.JSProperties("cp_thoigiangui") = data.Rows(0)(13)
+        btn.JSProperties("cp_trangthaigui") = data.Rows(0)(14)
+        btn.JSProperties("cp_thoigiangui") = data.Rows(0)(15)
 
         Dim trangthai As Integer = checkttky(idfile, trinhtuky - 1)
 
@@ -141,6 +148,7 @@ Partial Class Index
         Dim listtkthuchien As New List(Of String)
 
         logvb = serv.LaylogVB(idfile)
+        Session("Logvb") = logvb
         For k = 0 To logvb.Rows.Count - 1
             listnoidung.Add(logvb.Rows(k)(2))
             listthoigian.Add(logvb.Rows(k)(3))
@@ -149,6 +157,7 @@ Partial Class Index
         btn.JSProperties("cp_noidunglog") = listnoidung
         btn.JSProperties("cp_thoigianlog") = listthoigian
         btn.JSProperties("cp_tkthuchien") = listtkthuchien
+        serv.GhilogxemVB(idfile, Session("Login"), trangthaivb)
     End Sub
     Protected Sub gridDanhsach_HtmlDataCellPrepared(sender As Object, e As ASPxGridViewTableDataCellEventArgs)
         'If e.DataColumn.FieldName = "Trinhtuky" Then
