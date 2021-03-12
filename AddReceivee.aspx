@@ -37,6 +37,86 @@
 
 <body>
     <form id="form1" runat="server">
+                <div class="background-modal">
+        <div class="contact-form">
+            <div class="heading-modal">
+                <div class="contact-text">Danh bạ</div>
+                <div class="close-button">
+                    <img src="../images/Icons-Close-16px.svg" loading="lazy" alt="Close Modal">
+                </div>
+            </div>
+            <div class="contact-form-body">
+                <div class="contact-form-menu">
+                    <a href="#" class="group-menu active">
+                        <div class="menu-text-link">Tất cả liên hệ</div>
+                    </a>
+
+                    <a href="#" class="group-menu">
+                        <div class="menu-text-link">Nhóm</div>
+                        <img src="images/Group-15086_1.png" loading="lazy" alt="function">
+                    </a>
+
+                </div>
+                <div class="contact-form-content">
+                    <div class="search-contact">
+                        <form action="/search" class="search-block w-form">
+                            <input type="search" class="search-input-block w-input" name="query"
+                                placeholder="Tìm kiếm tài liệu" id="search" required="">
+                                <a href="" class="search-icon-button"><img src="/images/search-icon.png" alt=""></a>
+                        </form>
+                    </div>
+                    <div class="contact-table">
+                        <table class="contact-table-ui">
+
+                            <colgroup>
+                                <col width="30" />
+                                <col width="150" />
+                                <col width="100" />
+                                <col width="100" />
+                                <col width="100" />
+                            </colgroup>
+
+                            <thead>
+                                <tr>
+                                    <th></th>
+                                    <th>Họ và tên</th>
+                                    <th>Email</th>
+                                    <th>Nhóm</th>
+                                    <th></th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td><input type="radio" name="" id=""></td>
+                                    <td>
+                                        Nguyen Tran Van Khanh
+                                    </td>
+                                    <td>nguyenvankhanh123@gmail.com</td>
+                                    <td>NACENCOMM</td>
+                                    <td><a href="">Xoá</a></td>
+                                </tr>
+
+                                <tr>
+                                    <td><input type="radio" name="" id=""></td>
+                                    <td>
+                                        Nguyen Tran Van Khanh
+                                    </td>
+                                    <td>nguyenvankhanh123@gmail.com</td>
+                                    <td>NACENCOMM</td>
+                                    <td><a href="">Xoá</a></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+            <div class="contact-form-button">
+                <a href="../multiple-signatures/upload-file.html" aria-current="page"
+                    class="back-button w-button w--current">Bỏ qua</a>
+                <button type="submit" class="button-4 w-button">Xác nhận</button>
+            </div>
+        </div>
+    </div>
         <header id="nav" class="sticky-nav">
             <div class="close">
                 <a href="Index.aspx" class="back-to-home w-inline-block">
@@ -84,6 +164,36 @@
                 </div>
                 <div class="nav-divider"></div>
                 <div class="nav-user">
+<<<<<<< HEAD
+                <div class="user-avatar">
+                    <div class="first-word-name">K</div>
+                </div><img src="Content/images/Drop Default.svg" loading="lazy" alt="" class="drop-default"><img
+                    src="../images/Drop-Hover.svg" loading="lazy" alt="" class="drop-hover"><img
+                    src="../images/Drop-Clicked.svg" loading="lazy" alt="" class="drop-clicked">
+                <div class="user-dropdown">
+                    <div class="user-drop-card">
+                        <div class="user-name-card">Nguyễn Trần Văn Khanh</div>
+                        <div class="user-email-card">nguyentranvankhanh123@gmail.com</div>
+                        <div class="card-divider add-margin"></div>
+                        <a href="../settings.html" class="option-button w-inline-block"><img
+                                src="Content/images/Account-Setting.svg" loading="lazy" alt="" class="icon-option">
+                            <div class="option-text">Cài đặt tài khoản</div>
+                        </a>
+                        <a href="../setting/plan-and-billing.html" class="option-button w-inline-block"><img
+                                src="Content/images/Plan.svg" loading="lazy" alt="" class="icon-option">
+                            <div class="option-text">Gói dịch vụ</div>
+                        </a>
+                        <a href="#" class="option-button w-inline-block"><img src="Content/images/Help.svg" loading="lazy"
+                                alt="" class="icon-option">
+                            <div class="option-text">Trợ giúp và hỗ trợ</div>
+                        </a>
+                        <div class="card-divider"></div>
+                        <a href="#" class="option-button remove-padding w-inline-block">
+                            <img src="Content/images/Log-Out.svg"
+                                loading="lazy" alt="" class="icon-option">
+                            <asp:Button ID="btnDangxuat" runat="server" CssClass="option-text" Text="Đăng xuất" OnClick="btnDangxuat_Click" />
+                        </a>
+=======
                     <div class="user-avatar">
                         <div class="first-word-name" onclick="showUserMenu()">K</div>
                     </div>
@@ -118,8 +228,10 @@
                                 <div class="option-text">Đăng xuất</div>
                             </a>
                         </div>
+>>>>>>> d041a2c77952cf524f4e510930c3d61fe9c8af66
                     </div>
                 </div>
+            </div>
             </div>
         </header>
         <div class="add-receiver-body">
@@ -148,7 +260,7 @@
                 <div class="set-order-checkbox">
                     <div class="checkbox-form w-form">
                         <label class="w-checkbox checkbox-field">
-                            <input type="checkbox" id="enable-ordering" name="checkbox" class="w-checkbox-input" />
+                            <input type="checkbox" id="enable-ordering" name="checkbox" class="w-checkbox-input" disabled/>
                             <span class="checkbox-text w-form-label">Thiết lập thứ tự ký
                             </span>
                         </label>
@@ -175,7 +287,7 @@
                                                     <div class="name-field">
                                                         <input id="name1" type="text" name="namenn" class="text-field-3 w-input"
                                                             placeholder="Nhập tên người nhận" />
-                                                        <a href="#" class="eye-icon w-inline-block">
+                                                        <a id="contact-button" href="#" class="eye-icon w-inline-block">
                                                             <img
                                                                 src="Content/images/Contact-Icon.png" loading="lazy" alt=""
                                                                 class="eye-image" /></a>
@@ -253,7 +365,25 @@
         <script src="Scripts/jquery-3.3.1.min.js"></script>
         <script src="Scripts/js/webflow.js" type="text/javascript"></script>
         <script src="Scripts/js/pages/create-signature-request.js"></script>
+        <script src="Scripts/js/e-dropdown.js"></script>
         <script type="text/javascript">
+
+            function showContactModal() {
+
+                var contactButton = document.querySelector("#contact-button");
+                var contactModal = document.querySelector(".background-modal");
+
+                contactButton.addEventListener("click", function () {
+
+                    if (contactModal.style.display === 'none') {
+                        contactModal.style.display = 'block';
+                    } else {
+                        contactModal.style.display = 'none';
+                    }
+                });
+
+            }
+
             $(document).ready(function () {
 
                 var sessionValue = '<%= Session("Name") %>';

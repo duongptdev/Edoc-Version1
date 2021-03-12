@@ -254,6 +254,7 @@ body {
     width: auto;
     margin-right: 0px;
     margin-left: 0px;
+    padding-left: 0px;
 }
 
 .content-container.top-password {
@@ -279,6 +280,14 @@ body {
     font-weight: 400;
 }
 
+.email-form.sign-up-form {
+    margin-top: 99px;
+}
+
+.email-form.password-form {
+    margin-top: 61px;
+}
+
 .heading-card.new-password-heading {
     margin-top: 64px;
 }
@@ -293,6 +302,10 @@ body {
     color: #505f79;
     font-size: 13px;
     font-weight: 400;
+}
+
+.form-label.label-margin {
+    margin-top: 28px;
 }
 
 .form {
@@ -327,6 +340,10 @@ body {
     border-width: 1px;
     border-color: #7a869a;
     border-radius: 2px;
+}
+
+.form-field.form-margin {
+    margin-bottom: 0px;
 }
 
 .reset-margin {
@@ -1118,6 +1135,7 @@ body {
 
 .search-and-filter {
     display: flex;
+    align-items: center;
 }
 
 .menu-text-link {
@@ -1330,7 +1348,6 @@ body {
 .div-block-5 {
     display: block;
     width: 800px;
-    margin-bottom: 40px;
     padding: 88px 130px 69px;
     -webkit-box-orient: vertical;
     -webkit-box-direction: normal;
@@ -1830,6 +1847,10 @@ body {
     background-color: #fff;
 }
 
+.modal-form.add-contact-width {
+    width: 560px;
+}
+
 .contact-form {
     position: relative;
     z-index: 3;
@@ -2300,7 +2321,7 @@ body {
 
 .dropdown-toggle-4 {
     margin-top: 25px;
-    padding: 8px 36px 8px 12px;
+    padding: 8px 0px 8px 0px;
 }
 
 .name-container {
@@ -2314,7 +2335,8 @@ body {
     font-size: 13px;
     padding: 8px 30px 8px 12px;
     border: 1px solid #7a869a;
-    width: 200px;
+    width: 250px;
+    margin-bottom: 24px;
 }
 
 .icon-2 {
@@ -2512,7 +2534,7 @@ body {
 }
 
 .function-signature {
-    width: 320px;
+    width: 250px;
     margin-right: 70px;
 }
 
@@ -2604,6 +2626,7 @@ body {
     color: #253858;
     font-size: 13px;
     width: 100%;
+    padding-left: 0px;
 }
 
 .margin-icon {
@@ -2684,6 +2707,7 @@ body {
     max-width: 490px;
     font-family: "Helvetica neue", sans-serif;
     font-size: 13px;
+    margin-bottom: 4px;
 }
 
 .message-label {
@@ -2692,6 +2716,15 @@ body {
     color: #505f79;
     font-size: 13px;
     font-weight: 400;
+}
+
+.content-text-area {
+    width: 100%;
+    display: flex;
+    font-family: "Helvetica neue", sans-serif;
+    font-size: 12px;
+    color: #B3BAC5;
+    justify-content: flex-end;
 }
 
 .form-review-button {
@@ -2972,7 +3005,6 @@ body {
     color: #97A0AF;
     font-size: 13px;
     font-weight: 400;
-    text-align: center;
 }
 
 .card-pdf {
@@ -5271,6 +5303,8 @@ body {
     font-family: "Helvetica neue", sans-serif;
     color: #505f79;
     font-size: 13px;
+    background-color: transparent;
+    border: none;
 }
 
 .show-notification {
@@ -5675,15 +5709,19 @@ th:last-child {
 .contact-table-ui td {
     padding-top: 12px;
     padding-bottom: 12px;
-    border-top: 1px solid #eee;
-    border-bottom: 1px solid #eee;
+    border-top: 1px solid #B3BAC5;
+    border-bottom: 1px solid #B3BAC5;
     border-right: none;
     font-family: "Helvetica neue", sans-serif;
 }
 
 .contact-table-ui td:last-child {
     text-align: right;
-    padding-right: 20px;
+    padding-right: 10px;
+}
+
+#contact-function-link {
+    color: #505F79;
 }
 
 .contact-table-ui td a {
@@ -5695,7 +5733,7 @@ th:last-child {
     padding-top: 12px;
     padding-bottom: 12px;
     background-color: transparent;
-    border-bottom: 1px solid #eee;
+    border-bottom: 1px solid #B3BAC5;
     border-right: none;
     font-family: "Helvetica neue", sans-serif;
     font-weight: 400;

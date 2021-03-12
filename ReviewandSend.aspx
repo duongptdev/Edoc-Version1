@@ -102,6 +102,36 @@ data-wf-site="5fc9e8d6d24a3a09aec5cdc3">
                     <img src="Content/images/Mask-Group-653.png" loading="lazy" alt="Notification" />
                 </div>
                 <div class="nav-divider"></div>
+<<<<<<< HEAD
+                            <div class="nav-user">
+                <div class="user-avatar">
+                    <div class="first-word-name">K</div>
+                </div><img src="Content/images/Drop Default.svg" loading="lazy" alt="" class="drop-default"><img
+                    src="../images/Drop-Hover.svg" loading="lazy" alt="" class="drop-hover"><img
+                    src="../images/Drop-Clicked.svg" loading="lazy" alt="" class="drop-clicked">
+                <div class="user-dropdown">
+                    <div class="user-drop-card">
+                        <div class="user-name-card">Nguyễn Trần Văn Khanh</div>
+                        <div class="user-email-card">nguyentranvankhanh123@gmail.com</div>
+                        <div class="card-divider add-margin"></div>
+                        <a href="../settings.html" class="option-button w-inline-block"><img
+                                src="Content/images/Account-Setting.svg" loading="lazy" alt="" class="icon-option">
+                            <div class="option-text">Cài đặt tài khoản</div>
+                        </a>
+                        <a href="../setting/plan-and-billing.html" class="option-button w-inline-block"><img
+                                src="Content/images/Plan.svg" loading="lazy" alt="" class="icon-option">
+                            <div class="option-text">Gói dịch vụ</div>
+                        </a>
+                        <a href="#" class="option-button w-inline-block"><img src="Content/images/Help.svg" loading="lazy"
+                                alt="" class="icon-option">
+                            <div class="option-text">Trợ giúp và hỗ trợ</div>
+                        </a>
+                        <div class="card-divider"></div>
+                        <a href="#" class="option-button remove-padding w-inline-block"><img src="Content/images/Log-Out.svg"
+                                loading="lazy" alt="" class="icon-option">
+                            <div class="option-text">Đăng xuất</div>
+                        </a>
+=======
                 <div class="nav-user">
                     <div class="user-avatar">
                         <div class="first-word-name" onclick="showUserMenu()">K</div>
@@ -137,8 +167,10 @@ data-wf-site="5fc9e8d6d24a3a09aec5cdc3">
                                 <div class="option-text">Đăng xuất</div>
                             </a>
                         </div>
+>>>>>>> d041a2c77952cf524f4e510930c3d61fe9c8af66
                     </div>
                 </div>
+            </div>
             </div>
         </header>
         <div class="review-body">
@@ -160,11 +192,18 @@ data-wf-site="5fc9e8d6d24a3a09aec5cdc3">
                                     required="" />
                             </div>
                             <div class="mail-message">
-                                <label for="email-message" class="message-label">Lời nhắn</label><textarea
-                                    placeholder="Nhập lời nhắn"
+                                <label for="email-message" class="message-label">Nội dung email</label>
+                                <textarea
+                                    placeholder="Nhập nội dung email"
                                     id="email-message"
                                     name="email-message"
-                                    class="textarea w-input" ></textarea>
+                                    maxlength="1000"
+                                    class="textarea w-input" 
+                                    onkeyup="countChar(this)"></textarea>
+                                <div class="content-text-area">
+                                    <div id="charNum">0</div>
+                                    <div>/1000</div>
+                                </div>
                             </div>
                             <div class="form-review-button">
                                 <a href="AddSigntureField.aspx" class="button-5 w-button">Quay lại</a>
@@ -244,7 +283,19 @@ data-wf-site="5fc9e8d6d24a3a09aec5cdc3">
             integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0="
             crossorigin="anonymous"></script>
         <script src="Scripts/js/webflow.js" type="text/javascript"></script>
+        <script src="Scripts/js/e-dropdown.js"></script>
         <script>
+
+                  function countChar(val) {
+                        var len = val.value.length;
+                        if (len >= 500) {
+                          val.value = val.value.substring(0, 500);
+                        } else {
+                          $('#charNum').text(len++);
+                        }
+                  };
+
+
             $(document).ready(function () {
                 var sessionValue = '<%= Session("Name") %>';
                 var loinhan = '<%= Session("Login") %>';
