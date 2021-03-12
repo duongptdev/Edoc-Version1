@@ -113,18 +113,25 @@ Partial Class Index
         btn.JSProperties("cp_chudemail") = data.Rows(0)(8)
         Dim listtennguoiky As New List(Of String)
         For i = 0 To data.Rows.Count - 1
-            listtennguoiky.Add(data.Rows(i)(11))
+            If IsDBNull(data.Rows(i)(11)) = False Then
+                listtennguoiky.Add(data.Rows(i)(11))
+            End If
+
         Next
         btn.JSProperties("cp_tennguoiky") = listtennguoiky
         Dim listky As New List(Of String)
         For i = 0 To data.Rows.Count - 1
-            listky.Add(data.Rows(i)(10))
+            If IsDBNull(data.Rows(i)(10)) = False Then
+                listky.Add(data.Rows(i)(10))
+            End If
         Next
 
         btn.JSProperties("cp_taikhoanky") = listky
         Dim listhtk As New List(Of Integer)
         For j = 0 To data.Rows.Count - 1
-            listhtk.Add(data.Rows(j)(13))
+            If IsDBNull(data.Rows(j)(13)) = False Then
+                listhtk.Add(data.Rows(j)(13))
+            End If
         Next
 
         btn.JSProperties("cp_hinhthucky") = listhtk

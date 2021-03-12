@@ -28,8 +28,9 @@
     <script src="Scripts/js/main.js"></script>
     <script>
         $(document).ready(function () {
-                     var name = sessionStorage.getItem("name");
-                    var  email=sessionStorage.getItem("email");
+            var name =  sessionStorage.getItem("name");
+            var email = sessionStorage.getItem("email");
+            alert(name);
             document.getElementById("name").innerHTML = name;
             document.getElementById("gmail").innerHTML = email;
         });
@@ -42,10 +43,8 @@
             window.location.href = "Signin.aspx";
         }
         function showUserMenu() {
-
             var userMenuToggle = document.querySelector(".nav-user");
             var userMenu = document.querySelector(".user-dropdown");
-
             userMenuToggle.addEventListener("click", function () {
                 if (userMenu.style.display === "none") {
                     userMenu.style.display = "block";

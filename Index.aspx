@@ -450,7 +450,7 @@
 
 
                 <div>
-               <%--     <dx:ASPxGridView ID="grvDsvb" runat="server" Border-BorderStyle="None" Width="100%"   OnCustomColumnDisplayText="gridDanhsach_CustomColumnDisplayText">
+                    <%--     <dx:ASPxGridView ID="grvDsvb" runat="server" Border-BorderStyle="None" Width="100%"   OnCustomColumnDisplayText="gridDanhsach_CustomColumnDisplayText">
                         <Templates>
                             <DataRow>
                                 <table class="table-index">
@@ -482,7 +482,6 @@
                         </Templates>
                         <Settings ShowColumnHeaders="false" />
                     </dx:ASPxGridView>--%>
-
                 </div>
         </asp:Panel>
         <asp:Panel ID="pnEmpty" runat="server">
@@ -525,6 +524,10 @@
                 $("#flip").click(function () {
                     $("#panel").slideToggle("slow");
                 });
+                var name = '<%= Session("Ten") %>';
+                var email = '<%= Session("Login") %>';
+                sessionStorage.setItem("email", email);
+                sessionStorage.setItem("name", name);
             });
 
             function Close() {

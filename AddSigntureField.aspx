@@ -42,9 +42,9 @@
         });
         var ptsign = [];
         var infosign = [];
-        var code = [];  
+        var code = [];
         var trangky = [];
-        
+
         function Getptky() {
             sessionStorage.setItem("ptky", "0");
             ptsign.push(0);
@@ -59,11 +59,11 @@
             sessionStorage.setItem("ptky", "1");
             $("#btnTiepTuc").removeAttr("disabled").removeClass("disable-button");
             ptsign.push(1);
-             var info = sessionStorage.getItem("signInfo");
+            var info = sessionStorage.getItem("signInfo");
             infosign.push(info);
             var codesign = new Date().YYYYMMDDHHMMSS();
             code.push(codesign);
-              var signpage = sessionStorage.getItem("signpage");
+            var signpage = sessionStorage.getItem("signpage");
             trangky.push(signpage);
         }
         function Getsign() {
@@ -72,8 +72,8 @@
             pop.Hide();
         }
         $(document).ready(function (s, e) {
-             var name = sessionStorage.getItem("name");
-                    var  email=sessionStorage.getItem("email");
+            var name = sessionStorage.getItem("name");
+            var email = sessionStorage.getItem("email");
             document.getElementById("name").innerHTML = name;
             document.getElementById("gmail").innerHTML = email;
             var sessionValue = '<%= Session("Namefile") %>';
@@ -231,13 +231,13 @@
                 alert('Không tìm thấy file');
             }
 
-           
+
 
         });
 
 
         function SignDoc() {
-            loading.Show();
+           
             //var inFo = sessionStorage.getItem("signInfo");
             //var arr = sessionStorage.getItem("infoSign");
             //var array = [];
@@ -246,24 +246,27 @@
             phuongthuc = sessionStorage.getItem("ptky");
             sessionStorage.setItem("ptsign", ptsign);
             sessionStorage.setItem("ifsign", infosign);
-            sessionStorage.setItem("ifsign", infosign);
-            sessionStorage.setItem("ifsign", infosign);
-            sessionStorage.setItem("ifsign", infosign);
-            sessionStorage.setItem("ifsign", infosign);
-            if (phuongthuc == 1) {
+            var htk = localStorage.getItem("htky");
+            var countht = htk.split(",").length;
+            var inffo = sessionStorage.getItem("ifsign");
+            var countinfo = inffo.split(",").length;
+            if (countinfo==countht) {
                 loading.Hide();
-                var linkfile = sessionStorage.getItem('document');            
-                var tk = localStorage.getItem("email");       
+                var linkfile = sessionStorage.getItem('document');
+                var tk = localStorage.getItem("email");
                 var ttk = localStorage.getItem("ttk");
                 var htk = localStorage.getItem("htky");
-          
+
                 //cpky.PerformCallback(code + "|" + tkhoan + "|" + linkfile + "|" + info);
                 cpSigndoc.PerformCallback(linkfile + "|" + code + "|" + tk + "|" + infosign + "|" + ttk + "|" + htk + "|" + trangky + "|" + ptsign);
+            } else if (countht > countinfo) {
+                alert("Bạn chọn thiếu vùng ký");
+                return false;
             }
             else {
                 alert("Chưa chọn phương thức ký");
             }
-           
+
 
         }
 
@@ -277,11 +280,11 @@
             }
         }
     </script>
-        <script>
-            //$("#btnTiepTuc").click(function () {
-            //    window.location.href = "ReviewandSend.aspx";
-            //});
-              function Logout() {
+    <script>
+        //$("#btnTiepTuc").click(function () {
+        //    window.location.href = "ReviewandSend.aspx";
+        //});
+        function Logout() {
             cplogout.PerformCallback();
         }
         function EndLogout(s, e) {
@@ -289,8 +292,8 @@
             sessionStorage.clear();
             window.location.href = "Signin.aspx";
         }
-        
-               function showUserMenu() {
+
+        function showUserMenu() {
 
             var userMenuToggle = document.querySelector(".nav-user");
             var userMenu = document.querySelector(".user-dropdown");
@@ -303,8 +306,8 @@
                     userMenu.style.display = "none";
                 }
             });
-            };
-        </script>
+        };
+    </script>
 </head>
 <body class="body-3">
     <form id="form1" runat="server">
@@ -572,13 +575,13 @@
             <div class="add-receiver-button add-width">
                 <a href="add-receiver.html" class="back-button w-button">Quay lại</a>
                 <%--<a href="#" id="btnTiepTuc" onclick="SignDoc()" class="next-button w-button">Tiếp tục</a>--%>
-                <input id="btnTiepTuc" type="submit" name="sign-now" value="Ký" onclick="SignDoc()" class="sign-button disable-button w-button" disabled/>
+                <input id="btnTiepTuc" type="submit" name="sign-now" value="Ký" onclick="SignDoc()" class="sign-button disable-button w-button" disabled />
             </div>
         </div>
-             <dx:ASPxCallback ID="cplogout" runat="server" OnCallback="cplogout_Callback" ClientInstanceName="cplogout">
-                <ClientSideEvents CallbackComplete="EndLogout" />
-            </dx:ASPxCallback>
-    
+        <dx:ASPxCallback ID="cplogout" runat="server" OnCallback="cplogout_Callback" ClientInstanceName="cplogout">
+            <ClientSideEvents CallbackComplete="EndLogout" />
+        </dx:ASPxCallback>
+
 
     </form>
 
