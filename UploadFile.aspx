@@ -72,6 +72,12 @@
             sessionStorage.clear();
             window.location.href = "Signin.aspx";
         }
+       
+        var upload = document.querySelector('<%= btnUpload.ClientID %>');
+         upload.addEventListener("click",function () {
+             var path = $("#FileUpload2").val();
+             alert(path);
+        });
     </script>
 </head>
 
@@ -305,7 +311,7 @@
 
 
                 <div class="upload-file-button">
-                    <a href="upload-file.html" aria-current="page" class="back-button hiding w-button w--current">Quay
+                    <a href="Index.aspx" aria-current="page" class="back-button hiding w-button w--current">Quay
                         lại</a>
                     <asp:Button ID="btnUpload" runat="server" Text="Tiếp tục" CssClass="button-4 w-button" OnClick="btnUpload_Click" />
                     <%-- <asp:Button ID="btnSaveBL" runat="server" Text="Tiếp tục" CssClass="button-4 w-button" OnClick="btnUpload_Click" />
