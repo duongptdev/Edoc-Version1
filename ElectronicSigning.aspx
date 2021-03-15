@@ -23,6 +23,7 @@
     <link href="Content/images/webclip.png" rel="apple-touch-icon">
     <link href="Content/bootstrap.min.css" rel="stylesheet" />
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <script src="Scripts/jquery-3.3.1.min.js"></script>
     <style>
        
         .aligntext {
@@ -190,6 +191,19 @@
                 }
             });
         };
+        function Tuchoivb() {
+          
+            var idfile = localStorage.getItem("idFile");
+            
+            cptuchoi.PerformCallback(idfile);
+        }
+        function EndTuchoi(s, e) {
+            if (e.result == 1) {
+                alert("Từ chối thành công");
+            } else {
+                alert("Lỗi");
+            }
+        }
     </script>
 
 </head>
@@ -241,9 +255,7 @@
                 <div>
                     <div class="request-state" id="trangthaivb">Đang tiến hành</div>
                 </div>
-                <div class="nav-notification">
-                    <img src="Content/images/Mask-Group-653.png" loading="lazy" alt="Notification" />
-                </div>
+              
 
                 <div class="nav-divider"></div>
                 <div class="nav-user">
@@ -315,7 +327,7 @@
                             </div>
                             <div class="footer-button w-clearfix">
                                 <div class="sign-button-container">
-                                    <a href="#" class="back-page w-button" id="tuchoi">Từ chối</a>
+                                    <a href="#" class="back-page w-button" id="tuchoi" onclick="Tuchoivb()">Từ chối</a>
                                     <%--   <a href="#" id="sign-button1" onclick="clicked()" class="sign-button w-button">Gửi yêu cầu ký</a>--%>
                                     <a href="#" onclick="Getptk()" id="kyvb" class="sign-button w-button">Ký</a>
 
@@ -398,73 +410,35 @@
                                     </div>
                                 </div>
 
-                                <div class="request-activity">
-                                    <div class="activity-title">
-                                        <div class="info-heading">Lịch sử hoạt động</div>
-                                        <a href="#" class="sign-map w-inline-block">
-                                            <div class="map-text">Xem sơ đồ lệnh ký</div>
-                                            <img src="Content/images/Sign Map.png" loading="lazy" alt="">
-                                        </a>
-                                    </div>
-
-
-
+                       
+                          
+                                   <div class="request-activity">
+                                <div class="activity-title">
+                                    <div class="info-heading">Lịch sử hoạt động</div>
+                                    <a href="#" class="sign-map w-inline-block">
+                                        <div class="map-text">Xem sơ đồ lệnh ký</div><img src="Content/images/Sign Map.png"
+                                            loading="lazy" alt="">
+                                    </a>
                                 </div>
-                               <table class="table-index">
-                                    <tr>
-                                        <td>
-                                            <div class="username">
-                                                <div class="name-text">Người dùng</div>
-                                            </div>
-                                        </td>
-
-                                        <td>
-                                            <div class="username">
-                                                <div class="name-text">Thời gian</div>
-                                            </div>
-                                        </td>
-
-                                        <td>
-                                            <div class="username">
-                                                <div class="name-text">Hoạt động</div>
-                                            </div>
-                                        </td>
-                                       <%--  <td>
-                                            <div class="username">
-                                                <div class="name-text">Trạng thái</div>
-                                            </div>
-                                        </td>--%>
-
-                                    </tr>
-                                </table>
-                                <dx:ASPxGridView ID="grLogvb" runat="server" Width="100%" Theme="Default"  CssClass="boder-none" Border-BorderStyle="None">
-                               
-                                    <Templates>
-                                        <DataRow>
-                                              
-                                            <table class="table-index">
-
-                                                <tr>
-                                                    <td style="width: 25%">
-                                                        <%# Eval("Taikhoanthuchien") %>
-                                                    </td>
-                                                    <td style="width: 25%">
-                                                        <%# Eval("Thoigian") %>
-                                                                  
-                                                    </td>
-                                                    <td style="width: 30%;">
-                                                        <%# Eval("Noidung") %>
-                                                                   
-                                                    </td>
-                                                    
-                                                </tr>
-                                            </table>
-
-                                        </DataRow>
-                                    </Templates>
-                                    <Settings ShowColumnHeaders="false" />
-                                </dx:ASPxGridView>
-
+                                <div class="w-layout-grid title-grid">
+                                    <div class="username">
+                                        <div class="name-text">Người dùng</div>
+                                    </div>
+                                    <div class="time">
+                                        <div class="name-text">Thời gian</div><img src="images/Sort-Icon.png"
+                                            loading="lazy" alt="" class="image-12">
+                                    </div>
+                                    <div class="activity">
+                                        <div class="name-text">Hoạt động</div>
+                                    </div>
+                                    <div class="state">
+                                        <div class="name-text">Trạng thái</div>
+                                    </div>
+                                </div>
+                                <div class="table-background" id="lichsulog">
+                                  
+                                </div>
+                            </div>
                             </div>
                         </div>
                     </div>
@@ -473,6 +447,10 @@
         </div>
         <dx:ASPxCallback ID="cplogout" runat="server" OnCallback="cplogout_Callback" ClientInstanceName="cplogout">
             <ClientSideEvents CallbackComplete="EndLogout" />
+        </dx:ASPxCallback>
+         <dx:ASPxCallback ID="cptuchoi" runat="server" OnCallback="cptuchoi_Callback" ClientInstanceName="cptuchoi">
+            <ClientSideEvents CallbackComplete="EndTuchoi" />
+
         </dx:ASPxCallback>
         <dx:ASPxHiddenField ID="hdurl" runat="server" ClientInstanceName="hdurl"></dx:ASPxHiddenField>
         <dx:ASPxLoadingPanel ID="loading" runat="server" ClientInstanceName="loading" Text="Đang xử lý" Modal="true" />
@@ -525,6 +503,7 @@
             });
             $(document).ready(function () {
                 pop.Hide();
+                
                 var tieudemail = sessionStorage.getItem("tieudemail");
                 var idfile = localStorage.getItem("idFile");
                 var tenvanban = sessionStorage.getItem("tenvb");
@@ -539,6 +518,41 @@
                 var taikhoanky = sessionStorage.getItem("taikhoanky");
                 var tennguoitao = sessionStorage.getItem("tennguoitao");
                 var tennguoiky = sessionStorage.getItem("tennguoiky");
+                var trangthailog = sessionStorage.getItem("trangthailog");
+                 var hotennguoilog = sessionStorage.getItem("hotennguoilog");
+                 var thoigianthuchien = sessionStorage.getItem("thoigianthuchien");
+                 var taikhoanthuchien = sessionStorage.getItem("taikhoanthuchien");
+                var noidunglog = sessionStorage.getItem("noidunglog");
+               
+                var trangthailogg = trangthailog.split(",");
+                var hotennguoilogg = hotennguoilog.split(",");
+                var taikhoanthuchienn = taikhoanthuchien.split(",");
+                var noidunglog = noidunglog.split(",");
+                var thoigianlogg=  thoigianthuchien.split(",");
+                for (var i = 0; i < hotennguoilogg.length;i++) {
+                     var thoigianlog = new Date(thoigianlogg[i]);
+                var ngaytaolog =  thoigianlog.getDay() + "/" + thoigianlog.getMonth() + "/" + thoigianlog.getFullYear();
+                    var giotaolog = thoigianlog.getHours() + ":" + thoigianlog.getMinutes() + ":" + thoigianlog.getSeconds();
+            
+                    if (trangthailogg[i] == 1) {
+                        $("#lichsulog").append(' <div class="w-layout-grid title-grid"><div class="username"><div class="subtitle-info" id="tennguoiguilog">' + hotennguoilogg[i] + '</div><div class="hint-text" id="emailnguoiguilog">' + taikhoanthuchienn[i] + '</div></div><div class="time block"><div class="subtitle-info" id="ngaylog">' + ngaytaolog + '</div><div class="hint-text" id="thoigianlog">' + giotaolog + '</div></div> <div class="activity"><div class="subtitle-info" id="noidung"></div><div class="hint-text">' + noidunglog[i] + '</div></div><div class="state"> <div class="request-state regular" id="trangthaivblog">Nháp</div></div></div><div class="row-divider"></div>');
+                    } else if (trangthailogg[i] == 2) {
+                     $("#lichsulog").append(' <div class="w-layout-grid title-grid"><div class="username"><div class="subtitle-info" id="tennguoiguilog">'+hotennguoilogg[i]+'</div><div class="hint-text" id="emailnguoiguilog">'+taikhoanthuchienn[i]+'</div></div><div class="time block"><div class="subtitle-info" id="ngaylog">'+ngaytaolog+'</div><div class="hint-text" id="thoigianlog">'+giotaolog+'</div></div> <div class="activity"><div class="subtitle-info" id="noidung"></div><div class="hint-text">'+noidunglog[i]+'</div></div><div class="state"> <div class="request-state regular" id="trangthaivblog">Chờ ký</div></div></div><div class="row-divider"></div>');
+
+                    } else if (trangthailogg[i] == 3) {
+                     $("#lichsulog").append(' <div class="w-layout-grid title-grid"><div class="username"><div class="subtitle-info" id="tennguoiguilog">'+hotennguoilogg[i]+'</div><div class="hint-text" id="emailnguoiguilog">'+taikhoanthuchienn[i]+'</div></div><div class="time block"><div class="subtitle-info" id="ngaylog">'+ngaytaolog+'</div><div class="hint-text" id="thoigianlog">'+giotaolog+'</div></div> <div class="activity"><div class="subtitle-info" id="noidung"></div><div class="hint-text">'+noidunglog[i]+'</div></div><div class="state"> <div class="request-state regular" id="trangthaivblog">Ký hoàn tất</div></div></div><div class="row-divider"></div>');
+
+                    } else if (trangthailogg[i] == 4) {
+                     $("#lichsulog").append(' <div class="w-layout-grid title-grid"><div class="username"><div class="subtitle-info" id="tennguoiguilog">'+hotennguoilogg[i]+'</div><div class="hint-text" id="emailnguoiguilog">'+taikhoanthuchienn[i]+'</div></div><div class="time block"><div class="subtitle-info" id="ngaylog">'+ngaytaolog+'</div><div class="hint-text" id="thoigianlog">'+giotaolog+'</div></div> <div class="activity"><div class="subtitle-info" id="noidung"></div><div class="hint-text">'+noidunglog[i]+'</div></div><div class="state"> <div class="request-state regular" id="trangthaivblog">Từ chối</div></div></div><div class="row-divider"></div>');
+
+                    } else if (trangthailogg[i] == 5) {
+                     $("#lichsulog").append(' <div class="w-layout-grid title-grid"><div class="username"><div class="subtitle-info" id="tennguoiguilog">'+hotennguoilogg[i]+'</div><div class="hint-text" id="emailnguoiguilog">'+taikhoanthuchienn[i]+'</div></div><div class="time block"><div class="subtitle-info" id="ngaylog">'+ngaytaolog+'</div><div class="hint-text" id="thoigianlog">'+giotaolog+'</div></div> <div class="activity"><div class="subtitle-info" id="noidung"></div><div class="hint-text">'+noidunglog[i]+'</div></div><div class="state"> <div class="request-state regular" id="trangthaivblog">Thu hồi</div></div></div><div class="row-divider"></div>');
+
+                    } else if (trangthailogg[i] == 6) {
+                     $("#lichsulog").append(' <div class="w-layout-grid title-grid"><div class="username"><div class="subtitle-info" id="tennguoiguilog">'+hotennguoilogg[i]+'</div><div class="hint-text" id="emailnguoiguilog">'+taikhoanthuchienn[i]+'</div></div><div class="time block"><div class="subtitle-info" id="ngaylog">'+ngaytaolog+'</div><div class="hint-text" id="thoigianlog">'+giotaolog+'</div></div> <div class="activity"><div class="subtitle-info" id="noidung"></div><div class="hint-text">'+noidunglog[i]+'</div></div><div class="state"> <div class="request-state regular" id="trangthaivblog">Xóa/div></div></div><div class="row-divider"></div>');
+
+                    }
+                }
                 var tenky = tennguoiky.split(",");
                 var taikhoan = taikhoanky.split(",");
                 var hinhthuc = hinhthucky.split(",");
@@ -562,6 +576,7 @@
                     document.getElementById('kyvb').style.opacity = 0;
                     document.getElementById('tuchoi').style.opacity = 0;
                 }
+             
                 var datesend = new Date(ngaygui);
                 var daterecei = new Date(ngaytao);
                 var ngayguivanban = datesend.getHours() + ":" + datesend.getMinutes() + " " + datesend.getDay() + "/" + datesend.getMonth() + "/" + datesend.getFullYear();
@@ -604,6 +619,9 @@
                     document.getElementById("trangthaivanban").innerHTML = "Thu hồi";
                   
                 } else if (trangthaivb == 6) {
+                     blurBackground.style.display = "none";
+                     document.getElementById('kyvb').style.opacity = 0;
+                    document.getElementById('tuchoi').style.opacity = 0;
                     document.getElementById("trangthaivb").innerHTML = "Xóa";
                     document.getElementById("trangthaivanban").innerHTML = "Xóa";
                    
@@ -626,7 +644,7 @@
                         WebViewer(
                             {
                                 //    path: 'http://localhost:8001/lib/',
-                                path: 'http://localhost:58988/lib/',
+                                path: 'http://27.71.231.212:8001/lib/',
                                 //pdftronServer: 'http://localhost:8001',
                                 initialDoc: doc,
                             },
@@ -660,7 +678,8 @@
 
 
                             };
-
+                             instance.openElements(['menuOverlay', 'leftPanel']);
+                             instance.closeElements(['menuOverlay', 'menuButton']);
                             instance.setHeaderItems(header => {
                                 header.push({
                                     type: 'actionButton',

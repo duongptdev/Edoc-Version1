@@ -1,4 +1,5 @@
 ﻿
+Imports System.Data
 Imports System.Data.SqlClient
 Imports System.IO
 Imports System.Net
@@ -8,8 +9,8 @@ Partial Class ElectronicSigning
     Inherits System.Web.UI.Page
     Public sConString As String = ConfigurationManager.ConnectionStrings("ConnectionString").ConnectionString
     Protected Sub ElectronicSigning_Load(ByVal sender As Object, ByVal e As System.EventArgs) Handles Me.Load
-        grLogvb.DataSource = Session("Logvb")
-        grLogvb.DataBind()
+
+
     End Sub
     Protected Sub cpsign_Callback(source As Object, e As CallbackEventArgs)
         Dim arr1 As String() = e.Parameter.Split("|")
@@ -188,6 +189,14 @@ Partial Class ElectronicSigning
         Dim res As Integer = 0
         Dim serv As New swEDoc.apiEdoc
         res = serv.TaoYCKy(code, tk, linkfile, info)
+        e.Result = res
+    End Sub
+    Protected Sub cptuchoi_Callback(source As Object, e As CallbackEventArgs)
+        Dim idfile As Integer = e.Parameter
+        Dim taikhoan As String = Session("Login")
+        Dim serv As New swEDoc.apiEdoc
+        Dim res As Integer = 0
+        res = serv.TuchoiVB(idfile, taikhoan)
         e.Result = res
     End Sub
 End Class

@@ -32,7 +32,7 @@
                                 tài khoản của bạn. Hãy thiết lập mật khẩu.
                             </div>
                         </div>
-                        <div class="email-form password-form w-form">
+                        <div class="email-form w-form">
                             <form id="wf-form-Password-Form" name="wf-form-Password-Form" data-name="Password Form" redirect="sign-in" data-redirect="sign-in" method="post" class="form">
                                 <label for="Password" class="form-label">Mật khẩu</label>
                                 <div class="password-field">
@@ -60,7 +60,7 @@
                                 <div>
                                     <asp:Label ID="lblError" runat="server" Text="" CssClass="text-danger"></asp:Label>
                                 </div>
-                                <asp:Button ID="btnDangky" runat="server" Text="Đăng ký" CssClass="form-button button-color button-width w-button" OnClick="btnDangky_Click" />
+                                <asp:Button ID="btnDangky" runat="server" Text="Đăng ký" CssClass="form-button button-color w-button text-center input-group" OnClick="btnDangky_Click" />
                                 <%--  <a value="Đăng ký" href="SignIn.aspx" class="form-button button-color w-button text-center input-group"  style="width:120px">Đăng ký</a>--%>
                             </form>
                             <div class="w-form-done">

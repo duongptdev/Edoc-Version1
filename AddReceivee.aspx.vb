@@ -46,15 +46,15 @@ Partial Class AddReceivee
             Dim i As Integer
             Dim serv As New swEDoc.apiEdoc
             Dim res As Integer = 0
-            If ttk.Count = 0 Then
+            If ttk.Length > 2 Then
                 For i = 0 To htk.Count - 1
-                    res = serv.Thietlaptaikhoanky(idFile, tkk(i), 1, htk(i), tkt)
 
+                    res = serv.Thietlaptaikhoanky(idFile, tkk(i), Integer.Parse(ttk(i)), htk(i), tkt)
                 Next
 
             Else
                 For i = 0 To htk.Count - 1
-                    res = serv.Thietlaptaikhoanky(idFile, tkk(i), Integer.Parse(ttk(i)), htk(i), tkt)
+                    res = serv.Thietlaptaikhoanky(idFile, tkk(i), 1, htk(i), tkt)
 
                 Next
 

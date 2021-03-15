@@ -40,17 +40,23 @@
             var taikhoantao = s.cp_taikhoantao;
             var trinhtuky = s.cp_trinhtuky;
             var trangthaibutton = s.cp_trinhtu;
+            var tennguoitao = s.cp_tennguoitao;
+            var tennguoiky = s.cp_tennguoiky;
             var noidunglog = s.cp_noidunglog;
             var thoigianthuchien = s.cp_thoigianlog;
             var taikhoanthuchien = s.cp_tkthuchien;
-            var tennguoitao = s.cp_tennguoitao;
-            var tennguoiky = s.cp_tennguoiky;
+            var trangthailog = s.cp_trangthailog;
+            var hotennguoilog = s.cp_hotennguoigui;
             sessionStorage.setItem("tennguoitao", tennguoitao);
-            sessionStorage.setItem("tennguoiky", tennguoiky);
-            sessionStorage.setItem("trangthaibutton", trangthaibutton);
-            sessionStorage.setItem("noidunglog", noidunglog);
+            sessionStorage.setItem("trangthailog", trangthailog);
+            sessionStorage.setItem("hotennguoilog", hotennguoilog);
             sessionStorage.setItem("thoigianthuchien", thoigianthuchien);
             sessionStorage.setItem("taikhoanthuchien", taikhoanthuchien);
+         
+            sessionStorage.setItem("noidunglog", noidunglog);
+            sessionStorage.setItem("tennguoiky", tennguoiky);
+               sessionStorage.setItem("trangthaibutton", trangthaibutton);
+
             sessionStorage.setItem("signInfo", info);
             sessionStorage.setItem("tenvb", tenvb);
             sessionStorage.setItem("trangthaiky", trangthaiky);
@@ -85,7 +91,50 @@
             //    cpgetinfo.PerformCallback();
             //}
         }
+        function vbChoky() {
+            cpChoky.PerformCallback(2);
+        }
+        function vbTatca() {
+            cpChoky.PerformCallback(0);
+        }
+        function vbNhap() {
+            cpChoky.PerformCallback(1);
+        }
+        function vbKyht() {
+            cpChoky.PerformCallback(3);
+        }
+        function vbTuchoi() {
+            cpChoky.PerformCallback(4);
+        }
+        function vbThuhoi() {
+            cpChoky.PerformCallback(5);
+        }
+        function vbXoa() {
+            cpChoky.PerformCallback(6);
 
+        }
+        function EndGetVb(s, e) {
+            griddagui.PerformCallback();
+        }
+        function Chonvbxoa(s, e) {
+            var idfilexoa = s.cp_idfilexoa;
+            var taikhoanthuchien = s.cp_taikhoanthuchien;
+            sessionStorage.setItem("idfilexoa", idfilexoa);
+            sessionStorage.setItem("taikhoanthuchien", taikhoanthuchien);
+        }
+        function Xoavb() {
+            var idfilexoa = sessionStorage.getItem("idfilexoa");
+            var taikhoanthuchien = sessionStorage.getItem("taikhoanthuchien");
+            cpxoavb.PerformCallback(idfilexoa + "," + taikhoanthuchien);
+        }
+        function EndXoavb(s, e) {
+            if (e.result == 1) {
+                alert("Xóa thành công văn bản");
+                window.location.href = "Index.aspx";
+            } else {
+                alert("Xóa không thành công");
+            }
+        }
     </script>
     <style>
         .aligntext {
@@ -156,47 +205,7 @@
     </style>
 
 
-    <div class="background-modal">
-        <div class="add-folder-form">
-            <div class="heading-modal">
-                <div class="contact-text">Thêm vào thư mục</div>
-                <div class="close-button">
-                    <img src="Content/images/Icons-Close-16px.svg" loading="lazy" alt="Close Modal">
-                </div>
-            </div>
-            <div class="folder-form-body">
-                <div class="folder-hint-text">Chọn thư mục muốn thêm văn bản</div>
-                <div class="folder-block">
-                    <div class="folder-card-wrapper">
-                        <div class="folder-card">
-                            <img class="folder-icon" src="Content/images/add-folder.png" alt="" />
-                            <div>Thư mục</div>
-                        </div>
-                        <div class="folder-card-element">
-                            <div class="folder-card active">
-                                <img class="folder-icon" src="Content/images/folder.svg" alt="" />
-                                <div>Nacencomm</div>
-                            </div>
-                            <div class="folder-element">
-                                <img class="folder-icon" src="Content/images/folder.svg" alt="" />
-                                <div>NIC Team</div>
-                            </div>
-                            <div class="folder-element">
-                                <img class="folder-icon" src="Content/images/folder.svg" alt="" />
-                                <div>NIC Design</div>
-                            </div>
-                        </div>
-                    </div>
 
-                </div>
-            </div>
-            <div class="folder-form-button">
-                <a href="../multiple-signatures/upload-file.html" aria-current="page"
-                    class="back-button w-button w--current">Bỏ qua</a>
-                <button type="submit" class="button-4 w-button">Xác nhận</button>
-            </div>
-        </div>
-    </div>
 
     <div class="w-layout-grid dashboard-grid">
         <div id="w-node-339fecbc6fd0-66c5cdc4" class="menu-left">
@@ -222,30 +231,30 @@
                         class="image-9" />
                 </div>
                 <div id="panel" class="state-link w-hidden" style="margin-left: 30px">
-                    <div>
+                    <%--         <div>
                         <dx:ASPxButton ID="btnAll" runat="server" Text="Tất cả" OnClick="btnAll_Click" CssClass="bg-white link-state draft-item w-inline-block" BackColor="White">
                             <Image SpriteProperties-CssClass="d-flex justify-content-start" Url="Content/images/All.png"></Image>
                         </dx:ASPxButton>
-                    </div>
+                    </div>--%>
 
-                    <%-- <a
+                    <a
                         href="#"
                         class="link-state all-item w-inline-block"
-                        data-filter="*">
+                        data-filter="*" onclick="vbTatca()">
                         <img
                             src="Content/images/All.png"
                             loading="lazy"
                             alt=""
                             class="image-10" />
                         <div class="all-text">Tất cả</div>
-                    </a>--%>
-                    <div>
+                    </a>
+                    <%--      <div>
                         <dx:ASPxButton ID="btnNhap" runat="server" Text="Nháp" OnClick="btnNhap_Click" CssClass="bg-white link-state draft-item w-inline-block" BackColor="White">
                             <Image Url="Content/images/Wait.png"></Image>
                         </dx:ASPxButton>
-                    </div>
+                    </div>--%>
 
-                    <%--  <a
+                    <a
                         href="#"
                         class="link-state wait-item w-inline-block"
                         data-filter=".wait-filter" id="vbNhap" onclick="vbNhap()">
@@ -255,14 +264,14 @@
                             alt=""
                             class="image-10" />
                         <div class="all-text">Nháp</div>
-                    </a>--%>
-                    <div>
+                    </a>
+                    <%--     <div>
                         <dx:ASPxButton ID="btnChoky" runat="server" Text="Chờ ký" OnClick="btnChoky_Click" CssClass="bg-white link-state draft-item w-inline-block" BackColor="White">
                             <Image Url="Content/images/Done.png"></Image>
                         </dx:ASPxButton>
-                    </div>
+                    </div>--%>
 
-                    <%--  <a
+                    <a
                         href="#"
                         class="link-state done-item w-inline-block"
                         data-filter=".done-filter" onclick="vbChoky()">
@@ -272,39 +281,39 @@
                             alt=""
                             class="image-10" />
                         <div class="all-text">Chờ ký</div>
-                    </a>--%>
-                    <div>
+                    </a>
+                    <%--       <div>
                         <dx:ASPxButton ID="btnKyht" runat="server" Text="Ký hoàn tất" OnClick="btnKyht_Click" CssClass="bg-white link-state draft-item w-inline-block" BackColor="White">
                             <Image Url="Content/images/Reject.png"></Image>
                         </dx:ASPxButton>
-                    </div>
+                    </div>--%>
 
                     <%--  <asp:ImageButton ID="ImageButton1" runat="server" ImageUrl="Content/images/Reject.png"/>--%>
                     <%--<asp:Button ID="btnKyht" runat="server" Text="Ký hoàn tất" OnClick="btnKyht_Click"  CssClass="link-state reject-item w-inline-block"/>--%>
-                    <div>
+                    <%--     <div>
                         <dx:ASPxButton ID="btnTuchoi" runat="server" Text="Từ chối" OnClick="btnTuchoi_Click" CssClass="bg-white link-state draft-item w-inline-block" BackColor="White">
                             <Image Url="Content/images/Reject.png"></Image>
                         </dx:ASPxButton>
-                    </div>
+                    </div>--%>
 
-                    <%-- <a
+                    <a
                         href="#"
                         class="link-state reject-item w-inline-block"
-                        data-filter=".reject-filter" id="vbKyhoantat" onclick="vbKyhoantat()">
+                        data-filter=".reject-filter" id="vbKyhoantat" onclick="vbKyht()">
                         <img
                             src="Content/images/Reject.png"
                             loading="lazy"
                             alt=""
                             class="image-10" />
                         <div class="all-text">Ký hoàn tất</div>
-                    </a>--%>
-                    <div>
+                    </a>
+                    <%-- <div>
                         <dx:ASPxButton ID="btnThuhoi" runat="server" Text="Thu hồi" OnClick="btnThuhoi_Click" CssClass="link-state draft-item w-inline-block bg-white" BackColor="White">
                             <Image Url="Content/images/Voided.png"></Image>
                         </dx:ASPxButton>
-                    </div>
+                    </div>--%>
 
-                    <%--  <a
+                    <a
                         href="#"
                         class="link-state voided-item w-inline-block"
                         data-filter=".voided-filter" onclick="vbTuchoi()">
@@ -314,14 +323,14 @@
                             alt=""
                             class="image-10" />
                         <div class="all-text">Từ chối</div>
-                    </a>--%>
-                    <div>
+                    </a>
+                    <%-- <div>
                         <dx:ASPxButton ID="btnXoa" runat="server" Text="Xóa" OnClick="btnXoa_Click" CssClass="link-state draft-item w-inline-block bg-white" BackColor="White">
                             <Image Url="Content/images/Group-15087.png"></Image>
                         </dx:ASPxButton>
-                    </div>
+                    </div>--%>
 
-                    <%-- <a
+                    <a
                         href="#"
                         class="link-state draft-item w-inline-block"
                         data-filter=".draft-filter" onclick="vbThuhoi()">
@@ -331,13 +340,24 @@
                             alt=""
                             class="image-10" />
                         <div class="all-text">Thu hồi</div>
+                    </a>
+                    <%--<a
+                        href="#"
+                        class="link-state draft-item w-inline-block"
+                        data-filter=".draft-filter" onclick="vbXoa()">
+                        <img
+                            src="Content/images/Group-15087.png"
+                            loading="lazy"
+                            alt=""
+                            class="image-10" />
+                        <div class="all-text">Xóa</div>
                     </a>--%>
                 </div>
             </div>
-            <a href="#" class="menu-link w-inline-block" onclick="vbXoa">
+            <a href="#" class="menu-link w-inline-block" onclick="vbXoa()">
                 <div class="item-menu-container">
                     <img src="Content/images/Group-15087.png" loading="lazy" alt="">
-                    <div class="menu-text-link">Xóa</div>
+                    <div class="menu-text-link">Đã xóa</div>
                 </div>
             </a>
             <a href="#" class="menu-link w-inline-block">
@@ -347,31 +367,10 @@
                         <div class="menu-text-link">Thư mục</div>
                     </div>
                     <div class="item-right">
-                        <img src="Content/images/Group-15086_1.png" alt="" />
+                        <img src="Content/images/Group-15086_1.png" loading="lazy" alt="">
                     </div>
-                    
-                </div>      
+                </div>
             </a>
-                                    <div class="folder-card-element" style="margin-top: 0px;">
-                            <div class="folder-card-deactive">
-                                <img class="folder-icon" src="Content/images/folder.svg" alt="" />
-                                <div>Nacencomm</div>
-                            </div>
-                            <div class="folder-card-deactive">
-                                <img class="folder-icon" src="Content/images/folder.svg" alt="" />
-                                <div>NIC Team</div>
-                            </div>
-                            <div class="folder-card-deactive">
-                                <img class="folder-icon" src="Content/images/folder.svg" alt="" />
-                                <div>NIC Design</div>
-                            </div>
-                        </div>
-            <div class="add-folder-wrapper">
-                <a href="" class="add-folder-dropdown">
-                    <img style="margin-right: 8px;" src="Content/images/add-icon.png" alt="" />
-                    <div>Thêm thư mục</div>   
-                </a>
-            </div>
         </div>
 
         <asp:Panel ID="pnHaveFile" runat="server">
@@ -431,15 +430,11 @@
                     </div>
                     <div class="date-filter">
                         <div class="state-filter-text">Thời gian</div>
-                        <select id="day-custom" class="filter-select">
-                            <option value="waiting-state">Tất cả</option>
-                            <option value="waiting-state">1 tháng trước</option>
-                            <option value="waiting-state">3 tháng trước</option>
+                        <select class="filter-select">
                             <option value="waiting-state">6 tháng trước</option>
                             <option value="finish-state">Tuỳ chỉnh</option>
                         </select>
-                    </div>
-                         <div class="date-custom">
+                        <div class="date-custom">
                             <div class="from-to-block">
                                 <div class="state-filter-text">Từ ngày</div>
                                 <input class="date-input" type="date" name="from" value="" />
@@ -450,6 +445,7 @@
                                 <input class="date-input" type="date" name="to" value="" />
                             </div>
                         </div>
+                    </div>
                     <div class="button-filter">
                         <a href="" aria-current="page" class="back-button w-button w--current">Bỏ qua</a>
                         <button type="submit" class="button-4 w-button">Áp dụng</button>
@@ -471,11 +467,14 @@
                 <dx:ASPxGridView ID="gridDanhsach" runat="server" KeyFieldName="idFile" Theme="Material" Width="100%"
                     CssClass="text-left" OnCustomUnboundColumnData="gridDanhsach_CustomUnboundColumnData"
                     OnCustomColumnDisplayText="gridDanhsach_CustomColumnDisplayText"
-                    ClientInstanceName="griddagui" OnDataBound="gridDanhsach_DataBound" AutoGenerateColumns="false" OnHtmlDataCellPrepared="gridDanhsach_HtmlDataCellPrepared">
+                    ClientInstanceName="griddagui" OnCustomCallback="gridDanhsach_CustomCallback"
+                    OnDataBound="gridDanhsach_DataBound" AutoGenerateColumns="false" OnHtmlDataCellPrepared="gridDanhsach_HtmlDataCellPrepared">
                     <Columns>
                         <dx:GridViewDataColumn Caption="">
                             <DataItemTemplate>
-                                <dx:ASPxCheckBox runat="server" CssClass="form-check-input"></dx:ASPxCheckBox>
+                                <dx:ASPxCheckBox runat="server" ID="cbXoa" OnInit="cbXoa_Init" CssClass="form-check-input">
+                                    <ClientSideEvents CheckedChanged="Chonvbxoa" />
+                                </dx:ASPxCheckBox>
                             </DataItemTemplate>
                         </dx:GridViewDataColumn>
                         <dx:GridViewDataColumn FieldName="Vitriluu" Caption="Tiêu đề" Visible="false"></dx:GridViewDataColumn>
@@ -513,201 +512,18 @@
                 </dx:ASPxGridView>
 
 
-                <div>
+                <%--     <div>
 
-                 <table class="table-index">
 
-                            <colgroup>
-                                <col width="50" />
-                                <col width="450" />
-                                <col width="200" />
-                                <col width="250" />
-                                <col width="100" />
-                            </colgroup>
-
-                        <thead>
-                            <tr>
-                                <th></th>
-                                <th>Tiêu đề</th>
-                                <th>Cập nhật</th>
-                                <th>Trạng thái</th>
-                                <th></th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <td><input type="checkbox" name="" id=""></td>
-                                <td>
-                                    <div class="file-name-index">Hợp đồng dịch vụ VMI-NACENCOMM 13.7.20.docx</div>                     
-                                    <div class="user-name-index">Từ: Nguyễn Trần Văn Khanh</div>
-                                </td>
-                                <td>
-                                    <div class="day-created-index">07/12/2020</div>
-                                    <div class="user-name-index">03:32:35 PM</div>
-                                </td>
-                                <td>
-                                    <div class="card-state wait-state">
-                                        <img src="Content/images/Group-14876.svg" loading="lazy" alt="" class="icon-state" />
-                                        <div class="text-state wait-text">Đang chờ</div>
-                                    </div>
-                                </td>
-                                <td>
-                                    <div data-hover="" data-delay="0" class="w-dropdown">
-                                        <div class="dropdown-toggle-6 w-dropdown-toggle">
-                                            <img src="Content/images/Group-15086_1.png"
-                                                loading="lazy" alt="function">
-                                        </div>
-                                        <nav class="w-dropdown-list">
-                                            <a href="#" class="w-dropdown-link">Ký tài liệu</a>
-                                            <a href="#" class="w-dropdown-link add-folder">Thêm vào thư mục</a>
-                                            <a href="#" class="w-dropdown-link">Thu hồi tài liệu</a>
-                                            <a href="#" class="w-dropdown-link">Tải xuống</a>
-                                            <a href="#" class="w-dropdown-link">Xoá</a>
-                                        </nav>
-                                    </div>
-                                </td>
-                            </tr>
-
-                            <tr>
-                                <td><input type="checkbox" name="" id=""></td>
-                                <td>
-                                    <div class="file-name-index">Hợp đồng dịch vụ VMI-NACENCOMM 13.7.20.docx</div>                     
-                                    <div class="user-name-index">Từ: Nguyễn Trần Văn Khanh</div>
-                                </td>
-                                <td>
-                                    <div class="day-created-index">07/12/2020</div>
-                                    <div class="user-name-index">03:32:35 PM</div>
-                                </td>
-                                <td>
-                                    <div class="card-state reject-state">
-                                        <img src="Content/images/Group-15087_1.png" loading="lazy" alt="" class="icon-state" />
-                                        <div class="text-state reject-text">Bị từ chối</div>
-                                    </div>
-                                </td>
-                                <td>
-                                                                        <div data-hover="" data-delay="0" class="w-dropdown">
-                                        <div class="dropdown-toggle-6 w-dropdown-toggle">
-                                            <img src="Content/images/Group-15086_1.png"
-                                                loading="lazy" alt="function">
-                                        </div>
-                                        <nav class="w-dropdown-list">
-                                            <a href="#" class="w-dropdown-link">Ký tài liệu</a>
-                                            <a href="#" class="w-dropdown-link add-folder">Thêm vào thư mục</a>
-                                            <a href="#" class="w-dropdown-link">Thu hồi tài liệu</a>
-                                            <a href="#" class="w-dropdown-link">Tải xuống</a>
-                                            <a href="#" class="w-dropdown-link">Xoá</a>
-                                        </nav>
-                                    </div>
-                                </td>
-                            </tr>
-
-                            <tr>
-                                <td><input type="checkbox" name="" id=""></td>
-                                <td>
-                                    <div class="file-name-index">Hợp đồng dịch vụ VMI-NACENCOMM 13.7.20.docx</div>                     
-                                    <div class="user-name-index">Từ: Nguyễn Trần Văn Khanh</div>
-                                </td>
-                                <td>
-                                    <div class="day-created-index">07/12/2020</div>
-                                    <div class="user-name-index">03:32:35 PM</div>
-                                </td>
-                                <td>
-                                    <div class="card-state done-state">
-                                        <img src="Content/images/Group-15088_1.png" loading="lazy" alt="" class="icon-state" />
-                                        <div class="text-state done-text">Hoàn thành</div>
-                                    </div>
-                                </td>
-                                <td>                                    <div data-hover="" data-delay="0" class="w-dropdown">
-                                        <div class="dropdown-toggle-6 w-dropdown-toggle">
-                                            <img src="Content/images/Group-15086_1.png"
-                                                loading="lazy" alt="function">
-                                        </div>
-                                        <nav class="w-dropdown-list">
-                                            <a href="#" class="w-dropdown-link">Ký tài liệu</a>
-                                            <a href="#" class="w-dropdown-link add-folder">Thêm vào thư mục</a>
-                                            <a href="#" class="w-dropdown-link">Thu hồi tài liệu</a>
-                                            <a href="#" class="w-dropdown-link">Tải xuống</a>
-                                            <a href="#" class="w-dropdown-link">Xoá</a>
-                                        </nav>
-                                    </div></td>
-                            </tr>
-
-                            <tr>
-                                <td><input type="checkbox" name="" id=""></td>
-                                <td>
-                                    <div class="file-name-index">Hợp đồng dịch vụ VMI-NACENCOMM 13.7.20.docx</div>                     
-                                    <div class="user-name-index">Từ: Nguyễn Trần Văn Khanh</div>
-                                </td>
-                                <td>
-                                    <div class="day-created-index">07/12/2020</div>
-                                    <div class="user-name-index">03:32:35 PM</div>
-                                </td>
-                                <td>
-                                    <div class="card-state voided-state">
-                                        <img src="Content/images/Group-14877.svg" loading="lazy" alt="" class="icon-state" />
-                                        <div class="text-state voided-text">Đã thu hồi</div>
-                                    </div>
-                                </td>
-                                <td>                                    <div data-hover="" data-delay="0" class="w-dropdown">
-                                        <div class="dropdown-toggle-6 w-dropdown-toggle">
-                                            <img src="Content/images/Group-15086_1.png"
-                                                loading="lazy" alt="function">
-                                        </div>
-                                        <nav class="w-dropdown-list">
-                                            <a href="#" class="w-dropdown-link">Ký tài liệu</a>
-                                            <a href="#" class="w-dropdown-link add-folder">Thêm vào thư mục</a>
-                                            <a href="#" class="w-dropdown-link">Thu hồi tài liệu</a>
-                                            <a href="#" class="w-dropdown-link">Tải xuống</a>
-                                            <a href="#" class="w-dropdown-link">Xoá</a>
-                                        </nav>
-                                    </div></td>
-                            </tr>
-
-                            <tr>
-                                <td><input type="checkbox" name="" id=""></td>
-                                <td>
-                                    <div class="file-name-index">Hợp đồng dịch vụ VMI-NACENCOMM 13.7.20.docx</div>                     
-                                    <div class="user-name-index">Từ: Nguyễn Trần Văn Khanh</div>
-                                </td>
-                                <td>
-                                    <div class="day-created-index">07/12/2020</div>
-                                    <div class="user-name-index">03:32:35 PM</div>
-                                </td>
-                                <td>
-                                    <div class="card-state draft-state">
-                                        <img src="Content/images/Group-15090.png" loading="lazy" alt="" class="icon-state" />
-                                        <div class="text-state draft-text">Bản nháp</div>
-                                    </div>
-                                </td>
-                                <td>                                    <div data-hover="" data-delay="0" class="w-dropdown">
-                                        <div class="dropdown-toggle-6 w-dropdown-toggle">
-                                            <img src="Content/images/Group-15086_1.png"
-                                                loading="lazy" alt="function">
-                                        </div>
-                                        <nav class="w-dropdown-list">
-                                            <a href="#" class="w-dropdown-link">Ký tài liệu</a>
-                                            <a href="#" class="w-dropdown-link add-folder">Thêm vào thư mục</a>
-                                            <a href="#" class="w-dropdown-link">Thu hồi tài liệu</a>
-                                            <a href="#" class="w-dropdown-link">Tải xuống</a>
-                                            <a href="#" class="w-dropdown-link">Xoá</a>
-                                        </nav>
-                                    </div></td>
-                            </tr>
-                        </tbody>
-                    </table>
-
-                    <%--     <dx:ASPxGridView ID="grvDsvb" runat="server" Border-BorderStyle="None" Width="100%"   OnCustomColumnDisplayText="gridDanhsach_CustomColumnDisplayText">
-=======
-<<<<<<< HEAD
                     <table class="table-index">
 
-                            <colgroup>
-                                <col width="50" />
-                                <col width="450" />
-                                <col width="200" />
-                                <col width="250" />
-                                <col width="100" />
-                            </colgroup>
+                        <colgroup>
+                            <col width="50" />
+                            <col width="450" />
+                            <col width="200" />
+                            <col width="250" />
+                            <col width="100" />
+                        </colgroup>
 
                         <thead>
                             <tr>
@@ -720,9 +536,10 @@
                         </thead>
                         <tbody>
                             <tr>
-                                <td><input type="checkbox" name="" id=""></td>
                                 <td>
-                                    <div class="file-name-index">Hợp đồng dịch vụ VMI-NACENCOMM 13.7.20.docx</div>                     
+                                    <input type="checkbox" name="" id=""></td>
+                                <td>
+                                    <div class="file-name-index">Hợp đồng dịch vụ VMI-NACENCOMM 13.7.20.docx</div>
                                     <div class="user-name-index">Từ: Nguyễn Trần Văn Khanh</div>
                                 </td>
                                 <td>
@@ -733,6 +550,43 @@
                                     <div class="card-state wait-state">
                                         <img src="Content/images/Group-14876.svg" loading="lazy" alt="" class="icon-state" />
                                         <div class="text-state wait-text">Đang chờ</div>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div data-hover="" data-delay="0" class="w-dropdown">
+                                        <div class="dropdown-toggle-6 w-dropdown-toggle">
+                                            <img src="Content/images/Group-15086_1.png"
+                                                loading="lazy" alt="function">
+                                        </div>
+                                        <nav class="w-dropdown-list">
+                                        <%--       <dx:ASPxButton ID="btnXem" runat="server" Text="Xem" OnInit="btnXem_Init" RenderMode="Link" CssClass="w-dropdown-link" ClientEnabled="true" AutoPostBack="false">
+                                    <ClientSideEvents Click="Viewfile" />
+                                </dx:ASPxButton>
+                                            <a href="#" class="w-dropdown-link">Ký tài liệu</a>
+                                            <a href="#" class="w-dropdown-link">Thêm vào thư mục</a>
+                                            <a href="#" class="w-dropdown-link">Thu hồi tài liệu</a>
+                                            <a href="#" class="w-dropdown-link">Tải xuống</a>
+                                            <a href="#" class="w-dropdown-link">Xoá</a>
+                                        </nav>
+                                    </div>
+                                </td>
+                            </tr>
+
+                            <tr>
+                                <td>
+                                    <input type="checkbox" name="" id=""></td>
+                                <td>
+                                    <div class="file-name-index">Hợp đồng dịch vụ VMI-NACENCOMM 13.7.20.docx</div>
+                                    <div class="user-name-index">Từ: Nguyễn Trần Văn Khanh</div>
+                                </td>
+                                <td>
+                                    <div class="day-created-index">07/12/2020</div>
+                                    <div class="user-name-index">03:32:35 PM</div>
+                                </td>
+                                <td>
+                                    <div class="card-state reject-state">
+                                        <img src="Content/images/Group-15087_1.png" loading="lazy" alt="" class="icon-state" />
+                                        <div class="text-state reject-text">Bị từ chối</div>
                                     </div>
                                 </td>
                                 <td>
@@ -753,42 +607,10 @@
                             </tr>
 
                             <tr>
-                                <td><input type="checkbox" name="" id=""></td>
                                 <td>
-                                    <div class="file-name-index">Hợp đồng dịch vụ VMI-NACENCOMM 13.7.20.docx</div>                     
-                                    <div class="user-name-index">Từ: Nguyễn Trần Văn Khanh</div>
-                                </td>
+                                    <input type="checkbox" name="" id=""></td>
                                 <td>
-                                    <div class="day-created-index">07/12/2020</div>
-                                    <div class="user-name-index">03:32:35 PM</div>
-                                </td>
-                                <td>
-                                    <div class="card-state reject-state">
-                                        <img src="Content/images/Group-15087_1.png" loading="lazy" alt="" class="icon-state" />
-                                        <div class="text-state reject-text">Bị từ chối</div>
-                                    </div>
-                                </td>
-                                <td>
-                                                                        <div data-hover="" data-delay="0" class="w-dropdown">
-                                        <div class="dropdown-toggle-6 w-dropdown-toggle">
-                                            <img src="Content/images/Group-15086_1.png"
-                                                loading="lazy" alt="function">
-                                        </div>
-                                        <nav class="w-dropdown-list">
-                                            <a href="#" class="w-dropdown-link">Ký tài liệu</a>
-                                            <a href="#" class="w-dropdown-link">Thêm vào thư mục</a>
-                                            <a href="#" class="w-dropdown-link">Thu hồi tài liệu</a>
-                                            <a href="#" class="w-dropdown-link">Tải xuống</a>
-                                            <a href="#" class="w-dropdown-link">Xoá</a>
-                                        </nav>
-                                    </div>
-                                </td>
-                            </tr>
-
-                            <tr>
-                                <td><input type="checkbox" name="" id=""></td>
-                                <td>
-                                    <div class="file-name-index">Hợp đồng dịch vụ VMI-NACENCOMM 13.7.20.docx</div>                     
+                                    <div class="file-name-index">Hợp đồng dịch vụ VMI-NACENCOMM 13.7.20.docx</div>
                                     <div class="user-name-index">Từ: Nguyễn Trần Văn Khanh</div>
                                 </td>
                                 <td>
@@ -801,7 +623,8 @@
                                         <div class="text-state done-text">Hoàn thành</div>
                                     </div>
                                 </td>
-                                <td>                                    <div data-hover="" data-delay="0" class="w-dropdown">
+                                <td>
+                                    <div data-hover="" data-delay="0" class="w-dropdown">
                                         <div class="dropdown-toggle-6 w-dropdown-toggle">
                                             <img src="Content/images/Group-15086_1.png"
                                                 loading="lazy" alt="function">
@@ -813,13 +636,15 @@
                                             <a href="#" class="w-dropdown-link">Tải xuống</a>
                                             <a href="#" class="w-dropdown-link">Xoá</a>
                                         </nav>
-                                    </div></td>
+                                    </div>
+                                </td>
                             </tr>
 
                             <tr>
-                                <td><input type="checkbox" name="" id=""></td>
                                 <td>
-                                    <div class="file-name-index">Hợp đồng dịch vụ VMI-NACENCOMM 13.7.20.docx</div>                     
+                                    <input type="checkbox" name="" id=""></td>
+                                <td>
+                                    <div class="file-name-index">Hợp đồng dịch vụ VMI-NACENCOMM 13.7.20.docx</div>
                                     <div class="user-name-index">Từ: Nguyễn Trần Văn Khanh</div>
                                 </td>
                                 <td>
@@ -832,7 +657,8 @@
                                         <div class="text-state voided-text">Đã thu hồi</div>
                                     </div>
                                 </td>
-                                <td>                                    <div data-hover="" data-delay="0" class="w-dropdown">
+                                <td>
+                                    <div data-hover="" data-delay="0" class="w-dropdown">
                                         <div class="dropdown-toggle-6 w-dropdown-toggle">
                                             <img src="Content/images/Group-15086_1.png"
                                                 loading="lazy" alt="function">
@@ -844,13 +670,15 @@
                                             <a href="#" class="w-dropdown-link">Tải xuống</a>
                                             <a href="#" class="w-dropdown-link">Xoá</a>
                                         </nav>
-                                    </div></td>
+                                    </div>
+                                </td>
                             </tr>
 
                             <tr>
-                                <td><input type="checkbox" name="" id=""></td>
                                 <td>
-                                    <div class="file-name-index">Hợp đồng dịch vụ VMI-NACENCOMM 13.7.20.docx</div>                     
+                                    <input type="checkbox" name="" id=""></td>
+                                <td>
+                                    <div class="file-name-index">Hợp đồng dịch vụ VMI-NACENCOMM 13.7.20.docx</div>
                                     <div class="user-name-index">Từ: Nguyễn Trần Văn Khanh</div>
                                 </td>
                                 <td>
@@ -863,7 +691,8 @@
                                         <div class="text-state draft-text">Bản nháp</div>
                                     </div>
                                 </td>
-                                <td>                                    <div data-hover="" data-delay="0" class="w-dropdown">
+                                <td>
+                                    <div data-hover="" data-delay="0" class="w-dropdown">
                                         <div class="dropdown-toggle-6 w-dropdown-toggle">
                                             <img src="Content/images/Group-15086_1.png"
                                                 loading="lazy" alt="function">
@@ -875,13 +704,20 @@
                                             <a href="#" class="w-dropdown-link">Tải xuống</a>
                                             <a href="#" class="w-dropdown-link">Xoá</a>
                                         </nav>
-                                    </div></td>
+                                    </div>
+                                </td>
                             </tr>
                         </tbody>
                     </table>
-            </div>
-=======
-               <%--     <dx:ASPxGridView ID="grvDsvb" runat="server" Border-BorderStyle="None" Width="100%"   OnCustomColumnDisplayText="gridDanhsach_CustomColumnDisplayText">
+                </div>--%>
+
+                <dx:ASPxCallback ID="cpChoky" ClientInstanceName="cpChoky" OnCallback="cpChoky_Callback" runat="server">
+                    <ClientSideEvents CallbackComplete="EndGetVb" />
+                </dx:ASPxCallback>
+                <dx:ASPxCallback ID="cpxoavb" ClientInstanceName="cpxoavb" OnCallback="cpxoavb_Callback" runat="server">
+                    <ClientSideEvents CallbackComplete="EndXoavb" />
+                </dx:ASPxCallback>
+                <%--             <dx:ASPxGridView ID="grvDsvb" runat="server" Border-BorderStyle="None" Width="100%"   OnCustomColumnDisplayText="gridDanhsach_CustomColumnDisplayText">
 >>>>>>> remotes/origin/main
                         <Templates>
                             <DataRow>
@@ -913,9 +749,8 @@
                             </DataRow>
                         </Templates>
                         <Settings ShowColumnHeaders="false" />
-                    </dx:ASPxGridView>--%>
-
-                </div>
+                    </dx:ASPxGridView>
+                </div>--%>
         </asp:Panel>
         <asp:Panel ID="pnEmpty" runat="server">
             <div class="work-area">
@@ -952,39 +787,7 @@
         <dx:ASPxTextBox ID="txtttk" ClientInstanceName="txtttk" runat="server" Width="170px" ClientVisible="false"></dx:ASPxTextBox>
         <script src="Scripts/jquery-3.3.1.min.js"></script>
         <script src="Scripts/js/e-dropdown.js"></script>
-        <script src="Scripts/js/webflow.js"></script>
         <script>
-
-            (function postSelectionClickHandle() {
-
-                var addFolderButton = document.querySelector(".w-dropdown-link.add-folder");
-                var signModal = document.querySelector(".background-modal");
-
-                var closeModalBtn = document.querySelector(".close-button");
-
-                addFolderButton.addEventListener("click", function () {
-                    signModal.style.display = "block";
-                });
-
-                closeModalBtn.addEventListener("click", function () {
-                    signModal.style.display = "none";
-                });
-            })();
-
-            (function showCustomDay() {
-
-                var dateSelection = document.querySelector("#day-custom");
-
-                var dateCustomBlock = document.querySelector(".date-custom");
-
-                dateSelection.addEventListener('change', function () {
-                    var style = this.value == 'finish-state' ? 'flex' : 'none';
-                    dateCustomBlock.style.display = style;
-
-                });
-
-            })();
-
             $(document).ready(function () {
                 $("#flip").click(function () {
                     $("#panel").slideToggle("slow");
@@ -998,52 +801,6 @@
             function Close() {
                 $("#sendnotifi").addClass("fade");
             }
-        //OnGridFocusedRowChanged
-        //function OnGridFocusedRowChanged() {
 
-        //    griddagui.GetRowValues(griddagui.GetFocusedRowIndex(), 'Vitriluu;Hinhthucky;TenVBGoc;idFile;Taikhoanky;Phuongthucky;trinhtuky', OnGetRowValues);
-
-        //}
-        ////// Value array contains "EmployeeID" and "Notes" field values returned from the server
-        //function OnGetRowValues(values) {
-
-        //    txturl.SetText(values[0]);
-        //    txthtk.SetText(values[1]);
-        //    txttenvbgoc.SetText(values[2]);
-        //    txtidFile.SetText(values[3]);
-        //    txttkk.SetText(values[4]);
-        //    txtptk.SetText(values[5]);
-        //    txtttk.SetText(values[6]);
-        //    localStorage.setItem("urlFile", txturl.GetText());
-        //    localStorage.setItem("htkFile", txthtk.GetText());
-        //    localStorage.setItem("tenvbgoc", txttenvbgoc.GetText());
-        //    localStorage.setItem("idFile", txtidFile.GetText());
-        //    localStorage.setItem("Taikhoanky", txttkk.GetText());
-        //    localStorage.setItem("Phuongthucky", txtptk.GetText());
-        //    localStorage.setItem("trinhtuky", txtttk.GetText());
-
-        //    alert('a');
-        //    var htk = txthtk.GetText();
-        //    if (htk == 0) {
-        //        window.location.href = "DigitalSigning.aspx";
-        //        cpgetinfo.PerformCallback();
-        //    } else if (htk == 1) {
-        //        window.location.href = "ElectronicSigning.aspx";
-
-        //    } else {
-        //        alert("Lỗi");
-        //    }
-        //}
-       <%-- function Getinfo(e, s) {
-           
-                var code = '<%= Session("Code") %>';
-                var tkk = '<%= Session("Tkk") %>';
-                var info = '<%= Session("Info") %>';
-            localStorage.setItem("urlky", e.result);
-            localStorage.setItem("codeky", code);
-            localStorage.setItem("tkkky", tkk);
-            localStorage.setItem("infoky", info);
-
-        };--%>
-</script>
+        </script>
 </asp:Content>

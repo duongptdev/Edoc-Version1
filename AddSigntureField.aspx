@@ -118,7 +118,7 @@
                     WebViewer(
                         {
                             //    path: 'http://localhost:8001/lib/',
-                            path: 'http://localhost:58988/lib/',
+                            path: 'http://27.71.231.212:8001/lib/',
                             //pdftronServer: 'http://localhost:8001',
                             initialDoc: doc,
                         },
@@ -149,7 +149,8 @@
                                 y: viewerCoords.y //e.pageY + scrollTop
                             };
                         };
-
+                        instance.closeElements(['menuOverlay', 'menuButton']);
+                        instance.openElements(['menuOverlay', 'leftPanel']);
                         instance.setHeaderItems(header => {
                             header.push({
                                 type: 'actionButton',
@@ -237,7 +238,7 @@
 
 
         function SignDoc() {
-           
+
             //var inFo = sessionStorage.getItem("signInfo");
             //var arr = sessionStorage.getItem("infoSign");
             //var array = [];
@@ -250,7 +251,7 @@
             var countht = htk.split(",").length;
             var inffo = sessionStorage.getItem("ifsign");
             var countinfo = inffo.split(",").length;
-            if (countinfo==countht) {
+            if (countinfo == countht) {
                 loading.Hide();
                 var linkfile = sessionStorage.getItem('document');
                 var tk = localStorage.getItem("email");
@@ -260,9 +261,11 @@
                 //cpky.PerformCallback(code + "|" + tkhoan + "|" + linkfile + "|" + info);
                 cpSigndoc.PerformCallback(linkfile + "|" + code + "|" + tk + "|" + infosign + "|" + ttk + "|" + htk + "|" + trangky + "|" + ptsign);
             } else if (countht > countinfo) {
-                alert("Bạn chọn thiếu vùng ký");
+                alert("Bạn chọn thiếu vùng ký, mời bạn chọn lại từ đầu.");
+                sessionStorage.removeItem("ifsign");
                 return false;
-            }
+            } 
+
             else {
                 alert("Chưa chọn phương thức ký");
             }
@@ -472,9 +475,6 @@
         <dx:ASPxTextBox ID="txtendy" ClientInstanceName="txtendy" runat="server" Width="170px" ClientVisible="false"></dx:ASPxTextBox>
         <header id="nav" class="sticky-nav">
             <div class="close">
-                                <a href="index.html" class="back-to-home w-inline-block">
-                    <img src="Content/images/Icons-Close-16px.svg"
-                        loading="lazy" alt="" /></a>
                 <div class="file-name" id="filename"></div>
             </div>
             <div class="nav-right">
@@ -483,36 +483,6 @@
                 </div>
                 <div class="nav-divider"></div>
                 <div class="nav-user">
-<<<<<<< HEAD
-                <div class="user-avatar">
-                    <div class="first-word-name">K</div>
-                </div><img src="Content/images/Drop Default.svg" loading="lazy" alt="" class="drop-default"><img
-                    src="../images/Drop-Hover.svg" loading="lazy" alt="" class="drop-hover"><img
-                    src="../images/Drop-Clicked.svg" loading="lazy" alt="" class="drop-clicked">
-                <div class="user-dropdown">
-                    <div class="user-drop-card">
-                        <div class="user-name-card">Nguyễn Trần Văn Khanh</div>
-                        <div class="user-email-card">nguyentranvankhanh123@gmail.com</div>
-                        <div class="card-divider add-margin"></div>
-                        <a href="../settings.html" class="option-button w-inline-block"><img
-                                src="Content/images/Account-Setting.svg" loading="lazy" alt="" class="icon-option">
-                            <div class="option-text">Cài đặt tài khoản</div>
-                        </a>
-                        <a href="../setting/plan-and-billing.html" class="option-button w-inline-block"><img
-                                src="Content/images/Plan.svg" loading="lazy" alt="" class="icon-option">
-                            <div class="option-text">Gói dịch vụ</div>
-                        </a>
-                        <a href="#" class="option-button w-inline-block"><img src="Content/images/Help.svg" loading="lazy"
-                                alt="" class="icon-option">
-                            <div class="option-text">Trợ giúp và hỗ trợ</div>
-                        </a>
-                        <div class="card-divider"></div>
-                        <a href="#" class="option-button remove-padding w-inline-block">
-                            <img src="Content/images/Log-Out.svg"
-                                loading="lazy" alt="" class="icon-option">
-                            <asp:Button ID="btnDangxuat" runat="server" CssClass="option-text" Text="Đăng xuất" OnClick="btnDangxuat_Click" />
-                        </a>
-=======
                     <div class="user-avatar">
                         <div class="first-word-name" onclick="showUserMenu()">K</div>
                     </div>
@@ -547,10 +517,8 @@
                                 <div class="option-text">Đăng xuất</div>
                             </a>
                         </div>
->>>>>>> d041a2c77952cf524f4e510930c3d61fe9c8af66
                     </div>
                 </div>
-            </div>
             </div>
         </header>
         <div class="add-sign-body">
@@ -571,16 +539,16 @@
                     <div class="function-divider"></div>
                 </div>
                 <div class="function-button">
-                    <a href="#" class="signature-button w-button" onclick="Getpthuck()">
-                        <img src="Content/images/Icons- D-Signature.png" class="margin-icon" alt="icon">
-                        Chữ ký số
-                    </a>
                     <a href="#" class="signature-button w-button" onclick="Getptky()">
                         <img src="Content/images/Icons- E-Signature.png" class="margin-icon" alt="icon">
                         Chữ ký điện tử
                     </a>
+                    <a href="#" class="signature-button w-button" onclick="Getpthuck()">
+                        <img src="Content/images/Icons- D-Signature.png" class="margin-icon" alt="icon">
+                        Chữ ký số
+                    </a>
                 </div>
-                <div class="sign-hint">Hướng dẫn: Chọn và khoanh vùng trường ký vào khu vực ký mong muốn</div>
+                <div class="sign-hint">Hướng dẫn: Kéo và thả trường ký vào khu vực ký mong muốn</div>
             </div>
             <div class="pdf-viewer">
 
@@ -613,32 +581,10 @@
                 <input id="btnTiepTuc" type="submit" name="sign-now" value="Ký" onclick="SignDoc()" class="sign-button disable-button w-button" disabled />
             </div>
         </div>
-<<<<<<< HEAD
         <dx:ASPxCallback ID="cplogout" runat="server" OnCallback="cplogout_Callback" ClientInstanceName="cplogout">
             <ClientSideEvents CallbackComplete="EndLogout" />
         </dx:ASPxCallback>
 
-=======
-<<<<<<< HEAD
-
-        <script src="Scripts/js/e-dropdown.js"></script>
-
-        <script>
-            //$("#btnTiepTuc").click(function () {
-            //    window.location.href = "ReviewandSend.aspx";
-            //});
-            $("#btnDangxuat").click(function () {
-                localStorage.clear();
-                sessionStorage.clear();
-            });
-        </script>
-=======
-             <dx:ASPxCallback ID="cplogout" runat="server" OnCallback="cplogout_Callback" ClientInstanceName="cplogout">
-                <ClientSideEvents CallbackComplete="EndLogout" />
-            </dx:ASPxCallback>
-    
->>>>>>> d041a2c77952cf524f4e510930c3d61fe9c8af66
->>>>>>> remotes/origin/main
 
     </form>
 

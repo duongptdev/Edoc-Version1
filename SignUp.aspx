@@ -30,7 +30,7 @@
                             <div class="heading-card">Đăng ký tài khoản</div>
                             <div class="subtitle-card">Quy trình đăng ký rất đơn giản và nhanh chóng.<br>
                                 Hãy nhập Email của bạn để bắt đầu</div>
-                            <div class="email-form sign-up-form w-form">
+                            <div class="email-form w-form">
 
                                 <label for="Email" class="form-label">Email*</label>
                                 <asp:TextBox ID="txtEmail" runat="server" CssClass="orm-field w-input"></asp:TextBox>
@@ -50,7 +50,7 @@
                                 </div>
                             </div>
                             <div class="d-flex flex-column">
-                                <asp:Button ID="btnDangKy" runat="server" Text="Đăng ký" CssClass="form-button button-color button-width w-button" OnClick="btnDangKy_Click" />
+                                <asp:Button ID="btnDangKy" runat="server" Text="Đăng ký" CssClass="form-button button-color w-button d-flex flex-column" OnClick="btnDangKy_Click" />
 
                             </div>
                             <div class="text-link">Bạn đã có tài khoản? <a href="SignIn.aspx" class="link">Đăng nhập</a> ngay</div>

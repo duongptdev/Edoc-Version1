@@ -26,38 +26,11 @@
     <script src="Scripts/jquery-3.0.0.min.js"></script>
     <script src="Scripts/js/webflow.js"></script>
     <script src="Scripts/js/main.js"></script>
-    <script src="Scripts/js/e-dropdown.js"></script>
     <script>
-
-        function showNotificationblock() {
-            $(".nav-notification").click(function () {
-                $(".show-notification").toggle();
-            });
-        }
-
-        (function showUserMenu() {
-
-            $(".nav-user").click(function () {
-                $(".user-dropdown").toggle();
-            });
-        })();
-
-        (function showfilterblock() {
-            $("#filter-button").click(function () {
-                $(".filter-dropdown").toggle();
-            });
-        })();
-
-        (function showfilterblock() {
-            $(".item-right").click(function () {
-                $(".add-folder-wrapper").toggle();
-            });
-        })();
-
         $(document).ready(function () {
             var name =  sessionStorage.getItem("name");
             var email = sessionStorage.getItem("email");
-
+          
             document.getElementById("name").innerHTML = name;
             document.getElementById("gmail").innerHTML = email;
         });
@@ -89,7 +62,7 @@
         <header id="nav" class="sticky-nav">
             <div class="nav-left">
                 <div class="logo-container">
-                    <a href="index.html" aria-current="page" class="nav-logo-link w-inline-block w--current">
+                    <a href="Index.aspx" aria-current="page" class="nav-logo-link w-inline-block w--current">
                         <img
                             src="Content/images/Logo.png" alt="Logo" class="nav-logo" /></a>
                 </div>
@@ -99,10 +72,10 @@
                             <a href="Index.aspx" id="dashboard" aria-current="page" class="nav-link w--current">Quản lí</a>
                         </li>
                         <li>
-                            <a id="templates" href="" class="nav-link">Bản mẫu</a>
+                            <a id="templates" href="templates.html" class="nav-link">Bản mẫu</a>
                         </li>
                         <li>
-                            <a id="contacts" href="Contacts.aspx" class="nav-link">Danh bạ</a>
+                            <a id="contacts" href="Contact.aspx" class="nav-link">Danh bạ</a>
                         </li>
                         <li>
                             <a id="" href="SettingAccount.aspx" class="nav-link">Cài đặt</a>
@@ -111,46 +84,9 @@
                 </div>
             </div>
             <div class="nav-right">
-            <div class="nav-notification"><img src="Content/images/Mask-Group-653.png" loading="lazy" alt="Notification">
-                    <div class="show-notification">
-                      <div class="news-card">
-                        <div class="news-label">
-                          <div class="news-label-text">Thông báo</div>
-                          <a href="#" class="read-all-button w-inline-block">
-                            <div>Đọc tất cả</div>
-                          </a>
-                        </div>
-                        <div class="news-divider"></div>
-                        <a href="#" class="news-item w-inline-block"><img style="padding-top: 6px;" src="Content/images/Sign-Request.svg" loading="lazy" alt="" class="new-item-icon">
-                          <div class="news-text-block">
-                            <div class="content-item"><span class="medium-text">nguyentranvankhanh123@gmail.com</span> <span class="change-color">yêu cầu ký</span> “Hợp<br>đồng dịch vụ VMI-NACENCOMM 13.7.20”</div>
-                            <div class="date-item">5 phút trước</div>
-                          </div>
-                        </a>
-                        <div class="news-divider"></div>
-                        <a href="#" class="news-item w-inline-block"><img style="padding-top: 6px;" src="Content/images/Reject-Request.svg" loading="lazy" alt="" class="new-item-icon">
-                          <div class="news-text-block">
-                            <div class="content-item read-state"><span class="medium-text">nguyentranvankhanh123@gmail.com</span> <span class="change-color">yêu cầu ký</span> “Hợp<br>đồng dịch vụ VMI-NACENCOMM 13.7.20”</div>
-                            <div class="date-item">5 phút trước</div>
-                          </div>
-                        </a>
-                        <div class="news-divider"></div>
-                        <a href="#" class="news-item w-inline-block"><img style="padding-top: 6px;" src="Content/images/Setting-Request.svg" loading="lazy" alt="" class="new-item-icon">
-                          <div class="news-text-block">
-                            <div class="content-item read-state"><span class="medium-text">nguyentranvankhanh123@gmail.com</span> <span class="change-color">yêu cầu ký</span> “Hợp<br>đồng dịch vụ VMI-NACENCOMM 13.7.20”</div>
-                            <div class="date-item">5 phút trước</div>
-                          </div>
-                        </a>
-                        <div class="news-divider"></div>
-                        <a href="#" class="news-item w-inline-block"><img style="padding-top: 6px;" src="Content/images/Sign-Successful.svg" loading="lazy" alt="" class="new-item-icon">
-                          <div class="news-text-block">
-                            <div class="content-item read-state"><span class="medium-text">nguyentranvankhanh123@gmail.com</span> <span class="change-color">yêu cầu ký</span> “Hợp<br>đồng dịch vụ VMI-NACENCOMM 13.7.20”</div>
-                            <div class="date-item">5 phút trước</div>
-                          </div>
-                        </a>
-                      </div>
-                    </div>
-                  </div>
+                <div class="nav-notification">
+                    <img src="Content/images/Mask-Group-653.png" loading="lazy" alt="Notification" />
+                </div>
                 <div class="nav-divider"></div>
                 <div class="nav-user">
                     <div class="user-avatar">
@@ -166,10 +102,10 @@
                             <div class="card-divider add-margin"></div>
                             <a href="SettingAccount.aspx" class="option-button w-inline-block">
                                 <img
-                                    src="Content/images/Account-Setting.svg" loading="lazy" alt="" class="icon-option">
+                                    src="Content/images/Account Setting.svg" loading="lazy" alt="" class="icon-option">
                                 <div class="option-text">Cài đặt tài khoản</div>
                             </a>
-                            <a href="Content/setting/plan-and-billing.html" class="option-button w-inline-block">
+                            <a href="../setting/plan-and-billing.html" class="option-button w-inline-block">
                                 <img
                                     src="Content/images/Plan.svg" loading="lazy" alt="" class="icon-option">
                                 <div class="option-text">Gói dịch vụ</div>
@@ -182,7 +118,7 @@
                             <div class="card-divider"></div>
                             <%--  <asp:Button ID="Button1" runat="server" CssClass="option-button remove-padding w-inline-block" Text="Đăng xuất" OnClick="btnDangxuat_Click" />--%>
                             <a href="#" class="option-button remove-padding w-inline-block" onclick="Logout()">
-                                <img src="Content/images/Log-Out.svg"
+                                <img src="Content/images/Log Out.svg"
                                     loading="lazy" alt="" class="icon-option">
                                 <div class="option-text">Đăng xuất</div>
                             </a>

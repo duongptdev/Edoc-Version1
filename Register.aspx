@@ -20,11 +20,9 @@
     <link href="Content/images/webclip.png" rel="apple-touch-icon">
     <link href="Content/bootstrap.min.css" rel="stylesheet" />
     <style>
-        #lblname {
-            color: #DE350B;
-            font-size: 12px;
-            font-family: "Helvetica neue", sans-serif;
-            margin-top: 8px;
+        #lblError {
+            color: red;
+            font-size: 15px
         }
     </style>
 </head>
@@ -48,19 +46,19 @@
 
                                     <div class="field-1">
                                         <label for="Name-3" class="form-label">Họ và tên*</label>
-                                        <asp:TextBox ID="txtHoTen" runat="server" CssClass="form-field form-margin w-input" ></asp:TextBox>
+                                        <asp:TextBox ID="txtHoTen" runat="server" CssClass="form-field w-input" ></asp:TextBox>
                                          <asp:Label ID="lblname" runat="server" Text="" ForeColor="Red"></asp:Label>
                                         <%--<input type="text" class="form-field w-input" autofocus="true" maxlength="256" name="Name" data-name="Name" placeholder="Nhập họ và tên" id="Name" required="">--%>
                                     </div>
                                     <div class="form-divider"></div>
                                     <div class="field-2">
                                         <label for="Phone" class="form-label">Số điện thoại*</label>
-                                        <asp:TextBox ID="txtSDT" runat="server" CssClass="form-field form-margin form-margin w-input" TextMode="Number"   ></asp:TextBox>
+                                        <asp:TextBox ID="txtSDT" runat="server" CssClass="form-field w-input" TextMode="Number"   ></asp:TextBox>
                                          <asp:Label ID="lblsdt" runat="server" Text="" ForeColor="Red"></asp:Label>
                                         <%--                                             <input type="tel" class="form-field w-input" maxlength="256" name="Phone" data-name="Phone" pattern=".{10,}" placeholder="Nhập số điện thoại" title="Số điện thoại chưa chính xác" id="Phone" required="">--%>
                                     </div>
                                 </div>
-                                <label for="Organization" class="form-label label-margin">Tên tổ chức</label>
+                                <label for="Organization" class="form-label">Tên tổ chức</label>
                                 <asp:TextBox ID="txtTenToChuc" runat="server" CssClass="form-field w-input"></asp:TextBox>
                                 <label for="Organization" class="form-label">Mã số thuế</label>
                                 <asp:TextBox ID="txtMST" runat="server" CssClass="form-field w-input" TextMode="Number"></asp:TextBox>

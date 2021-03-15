@@ -88,8 +88,8 @@ Partial Class Index
         Dim trangthaiky As Integer = res.Trangthaiky
         Dim trinhtuky As Integer = res.Trinhtuky
         Dim checkdl As Integer = res.CheckDL
-        '   Dim link As String = duongdanfile.Replace("D:\EDOC_TEST\WEBEDOC\Edoc0103", "http://27.71.231.212:8001")
-        Dim link As String = duongdanfile.Replace("D:\Web\Edoc", "http://localhost:58988")
+        Dim link As String = duongdanfile.Replace("D:\EDOC_TEST\WEBEDOC\Edoc0103", "http://27.71.231.212:8001")
+        'Dim link As String = duongdanfile.Replace("D:\Web\Edoc", "http://localhost:58988")
         Session("idf") = idfile
         btn.JSProperties("cp_idfile") = idfile
         btn.JSProperties("cp_tkk") = tkk
@@ -153,17 +153,37 @@ Partial Class Index
         Dim listnoidung As New List(Of String)
         Dim listthoigian As New List(Of String)
         Dim listtkthuchien As New List(Of String)
+        Dim listtrangthaivb As New List(Of String)
+        Dim listhotennguoiguilog As New List(Of String)
 
         logvb = serv.LaylogVB(idfile)
         Session("Logvb") = logvb
         For k = 0 To logvb.Rows.Count - 1
-            listnoidung.Add(logvb.Rows(k)(2))
-            listthoigian.Add(logvb.Rows(k)(3))
-            listtkthuchien.Add(logvb.Rows(k)(4))
+            If IsDBNull(logvb.Rows(k)(2)) = False Then
+                listnoidung.Add(logvb.Rows(k)(2))
+            End If
+            If IsDBNull(logvb.Rows(k)(3)) = False Then
+                listthoigian.Add(logvb.Rows(k)(3))
+            End If
+            If IsDBNull(logvb.Rows(k)(4)) = False Then
+                listtkthuchien.Add(logvb.Rows(k)(4))
+            End If
+            If IsDBNull(logvb.Rows(k)(8)) = False Then
+                listtrangthaivb.Add(logvb.Rows(k)(8))
+            End If
+            If IsDBNull(logvb.Rows(k)(7)) = False Then
+                listhotennguoiguilog.Add(logvb.Rows(k)(7))
+            End If
+
+
+
+           
         Next
         btn.JSProperties("cp_noidunglog") = listnoidung
         btn.JSProperties("cp_thoigianlog") = listthoigian
         btn.JSProperties("cp_tkthuchien") = listtkthuchien
+        btn.JSProperties("cp_trangthailog") = listtrangthaivb
+        btn.JSProperties("cp_hotennguoigui") = listhotennguoiguilog
         serv.GhilogxemVB(idfile, Session("Login"), trangthaivb)
     End Sub
     Protected Sub gridDanhsach_HtmlDataCellPrepared(sender As Object, e As ASPxGridViewTableDataCellEventArgs)
@@ -221,67 +241,37 @@ Partial Class Index
         Return data
     End Function
 
-
-    Protected Sub btnKyht_Click(sender As Object, e As EventArgs)
-        Dim email As String = Session("Login").ToString()
+    Protected Sub cpChoky_Callback(source As Object, e As CallbackEventArgs)
         Dim serv As New swEDoc.apiEdoc
-        Dim data As DataTable = New DataTable()
-        data = serv.LayDSVB(email, 3)
-        gridDanhsach.DataSource = data
-        gridDanhsach.DataBind()
+        Dim trangthai As Integer = e.Parameter
+        Dim data As New DataTable
+        data = serv.LayDSVB(Session("Login"), trangthai)
+        Session("dt") = data
+
     End Sub
-    Protected Sub btnAll_Click(sender As Object, e As EventArgs)
-        Dim email As String = Session("Login").ToString()
-        Dim serv As New swEDoc.apiEdoc
-        Dim data As DataTable = New DataTable()
-        data = serv.LayDSVB(email, 0)
-
-        gridDanhsach.DataSource = data
-        gridDanhsach.DataBind()
+    Protected Sub gridDanhsach_CustomCallback(sender As Object, e As ASPxGridViewCustomCallbackEventArgs)
+        If Session("dt") IsNot Nothing Then
+            Dim dt As DataTable = DirectCast(Session("dt"), DataTable)
+            gridDanhsach.DataSource = dt
+            gridDanhsach.DataBind()
+        End If
     End Sub
-    Protected Sub btnNhap_Click(sender As Object, e As EventArgs)
-        Dim email As String = Session("Login").ToString()
-        Dim serv As New swEDoc.apiEdoc
-        Dim data As DataTable = New DataTable()
-        data = serv.LayDSVB(email, 1)
+    Protected Sub cbXoa_Init(sender As Object, e As EventArgs)
+        Dim btn As ASPxCheckBox = DirectCast(sender, ASPxCheckBox)
+        Dim container As GridViewDataItemTemplateContainer = DirectCast(btn.NamingContainer, GridViewDataItemTemplateContainer)
+        Dim idfile As Integer = gridDanhsach.GetRowValues(container.VisibleIndex, "idFile")
+        Dim taikhoan As String = Session("Login")
 
-        gridDanhsach.DataSource = data
-        gridDanhsach.DataBind()
+        btn.JSProperties("cp_idfilexoa") = idfile
+        btn.JSProperties("cp_taikhoanthuchien") = taikhoan
     End Sub
-    Protected Sub btnChoky_Click(sender As Object, e As EventArgs)
-        Dim email As String = Session("Login").ToString()
+    Protected Sub cpxoavb_Callback(source As Object, e As CallbackEventArgs)
+        Dim arr As String() = e.Parameter.Split(",")
+        Dim idfile As Integer = arr(0)
+        Dim taikhoanthuchien As String = arr(1)
+        Dim res As Integer = 0
         Dim serv As New swEDoc.apiEdoc
-        Dim data As DataTable = New DataTable()
-        data = serv.LayDSVB(email, 2)
-
-        gridDanhsach.DataSource = data
-        gridDanhsach.DataBind()
-    End Sub
-    Protected Sub btnTuchoi_Click(sender As Object, e As EventArgs)
-        Dim email As String = Session("Login").ToString()
-        Dim serv As New swEDoc.apiEdoc
-        Dim data As DataTable = New DataTable()
-        data = serv.LayDSVB(email, 4)
-
-        gridDanhsach.DataSource = data
-        gridDanhsach.DataBind()
-    End Sub
-    Protected Sub btnThuhoi_Click(sender As Object, e As EventArgs)
-        Dim email As String = Session("Login").ToString()
-        Dim serv As New swEDoc.apiEdoc
-        Dim data As DataTable = New DataTable()
-        data = serv.LayDSVB(email, 5)
-
-        gridDanhsach.DataSource = data
-        gridDanhsach.DataBind()
-    End Sub
-    Protected Sub btnXoa_Click(sender As Object, e As EventArgs)
-        Dim email As String = Session("Login").ToString()
-        Dim serv As New swEDoc.apiEdoc
-        Dim data As DataTable = New DataTable()
-        data = serv.LayDSVB(email, 6)
-
-        gridDanhsach.DataSource = data
-        gridDanhsach.DataBind()
+        res = serv.XoaVB(idfile, taikhoanthuchien)
+        e.Result = res
     End Sub
 End Class
