@@ -26,14 +26,14 @@
   <script type="text/javascript">WebFont.load({  google: {    families: ["Merriweather:300,300italic,400,400italic,700,700italic,900,900italic","Great Vibes:400"]  }});</script>
   <!-- [if lt IE 9]><script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.min.js" type="text/javascript"></script><![endif] -->
   <script type="text/javascript">!function(o,c){var n=c.documentElement,t=" w-mod-";n.className+=t+"js",("ontouchstart"in o||o.DocumentTouch&&c instanceof DocumentTouch)&&(n.className+=t+"touch")}(window,document);</script>
-  <link href="../images/favicon.png" rel="shortcut icon" type="image/x-icon">
-  <link href="../images/webclip.png" rel="apple-touch-icon">
+  <link href="Content/images/favicon.png" rel="shortcut icon" type="image/x-icon">
+  <link href="Content/images/webclip.png" rel="apple-touch-icon">
 </head>
 <body>
   <header id="nav" class="sticky-nav">
     <div class="nav-left">
       <div class="logo-container">
-        <a href="../index.html" class="nav-logo-link w-inline-block"><img src="../images/Logo.png" alt="" class="nav-logo"></a>
+        <a href="../index.html" class="nav-logo-link w-inline-block"><img src="Content/images/Logo.png" alt="" class="nav-logo"></a>
       </div>
       <div class="nav-menu">
         <ul role="list" class="nav-grid w-list-unstyled">
@@ -56,7 +56,7 @@
       <div class="trial-access">
         <div class="trial-text">30 ngày dùng thử</div>
       </div>
-      <div class="nav-notification"><img src="../images/Mask-Group-653.png" loading="lazy" alt="Notification">
+      <div class="nav-notification"><img src="Content/images/Mask-Group-653.png" loading="lazy" alt="Notification">
         <div class="show-notification">
           <div class="news-card">
             <div class="news-label">
@@ -66,28 +66,28 @@
               </a>
             </div>
             <div class="news-divider"></div>
-            <a href="#" class="news-item w-inline-block"><img src="../images/Sign-Request.svg" loading="lazy" alt="" class="new-item-icon">
+            <a href="#" class="news-item w-inline-block"><img src="Content/images/Sign-Request.svg" loading="lazy" alt="" class="new-item-icon">
               <div class="news-text-block">
                 <div class="content-item"><span class="medium-text">nguyentranvankhanh123@gmail.com</span> <span class="change-color">yêu cầu ký</span> “Hợp<br>đồng dịch vụ VMI-NACENCOMM 13.7.20”</div>
                 <div class="date-item">5 phút trước</div>
               </div>
             </a>
             <div class="news-divider"></div>
-            <a href="#" class="news-item w-inline-block"><img src="../images/Reject-Request.svg" loading="lazy" alt="" class="new-item-icon">
+            <a href="#" class="news-item w-inline-block"><img src="Content/images/Reject-Request.svg" loading="lazy" alt="" class="new-item-icon">
               <div class="news-text-block">
                 <div class="content-item read-state"><span class="medium-text">nguyentranvankhanh123@gmail.com</span> <span class="change-color">yêu cầu ký</span> “Hợp<br>đồng dịch vụ VMI-NACENCOMM 13.7.20”</div>
                 <div class="date-item">5 phút trước</div>
               </div>
             </a>
             <div class="news-divider"></div>
-            <a href="#" class="news-item w-inline-block"><img src="../images/Setting-Request.svg" loading="lazy" alt="" class="new-item-icon">
+            <a href="#" class="news-item w-inline-block"><img src="Content/images/Setting-Request.svg" loading="lazy" alt="" class="new-item-icon">
               <div class="news-text-block">
                 <div class="content-item read-state"><span class="medium-text">nguyentranvankhanh123@gmail.com</span> <span class="change-color">yêu cầu ký</span> “Hợp<br>đồng dịch vụ VMI-NACENCOMM 13.7.20”</div>
                 <div class="date-item">5 phút trước</div>
               </div>
             </a>
             <div class="news-divider"></div>
-            <a href="#" class="news-item w-inline-block"><img src="../images/Sign-Successful.svg" loading="lazy" alt="" class="new-item-icon">
+            <a href="#" class="news-item w-inline-block"><img src="Content/images/Sign-Successful.svg" loading="lazy" alt="" class="new-item-icon">
               <div class="news-text-block">
                 <div class="content-item read-state"><span class="medium-text">nguyentranvankhanh123@gmail.com</span> <span class="change-color">yêu cầu ký</span> “Hợp<br>đồng dịch vụ VMI-NACENCOMM 13.7.20”</div>
                 <div class="date-item">5 phút trước</div>
@@ -100,13 +100,13 @@
       <div class="nav-user">
         <div class="user-avatar">
           <div class="first-word-name">K</div>
-        </div><img src="../images/Drop-Default.svg" loading="lazy" alt="" class="drop-default"><img src="../images/Drop-Hover.svg" loading="lazy" alt="" class="drop-hover"><img src="../images/Drop-Clicked.svg" loading="lazy" alt="" class="drop-clicked">
+        </div><img src="../images/Drop-Default.svg" loading="lazy" alt="" class="drop-default"><img src="Content/images/Drop-Hover.svg" loading="lazy" alt="" class="drop-hover"><img src="../images/Drop-Clicked.svg" loading="lazy" alt="" class="drop-clicked">
         <div class="user-dropdown">
           <div class="user-drop-card">
             <div class="user-name-card">Nguyễn Trần Văn Khanh</div>
             <div class="user-email-card">nguyentranvankhanh123@gmail.com</div>
             <div class="card-divider add-margin"></div>
-            <a href="../settings.html" class="option-button w-inline-block"><img src="../images/Account-Setting.svg" loading="lazy" alt="" class="icon-option">
+            <a href="../settings.html" class="option-button w-inline-block"><img src="Content/images/Account-Setting.svg" loading="lazy" alt="" class="icon-option">
               <div class="option-text">Cài đặt tài khoản</div>
             </a>
             <a href="../setting/plan-and-billing.html" class="option-button w-inline-block"><img src="../images/Plan.svg" loading="lazy" alt="" class="icon-option">
