@@ -67,17 +67,17 @@
             <div class="nav-menu">
                 <ul role="list" class="nav-grid w-list-unstyled">
                     <li class="list-item">
-                        <a href="http://localhost:58988/Index.aspx" id="dashboard" class="nav-link">Quản lí</a>
+                        <a href="Index.aspx" id="dashboard" class="nav-link">Quản lí</a>
                     </li>
                     <li>
-                        <a id="templates" href="templates.html" class="nav-link">Bản mẫu</a>
+                        <a id="templates" href="" class="nav-link">Bản mẫu</a>
                     </li>
                     <li>
-                        <a id="contacts" href="http://localhost:58988/Contact.aspx" aria-current="page" class="nav-link w--current">Danh
+                        <a id="contacts" href="http://localhost:58988/Contacts.aspx" aria-current="page" class="nav-link w--current">Danh
                             bạ</a>
                     </li>
                     <li>
-                        <a id="settings" href="settings.html" class="nav-link">Cài đặt</a>
+                        <a id="settings" href="http://localhost:58988/SettingAccount.aspx" class="nav-link">Cài đặt</a>
                     </li>
                 </ul>
             </div>
