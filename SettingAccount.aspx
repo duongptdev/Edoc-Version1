@@ -73,6 +73,7 @@
             </div>
         </div>
     </div>
+    <script src="Scripts/js/e-dropdown.js"></script>
     <script>
         $(document).ready(function () {
             var name='<%= Session("Ten") %>';

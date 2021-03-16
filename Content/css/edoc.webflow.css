@@ -278,6 +278,11 @@ body {
     color: #505f79;
     font-size: 14px;
     font-weight: 400;
+    margin-bottom: 60px;
+}
+
+.subtitle-card.forgot-margin {
+    margin-bottom: 80px;
 }
 
 .email-form.sign-up-form {
@@ -1176,6 +1181,7 @@ body {
 .add-folder-wrapper {
     display: none;
     position: relative;
+    z-index: 9999;
 }
 
 .menu-link:hover {
@@ -1846,6 +1852,46 @@ body {
     opacity: 1;
 }
 
+.all-background-modal {
+    position: fixed;
+    left: 0%;
+    top: 0%;
+    right: 0%;
+    bottom: 0%;
+    z-index: 9999;
+    display: none;
+    -webkit-box-pack: center;
+    -webkit-justify-content: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    -webkit-box-align: center;
+    -webkit-align-items: center;
+    -ms-flex-align: center;
+    align-items: center;
+    background-color: rgba(35, 39, 42, 0.5);
+    opacity: 1;
+}
+
+.contact-background-modal {
+    position: fixed;
+    left: 0%;
+    top: 0%;
+    right: 0%;
+    bottom: 0%;
+    z-index: 9999;
+    display: none;
+    -webkit-box-pack: center;
+    -webkit-justify-content: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    -webkit-box-align: center;
+    -webkit-align-items: center;
+    -ms-flex-align: center;
+    align-items: center;
+    background-color: rgba(35, 39, 42, 0.5);
+    opacity: 1;
+}
+
 .background-modal.align-top {
     display: none;
     -webkit-box-align: start;
@@ -1934,6 +1980,7 @@ body {
     font-family: "Helvetica neue", sans-serif;
     color: #253858;
     font-size: 13px;
+    font-weight: 600;
 }
 
 .folder-block {
@@ -2045,7 +2092,6 @@ body {
 }
 
 .modal-form.add-width {
-    display: none;
     width: 925px;
     margin-top: 60px;
     margin-right: auto;
@@ -2087,7 +2133,7 @@ body {
 .contact-text {
     font-family: "Helvetica neue", sans-serif;
     font-size: 13px;
-    font-weight: 500;
+    font-weight: 600;
     color: #253858;
 }
 
@@ -2580,11 +2626,7 @@ body {
     color: #0052cc;
 }
 
-.back-button.hiding {
-    display: block;
-}
-
-.back-button.hiding.w--current {
+.back-button.hiding.w-button {
     display: none;
 }
 
@@ -2655,7 +2697,7 @@ body {
 }
 
 .function-signature {
-    width: 250px;
+    width: 308px;
     margin-right: 70px;
 }
 
@@ -2957,7 +2999,7 @@ body {
     margin-top: 5px;
 }
 
-.order-text-margin {
+.order-text.order-text-margin {
     margin-top: 5px;
 }
 
@@ -3131,7 +3173,7 @@ body {
 .card-pdf {
     display: none;
     margin-top: 36px;
-    margin-bottom: 32px;
+    margin-bottom: 64px;
 }
 
 .card-ui {
@@ -3344,7 +3386,7 @@ body {
     bottom: 0%;
     z-index: 8;
     display: block;
-    background-image: url("../images/Blur-Background.png");
+    background-color: rgba(183, 183, 183, 0.85);
     background-position: 0px 0px;
     background-size: auto;
 }
@@ -3361,7 +3403,8 @@ body {
 }
 
 .accept-checkbox {
-    width: 470px;
+    display: flex;
+    width: 500px;
     margin-bottom: 0px;
 }
 
@@ -3370,6 +3413,7 @@ body {
     color: #fff;
     font-size: 13px;
     font-weight: 400;
+    margin-left: 8px;
 }
 
 .form-block-2 {
@@ -4667,6 +4711,8 @@ body {
 }
 
 .uses-button {
+    width: 114px;
+    text-align: center;
     padding-top: 6px;
     padding-bottom: 6px;
     border-radius: 2px;

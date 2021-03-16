@@ -22,6 +22,49 @@
 </head>
 
 <body>
+
+    <div class="contact-background-modal">
+        <div class="add-folder-form">
+            <div class="heading-modal">
+                <div class="contact-text">Thêm vào nhóm</div>
+                <div class="close-button">
+                    <img src="Content/images/Icons-Close-16px.svg" loading="lazy" alt="Close Modal">
+                </div>
+            </div>
+            <div class="folder-form-body">
+                <div class="folder-hint-text">Chọn nhóm muốn thêm</div>
+                <div class="folder-block">
+                    <div class="folder-card-wrapper">
+                        <div class="folder-card">
+                            <img class="folder-icon" src="/images/add-folder.png" alt="" />
+                            <div>Nhóm</div>
+                        </div>
+                        <div class="folder-card-element">
+                            <div class="folder-card active">
+                                <img class="folder-icon" src="/images/folder.svg" alt="" />
+                                <div>Nacencomm</div>
+                            </div>
+                            <div class="folder-element">
+                                <img class="folder-icon" src="/images/folder.svg" alt="" />
+                                <div>NIC Team</div>
+                            </div>
+                            <div class="folder-element">
+                                <img class="folder-icon" src="/images/folder.svg" alt="" />
+                                <div>NIC Design</div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+            <div class="folder-form-button">
+                <a href="../multiple-signatures/upload-file.html" aria-current="page"
+                    class="back-button w-button w--current">Bỏ qua</a>
+                <button type="submit" class="button-4 w-button">Xác nhận</button>
+            </div>
+        </div>
+    </div>
+
     <div style="opacity:0" class="background-modal">
         <div class="modal-form add-contact-width">
             <div class="heading-modal">
@@ -70,7 +113,7 @@
                         <a href="Index.aspx" id="dashboard" class="nav-link">Quản lí</a>
                     </li>
                     <li>
-                        <a id="templates" href="" class="nav-link">Bản mẫu</a>
+                        <a id="templates" href="http://localhost:58988/Templates.aspx" class="nav-link">Bản mẫu</a>
                     </li>
                     <li>
                         <a id="contacts" href="http://localhost:58988/Contacts.aspx" aria-current="page" class="nav-link w--current">Danh
@@ -131,9 +174,15 @@
                     <div class="item-left">
                         <div class="menu-text-link">Nhóm</div>
                     </div>
-                    <div class="item-right"><img src="Content/images/Group-15086_1.png" loading="lazy" alt="function"></div>
+                    <div class="item-right"><img src="Content/images/Group-15086_1.png" alt="" /></div>
                 </div>
             </a>
+            <div class="add-folder-wrapper">
+                <a href="" class="add-folder-dropdown">
+                    <img style="margin-right: 8px;" src="Content/images/add-icon.png" alt="" />
+                    <div>Thêm nhóm</div>   
+                </a>
+            </div>
         </div>
         <div class="work-area">
             <div class="heading-container">
@@ -190,7 +239,7 @@
                                         </div>
                                         <nav class="w-dropdown-list">
                                             <a id="contact-function-link" href="#" class="w-dropdown-link">Chỉnh sửa</a>
-                                            <a id="contact-function-link" href="#" class="w-dropdown-link">Thêm vào nhóm</a>
+                                            <a id="contact-function-link" href="#" class="w-dropdown-link add-group">Thêm vào nhóm</a>
                                             <a href="#" class="w-dropdown-link">Xoá liên hệ</a>
                                         </nav>
                                     </div>
@@ -213,7 +262,7 @@
                                         </div>
                                         <nav class="w-dropdown-list">
                                             <a id="contact-function-link" href="#" class="w-dropdown-link">Chỉnh sửa</a>
-                                            <a id="contact-function-link" href="#" class="w-dropdown-link">Thêm vào nhóm</a>
+                                            <a id="contact-function-link" href="#" class="w-dropdown-link add-group">Thêm vào nhóm</a>
                                             <a href="#" class="w-dropdown-link">Xoá liên hệ</a>
                                         </nav>
                                     </div>

@@ -72,6 +72,12 @@
             sessionStorage.clear();
             window.location.href = "Signin.aspx";
         }
+       
+        var upload = document.querySelector('<%= btnUpload.ClientID %>');
+         upload.addEventListener("click",function () {
+             var path = $("#FileUpload2").val();
+             alert(path);
+        });
     </script>
 </head>
 
@@ -187,7 +193,7 @@
                         <a href="#" class="option-button remove-padding w-inline-block">
                             <img src="Content/images/Log-Out.svg"
                                 loading="lazy" alt="" class="icon-option">
-                            <asp:Button ID="btnDangxuat" runat="server" CssClass="log-out-button" Text="Đăng xuất" OnClick="btnDangxuat_Click" />
+                            <asp:Button ID="btnDangxuat" runat="server" CssClass="option-text" Text="Đăng xuất" OnClick="btnDangxuat_Click" />
                         </a>
 
                     </div>
@@ -210,14 +216,14 @@
                 <asp:Panel ID="pnUpLoad" Width="100%" runat="server">
                     <div class="div-block-6">
                         <div class="heading-step">Tải lên Tài liệu mới</div>
-                        <div class="show-list">
+<%--                        <div class="show-list">
                             <a href="#" class="list-mode w-inline-block">
                                 <img src="Content/images/Group-15086_2.png" loading="lazy"
                                     alt=""></a>
                             <a href="#" class="card-mode w-inline-block">
                                 <img src="Content/images/Group-15087_2.png" loading="lazy"
                                     alt=""></a>
-                        </div>
+                        </div>--%>
                     </div>
 
                     <div id="drop-area" class="div-block-5">
@@ -259,8 +265,9 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="file-warning">*Kích thước tệp tối đa 50MB</div>
                     </div>
+
+                    <div class="file-warning">*Kích thước tệp tối đa 50MB</div>
 
                     <div id="card-pdf" class="card-pdf">
                         <div class="card-ui">
@@ -282,16 +289,9 @@
                                     <nav class="w-dropdown-list">
 
                                         <a href="#" id="renamefile" class="w-dropdown-link">Đổi tên tài liệu</a>
-                                        <a href="UploadFile.aspx" class="w-dropdown-link">Xóa tài liệu</a>
-                                        <a href="UploadFile.aspx" onclick="window.location.href='UploadFile.aspx'" class="w-dropdown-link">Tải lại tài liệu</a>
-
-                                        <a href="#" class="w-dropdown-link" onclick="window.location.href='UploadFile.aspx'">Tải lên bản thay thế</a>
+                                        <a href="UploadFile.aspx" onclick="window.location.href='UploadFile.aspx'" class="w-dropdown-link">Tải lên bản thay thế</a>
                                         <a href="#" class="w-dropdown-link">Xem tài liệu</a>
-
-                                        <a href="#" class="w-dropdown-link">Tải xuống</a>
-
-
-
+                                        <a href="UploadFile.aspx" class="w-dropdown-link">Xóa tài liệu</a>
 
                                     </nav>
                                 </div>
@@ -305,7 +305,7 @@
 
 
                 <div class="upload-file-button">
-                    <a href="upload-file.html" aria-current="page" class="back-button hiding w-button w--current">Quay
+                    <a href="UploadFile.aspx" aria-current="page" class="back-button hiding w-button w--current">Quay
                         lại</a>
                     <asp:Button ID="btnUpload" runat="server" Text="Tiếp tục" CssClass="button-4 w-button" OnClick="btnUpload_Click" />
                     <%-- <asp:Button ID="btnSaveBL" runat="server" Text="Tiếp tục" CssClass="button-4 w-button" OnClick="btnUpload_Click" />
@@ -360,6 +360,7 @@
         <script src="Scripts/jquery-3.3.1.min.js"></script>
         <script src="Scripts/js/webflow.js" type="text/javascript"></script>
         <script src="Scripts/js/main.js"></script>
+        <script src="Scripts/js/e-dropdown.js"></script>
 
         <%--    <script type="text/javascript">
             (function uploadFileClickHandle() {

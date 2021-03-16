@@ -23,7 +23,7 @@
         <div class="card password-card">
             <div class="card-content">
                 <div class="content-container top-password">
-                    <img src="Content/images/Logo.png" class="password-logo" alt="">
+                    <img style="width: 110px" src="Content/images/Logo.png" class="password-logo" alt="">
                     <div class="heading-card">Quên mật khẩu?</div>
                     <div class="subtitle-card">Để chắc chắn đó đúng là bạn, chúng tôi đã gửi<br>mã xác minh đến
                         nguyen*****123@gmail.com.<br>

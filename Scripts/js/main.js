@@ -6,6 +6,7 @@
     var dropArea = document.querySelector("#drop-area");
     var fileSize = document.querySelector("#file-size");
     var uploadHint = document.querySelector(".file-warning");
+    var backButton = document.querySelector(".back-button.hiding.w-button.w--current");
 
     function formatBytes(bytes, decimals = 2) {
         if (bytes === 0) return '0 Bytes';
@@ -30,7 +31,10 @@
     uploadFileInput.addEventListener("change", function () {
         dropArea.style.display = "none";
         uploadHint.style.display = "none";
+
         cardPDF.style.display = "block";
+        backButton.style.display = "block";
+
         fileName.textContent = this.files[0].name;
         setText(this.files[0].size);
     });

@@ -164,7 +164,7 @@
                 </div>
                 <div class="nav-divider"></div>
                 <div class="nav-user">
-<<<<<<< HEAD
+
                 <div class="user-avatar">
                     <div class="first-word-name">K</div>
                 </div><img src="Content/images/Drop Default.svg" loading="lazy" alt="" class="drop-default"><img
@@ -228,7 +228,7 @@
                                 <div class="option-text">Đăng xuất</div>
                             </a>
                         </div>
->>>>>>> d041a2c77952cf524f4e510930c3d61fe9c8af66
+
                     </div>
                 </div>
             </div>
@@ -324,12 +324,14 @@
                     </div>
                     <div class="add-margin">
                         <div class="add-button-container">
-                            <a href="#" id="add-recipient-button" class="add-person-button w-button">Thêm người nhận</a>
+                            <a href="#" id="add-recipient-button" class="add-person-button w-button">Thêm người nhận
+                                <img style="margin-left: 4px;" src="Content/images/add-recipient-icon.png" alt="" />
+                            </a>
                             <div class="button-divider"></div>
                             <a href="#" class="add-contact-button w-button">Thêm từ danh bạ</a>
                         </div>
                         <div class="add-receiver-button">
-                            <a href="upload-file.html" class="back-button w-button">Quay lại</a>
+                            <a href="upload-file.html" class="back-button add-receiver-back w-button">Quay lại</a>
                             <%--  <button class="next-button w-button" type="submit">Tiếp tục</button>--%>
                             <asp:Button ID="btnAddRecei" runat="server" Text="Tiếp tục" CssClass="next-button w-button" />
                         </div>

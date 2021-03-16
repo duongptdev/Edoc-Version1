@@ -145,12 +145,7 @@ Partial Class AddSigntureField
         Dim res As Integer = 0
 
         For i = 0 To htk.Count - 1
-            If ttk.Length > 2 Then
-                res = serv.Thietlapvungky(idfile, tk(i), Integer.Parse(ttk(i)), Integer.Parse(htk(i)), Integer.Parse(trangky(i)), info(i), Integer.Parse(phuongthuc(i)), "", Session("Login"))
-            Else
-                res = serv.Thietlapvungky(idfile, tk(i), 1, Integer.Parse(htk(i)), Integer.Parse(trangky(i)), info(i), Integer.Parse(phuongthuc(i)), "", Session("Login"))
-            End If
-
+            res = serv.Thietlapvungky(idfile, tk(i), Integer.Parse(ttk(i)), Integer.Parse(htk(i)), Integer.Parse(trangky(i)), info(i), Integer.Parse(phuongthuc(i)), "", Session("Login"))
         Next
 
 

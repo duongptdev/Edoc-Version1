@@ -110,14 +110,14 @@
             <div class="div-block-17">
                 <div class="div-block-6">
                     <div class="heading-step">Tải lên dữ liệu theo lô</div>
-                    <div class="show-list">
+<%--                    <div class="show-list">
                         <a href="#" class="list-mode w-inline-block">
                             <img src="Content/images/Group-15086_2.png" loading="lazy"
                                 alt=""></a>
                         <a href="#" class="card-mode w-inline-block">
                             <img src="Content/images/Group-15087_2.png" loading="lazy"
                                 alt=""></a>
-                    </div>
+                    </div>--%>
                 </div>
 
                 <div id="drop-area" class="div-block-5">
@@ -140,11 +140,14 @@
                     <div class="upload-text">
                         <div class="upload-hint-content">Bạn chưa có bản mẫu ?</div>
                         <div class="upload-hint-content">
-                            Vui lòng tải xuống mẫu &quot;<span class="blue-text">Bảng thanh
-                                toán lương CBCNV</span>&quot;
+                            Vui lòng tải xuống mẫu &quot;<a href="" class="blue-text">Bảng thanh
+                                toán lương CBCNV</a>&quot;
                         </div>
                     </div>
                 </div>
+
+                <div class="file-warning">*Kích thước tệp tối đa 50MB</div>
+
                 <div id="card-pdf" class="card-pdf">
                     <div class="card-ui">
                         <div class="pdf-content">
@@ -156,25 +159,28 @@
                             </div>
                         </div>
                         <div class="function-card">
-                            <div data-hover="" data-delay="0" class="w-dropdown">
-                                <div class="dropdown-toggle-6 w-dropdown-toggle">
-                                    <img src="Content/images/Group-15086_1.png"
-                                        loading="lazy" alt="function">
+                                <div data-hover="" data-delay="0" class="w-dropdown">
+                                    <div class="dropdown-toggle-6 w-dropdown-toggle">
+                                        <img src="Content/images/Group-15086_1.png"
+                                            loading="lazy" alt="function">
+                                    </div>
+                                    <nav class="w-dropdown-list">
+
+                                        <a href="#" id="renamefile" class="w-dropdown-link">Đổi tên tài liệu</a>
+                                        <a href="UploadFile.aspx" onclick="window.location.href='UploadFile.aspx'" class="w-dropdown-link">Tải lên bản thay thế</a>
+                                        <a href="#" class="w-dropdown-link">Xem tài liệu</a>
+                                        <a href="MultiUploadFile.aspx" class="w-dropdown-link">Xóa tài liệu</a>
+
+                                    </nav>
                                 </div>
-                                <nav class="w-dropdown-list">
-                                    <a href="#" class="w-dropdown-link">Link 1</a>
-                                    <a href="#" class="w-dropdown-link">Link 2</a>
-                                    <a href="#" class="w-dropdown-link">Link 3</a>
-                                </nav>
-                            </div>
-                    =
+                    
                         </div>
                     </div>
                 </div>
                 <div class="upload-file-button">
                     <a href="../multiple-signatures/upload-file.html" aria-current="page" class="back-button hiding w-button w--current">Quay
                         lại</a>
-                    <button type="submit" class="button-4 w-button" onclick="Upload()">Tiếp tục</button>
+                    <a href="MultiplePreviewFiles.aspx" type="submit" class="button-4 w-button" onclick="Upload()">Tiếp tục</a>
                 </div>
 
             </div>
@@ -210,6 +216,14 @@
         <script src="Scripts/js/webflow.js" type="text/javascript"></script>
         <script src="Scripts/js/main.js"></script>
         <script>
+
+            (function showUserMenu() {
+
+                $(".nav-user").click(function () {
+                    $(".user-dropdown").toggle();
+                });
+            })();
+
             (function uploadFileClickHandle() {
                 var uploadFileBtn = document.querySelector("#upload-file-btn");
                 var uploadFileInput = document.querySelector("#upload-file-input");
@@ -217,6 +231,7 @@
                 var cardPDF = document.querySelector("#card-pdf");
                 var dropArea = document.querySelector("#drop-area");
                 var fileSize = document.querySelector("#file-size");
+                var backButton = document.querySelector(".back-button.hiding.w-button.w--current");
 
                 function formatBytes(bytes, decimals = 2) {
                     if (bytes === 0) return '0 Bytes';
@@ -240,7 +255,11 @@
 
                 uploadFileInput.addEventListener("change", function () {
                     dropArea.style.display = "none";
+                    document.querySelector(".file-warning").style.display = "none";
+
                     cardPDF.style.display = "block";
+                    backButton.style.display = "block";
+
                     fileName.textContent = this.files[0].name;
                     setText(this.files[0].size);
                 });

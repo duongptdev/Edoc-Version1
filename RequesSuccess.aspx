@@ -35,7 +35,7 @@
       </div>
         <div>
             <asp:Label ID="lblError" runat="server" Text="" CssClass="text-danger"></asp:Label></div>
-      <div class="subtitle-card">Cảm ơn bạn đã tin tưởng và đăng ký sử dụng Edoc.</div>
+      <div class="subtitle-card">Cảm ơn bạn đã tin tưởng và đăng ký sử dụng Ca2.edoc.</div>
     </div>
     <div class="copyright"><img src="Content/images/Icon-material-copyright.png" loading="lazy" alt="" class="image-2">
       <div class="text-block">Bản quyền thuộc về Công ty Cổ phần Công nghệ thẻ NACENCOMM</div>

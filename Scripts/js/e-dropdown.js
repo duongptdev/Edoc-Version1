@@ -1,4 +1,10 @@
- //JavaScript source code
+// JavaScript source code
+function showNotificationblock() {
+    $(".nav-notification").click(function () {
+        $(".show-notification").toggle();
+    });
+}
+
 (function showUserMenu() {
 
     $(".nav-user").click(function () {
@@ -17,4 +23,30 @@
         $(".add-folder-wrapper").toggle();
     });
 })();
+
+(function postSelectionClickHandle() {
+
+    var addFolderButton = document.querySelector(".w-dropdown-link.add-group");
+    var signModal = document.querySelector(".contact-background-modal");
+
+    var closeModalBtn = document.querySelector(".close-button");
+
+    addFolderButton.addEventListener("click", function () {
+        if (signModal.style.display === "none") {
+            signModal.style.display = "block";
+        } else {
+            signModal.style.display = "none";
+        }
+
+    });
+
+    closeModalBtn.addEventListener("click", function () {
+        if (signModal.style.display === "block") {
+            signModal.style.display = "none";
+        } else {
+            signModal.style.display = "block";
+        }
+    });
+})();
+
 
