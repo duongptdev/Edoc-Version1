@@ -29,6 +29,14 @@
     <script src="Scripts/js/e-dropdown.js"></script>
     <script>
 
+        function showNotificationBlock() {
+
+            $(".nav-notification").click(function(){
+              $(".show-notification").toggle();
+            });
+
+        }
+
         $(document).ready(function () {
             var name =  sessionStorage.getItem("name");
             var email = sessionStorage.getItem("email");
@@ -75,8 +83,10 @@
                 </div>
             </div>
             <div class="nav-right">
-            <div class="nav-notification"><img src="Content/images/Mask-Group-653.png" loading="lazy" alt="Notification">
-                    <div class="show-notification">
+                <div class="nav-notification">
+                <img src="Content/images/Mask-Group-653.png" loading="lazy" alt="Notification">
+                  </div>
+                <div class="show-notification">
                       <div class="news-card">
                         <div class="news-label">
                           <div class="news-label-text">Thông báo</div>
@@ -114,7 +124,6 @@
                         </a>
                       </div>
                     </div>
-                  </div>
                 <div class="nav-divider"></div>
                 <div class="nav-user">
                     <div class="user-avatar">

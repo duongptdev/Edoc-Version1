@@ -16,6 +16,7 @@
     </style>
 
     <link href="Content/css/edoc.webflow.css" rel="stylesheet" />
+
     <script>
         function Viewfile(s, e) {
             var idfile = s.cp_idfile;
@@ -243,6 +244,61 @@
                 <a href="../multiple-signatures/upload-file.html" aria-current="page"
                     class="back-button w-button w--current">Bỏ qua</a>
                 <button type="submit" class="button-4 w-button">Xác nhận</button>
+            </div>
+        </div>
+    </div>
+
+    <div class="voided-background-modal hidden-block">
+        <div class="voided-form">
+            <div class="heading-modal">
+                <div class="contact-text">Thu hồi tài liệu</div>
+                <div id="voided-close" class="close-button">
+                    <img src="Content/images/Icons-Close-16px.svg" loading="lazy" alt="">
+                </div>
+            </div>
+            <div class="voided-form-body">
+
+                <div class="folder-hint-text">Tài liệu sẽ được thu hồi và không thể hoàn tác.</div>
+                <div class="voided-text-form">*Sau khi nhập lí do thu hồi tài liệu và ấn xác nhận, bạn sẽ hủy tất cả các hoạt động ký của người nhận đã ký và chưa ký tài liệu. Tất cả người nhận được thông báo qua email 
+                bao gồm thông báo thu hồi tài liệu và lý do thu hồi của bạn.
+                </div>
+                             
+                                <label class="message-label">Lý do thu hồi tài liệu*</label>
+                                <textarea
+                                    placeholder="Nhập lý do thu hồi tài liệu"
+                                    id="email-message"
+                                    name="email-message"
+                                    maxlength="1000"
+                                    class="textarea w-input" 
+                                    onkeyup="countChar(this)"></textarea>
+                                <div class="content-text-area">
+                                    <div id="charNum">0</div>
+                                    <div>/1000</div>
+                                </div>
+                            
+                 <div class="voided-form-button">
+                    <a href="../multiple-signatures/upload-file.html" aria-current="page"
+                        class="back-button w-button w--current">Bỏ qua</a>
+                    <button type="submit" class="button-4 w-button">Xác nhận</button>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <div class="delete-background-modal hidden-block">
+        <div class="voided-form">
+            <div class="heading-modal">
+                <div class="contact-text"></div>
+                <div id="delete-close" class="close-button">
+                    <img src="Content/images/Icons-Close-16px.svg" loading="lazy" alt="Close Modal">
+                </div>
+            </div>
+            <div class="delete-form-body">
+                <div>
+                    <div class="delete-modal-text">Tài liệu của bạn sẽ bị xóa và chuyển đến thư mục "<strong>Đã xóa</strong>".<br />Bạn có chắc chắn muốn tiếp tục?</div>
+                    <button type="submit" class="button-4 add-width w-button">Tiếp tục</button>
+                </div>
             </div>
         </div>
     </div>
@@ -611,9 +667,9 @@
                                         <nav class="w-dropdown-list">
                                             <a href="#" class="w-dropdown-link">Ký tài liệu</a>
                                             <a href="#" class="w-dropdown-link add-folder">Thêm vào thư mục</a>
-                                            <a href="#" class="w-dropdown-link">Thu hồi tài liệu</a>
+                                            <a id="voided-file" href="#" class="w-dropdown-link">Thu hồi tài liệu</a>
                                             <a href="#" class="w-dropdown-link">Tải xuống</a>
-                                            <a href="#" class="w-dropdown-link">Xoá</a>
+                                            <a id="deleted-file" href="#" class="w-dropdown-link">Xoá</a>
                                         </nav>
                                     </div>
                                 </td>
@@ -824,28 +880,71 @@
         <script>
 
             //Updated 16/03/2021
-            (function postSelectionClickHandle() {
+
+                  function countChar(val) {
+                        var len = val.value.length;
+                        if (len >= 500) {
+                          val.value = val.value.substring(0, 500);
+                        } else {
+                          $('#charNum').text(len++);
+                        }
+                  };
+
+            (function addFolderClickHandle() {
 
                 var addFolderButton = document.querySelector(".w-dropdown-link.add-folder");
-                var signModal = document.querySelector(".background-modal");
+                var addFolderModal = document.querySelector(".background-modal");
 
-                var closeModalBtn = document.querySelector(".close-button");
+                var closeFolderBtn = document.querySelector(".close-button");
 
                 addFolderButton.addEventListener("click", function () {
-                    if (signModal.style.display === "none") {
-                        signModal.style.display = "block";
+                    if (addFolderModal.style.display === "none") {
+                        addFolderModal.style.display = "block";
                     } else {
-                        signModal.style.display = "none";
+                        addFolderModal.style.display = "none";
                     }
-                    
+
                 });
 
-                closeModalBtn.addEventListener("click", function () {
-                    if (signModal.style.display === "block") {
-                        signModal.style.display = "none";
+                closeFolderBtn.addEventListener("click", function () {
+                    if (addFolderModal.style.display === "block") {
+                        addFolderModal.style.display = "none";
                     } else {
-                        signModal.style.display = "block";
+                        addFolderModal.style.display = "block";
                     }
+                });
+            })();
+
+            (function voidedRequestClickHandle() {
+
+                var voidedButton = document.querySelector("#voided-file");
+                var voidedModal = document.querySelector(".voided-background-modal.hidden-block");
+
+                var closeVoidedBtn = document.querySelector("#voided-close");
+
+                voidedButton.addEventListener("click", function () {
+                    voidedModal.classList.remove("hidden-block");
+                });
+
+                closeVoidedBtn.addEventListener("click", function () {
+                    voidedModal.classList.add("hidden-block");
+                });
+            })();
+
+            (function deleteRequestClickHandle() {
+
+                var deleteButton = document.querySelector("#deleted-file");
+                var deleteModal = document.querySelector(".delete-background-modal.hidden-block");
+
+                var closeDeleteBtn = document.querySelector("#delete-close");
+
+                deleteButton.addEventListener("click", function () {
+                    deleteModal.classList.remove("hidden-block");
+
+                });
+
+                closeDeleteBtn.addEventListener("click", function () {
+                    deleteModal.classList.add("hidden-block");
                 });
             })();
 

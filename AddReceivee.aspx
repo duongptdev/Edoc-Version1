@@ -36,13 +36,12 @@
 </head>
 
 <body>
-    <form id="form1" runat="server">
-                <div class="background-modal">
+    <div class="add-contact-modal hidden-block">
         <div class="contact-form">
             <div class="heading-modal">
                 <div class="contact-text">Danh bạ</div>
                 <div class="close-button">
-                    <img src="../images/Icons-Close-16px.svg" loading="lazy" alt="Close Modal">
+                    <img src="Content/images/Icons-Close-16px.svg" loading="lazy" alt="Close Modal">
                 </div>
             </div>
             <div class="contact-form-body">
@@ -53,7 +52,7 @@
 
                     <a href="#" class="group-menu">
                         <div class="menu-text-link">Nhóm</div>
-                        <img src="images/Group-15086_1.png" loading="lazy" alt="function">
+                        <img src="Content/images/Group-15086_1.png" loading="lazy" alt="function">
                     </a>
 
                 </div>
@@ -117,6 +116,7 @@
             </div>
         </div>
     </div>
+    <form id="form1" runat="server">
         <header id="nav" class="sticky-nav">
             <div class="close">
                 <a href="Index.aspx" class="back-to-home w-inline-block">
@@ -193,41 +193,6 @@
                                 loading="lazy" alt="" class="icon-option">
                             <asp:Button ID="btnDangxuat" runat="server" CssClass="option-text" Text="Đăng xuất" OnClick="btnDangxuat_Click" />
                         </a>
-=======
-                    <div class="user-avatar">
-                        <div class="first-word-name" onclick="showUserMenu()">K</div>
-                    </div>
-                    <img src="Content/images/Drop Default.svg" loading="lazy" alt="" class="drop-default" />
-                    <img src="Content/images/Drop Hover.svg" loading="lazy" alt="" class="drop-hover" />
-                    <img src="Content/images/Drop Clicked.svg" loading="lazy" alt="" class="drop-clicked" />
-                    <div class="user-dropdown">
-                        <div class="user-drop-card">
-                            <div class="user-name-card" id="name"></div>
-                            <div class="user-email-card" id="gmail"></div>
-                            <div class="card-divider add-margin"></div>
-                            <a href="SettingAccount.aspx" class="option-button w-inline-block">
-                                <img
-                                    src="Content/images/Account Setting.svg" loading="lazy" alt="" class="icon-option">
-                                <div class="option-text">Cài đặt tài khoản</div>
-                            </a>
-                            <a href="../setting/plan-and-billing.html" class="option-button w-inline-block">
-                                <img
-                                    src="Content/images/Plan.svg" loading="lazy" alt="" class="icon-option">
-                                <div class="option-text">Gói dịch vụ</div>
-                            </a>
-                            <a href="#" class="option-button w-inline-block">
-                                <img src="Content/images/Help.svg" loading="lazy"
-                                    alt="" class="icon-option">
-                                <div class="option-text">Trợ giúp và hỗ trợ</div>
-                            </a>
-                            <div class="card-divider"></div>
-                            <%--  <asp:Button ID="Button1" runat="server" CssClass="option-button remove-padding w-inline-block" Text="Đăng xuất" OnClick="btnDangxuat_Click" />--%>
-                            <a href="#" class="option-button remove-padding w-inline-block" onclick="Logout()">
-                                <img src="Content/images/Log Out.svg"
-                                    loading="lazy" alt="" class="icon-option">
-                                <div class="option-text">Đăng xuất</div>
-                            </a>
-                        </div>
 
                     </div>
                 </div>
@@ -290,7 +255,9 @@
                                                         <a id="contact-button" href="#" class="eye-icon w-inline-block">
                                                             <img
                                                                 src="Content/images/Contact-Icon.png" loading="lazy" alt=""
-                                                                class="eye-image" /></a>
+                                                                class="eye-image" />
+
+                                                        </a>
                                                     </div>
                                                 </div>
                                                 <div>
@@ -373,15 +340,15 @@
             function showContactModal() {
 
                 var contactButton = document.querySelector("#contact-button");
-                var contactModal = document.querySelector(".background-modal");
+                var contactModal = document.querySelector(".add-contact-modal.hidden-block");
+                var closeContactModal = document.querySelector(".close-button");
 
                 contactButton.addEventListener("click", function () {
+                    contactModal.classList.remove("hidden-block");
+                });
 
-                    if (contactModal.style.display === 'none') {
-                        contactModal.style.display = 'block';
-                    } else {
-                        contactModal.style.display = 'none';
-                    }
+                closeContactModal.addEventListener("click", function () {
+                    contactModal.classList.add("hidden-block");
                 });
 
             }

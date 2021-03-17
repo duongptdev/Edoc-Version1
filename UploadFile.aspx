@@ -24,6 +24,23 @@
     <link href="Content/images/webclip.png" rel="apple-touch-icon">
     <script src="Scripts/jquery-3.3.1.min.js"></script>
     <script>
+
+            (function voidedRequestClickHandle() {
+
+                var renameButton = document.querySelector(".w-dropdown-link.rename-file");
+                var renameModal = document.querySelector(".rename-background-modal.hidden-block");
+
+                var closeRenameBtn = document.querySelector("#voided-close");
+
+                renameButton.addEventListener("click", function () {
+                    renameModal.classList.remove("hidden-block");
+                });
+
+                closeRenameBtn.addEventListener("click", function () {
+                    renameModal.classList.add("hidden-block");
+                });
+            })();
+
         $(document).ready(function () {
             var name = sessionStorage.getItem("name");
             var email = sessionStorage.getItem("email");
@@ -82,6 +99,36 @@
 </head>
 
 <body class="body-2">
+
+    <div class="rename-background-modal hidden-block">
+        <div class="voided-form">
+            <div class="heading-modal">
+                <div class="contact-text">Đổi tên</div>
+                <div id="voided-close" class="close-button">
+                    <img src="Content/images/Icons-Close-16px.svg" loading="lazy" alt="">
+                </div>
+            </div>
+            <div class="voided-form-body">
+                             
+                                <label class="message-label">Tên văn bản*</label>
+                                <input
+                                    type="text"
+                                    class="text-field-4 w-input"
+                                    name="rename-file"
+                                    placeholder="Nhập tên văn bản"
+                                    id="rename-file-modal"
+                                     />
+                            
+                 <div class="rename-form-button">
+                    <a href="../multiple-signatures/upload-file.html" aria-current="page"
+                        class="back-button w-button w--current">Bỏ qua</a>
+                    <button type="submit" class="button-4 w-button">Xác nhận</button>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
     <form id="form1" runat="server">
         <header id="nav" class="sticky-nav">
             <div class="close">
@@ -288,7 +335,7 @@
                                     </div>
                                     <nav class="w-dropdown-list">
 
-                                        <a href="#" id="renamefile" class="w-dropdown-link">Đổi tên tài liệu</a>
+                                        <a href="#" id="renamefile" class="w-dropdown-link rename-file">Đổi tên tài liệu</a>
                                         <a href="UploadFile.aspx" onclick="window.location.href='UploadFile.aspx'" class="w-dropdown-link">Tải lên bản thay thế</a>
                                         <a href="#" class="w-dropdown-link">Xem tài liệu</a>
                                         <a href="UploadFile.aspx" class="w-dropdown-link">Xóa tài liệu</a>
