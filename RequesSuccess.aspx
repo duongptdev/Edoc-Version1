@@ -21,7 +21,7 @@
 </head>
 <body>
      <form id="form1" runat="server">
-  <div class="container">
+  <div class="container-fluid">
     <div class="center-content">
       <div class="heading-card">Chúng tôi đã nhận được yêu cầu!</div>
       <div class="subtitle-card center">Chúng tôi đã gửi xác nhận yêu cầu đăng ký tài khoản về tài khoản Email<br>

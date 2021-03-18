@@ -3,7 +3,10 @@
 <%@ Register Assembly="DevExpress.Web.v16.2, Version=16.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" Namespace="DevExpress.Web" TagPrefix="dx" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="ContentPlaceHolder1" runat="Server">
+    <link href="Content/bootstrap.min.css" rel="stylesheet" />
+    <link href="Content/css/edoc.webflow.css" rel="stylesheet" />
     <script src="Scripts/jquery-3.3.1.min.js"></script>
+    <script src="Scripts/js/e-dropdown.js"></script>
     <script>
         function myFunction() {
             var value = $("#sign-method").val();
@@ -83,101 +86,133 @@
             }
         }
     </script>
-    <div class="setting-body">
-        <div class="setting-menu">
-            <div class="title-menu">cài đặt</div>
-            <a href="SettingAccount.aspx" class="menu-item-link w-inline-block">
-                <div class="menu-item-text">Thiết lập tài khoản</div>
-            </a>
-            <a href="Electronic-Signature.aspx" class="menu-item-link w-inline-block">
-                <div class="menu-item-text">Chữ ký điện tử</div>
-            </a>
-            <a href="DigitalSignture.aspx" class="menu-item-link w-inline-block">
-                <div class="menu-item-text">Chữ ký số</div>
-            </a>
-            <a href="PassWord.aspx" aria-current="page" class="menu-item-link w-inline-block w--current">
-                <div class="menu-item-text">Mật khẩu</div>
-            </a>
-            <a href="#" class="menu-item-link w-inline-block">
-                <div class="menu-item-text">Gói dịch vụ</div>
-            </a>
-        </div>
-        <div class="setting-content">
-            <div class="title-body">Chữ ký số</div>
-            <div class="subtitle-body">
-                Kết nối tài khoản Mobile Sign với thiết bị, đảm bảo quy trình ký tài liệu diễn
-                ra<br>
-                nhanh chóng và tiện lợi
-            </div>
-            <div class="add-signature-button">
-                <!-- <div class="button-text">Vui lòng quét mã QR Code để kết nối với tài khoản Mobile Sign</div>
-                <img src="../images/QR-Code.png" loading="lazy" alt="" class="image-14"> -->
-                <div class="button-text">Chọn phương thức ký số:</div>
-                <select class="sign-select" id="sign-method" onchange="myFunction()">
-                    <option value="">Chọn phương thức ký</option>
-                    <option value="2">Ký bằng USB Token</option>
-                    <option value="1">Ký bằng Mobile Sign Serial</option>
-
-                    <option value="3">Ký bằng Mobile Sign mã CTS</option>
-                </select>
-            </div>
-
-            <div id="serial" hidden>
-                <div class="button-text">Thiết lập ký USB token</div>
-
-                <input type="submit" class="form-button button-color w-button" onclick="AddSerial()" value="Gửi" />
-            </div>
-
-            <div id="passregis" hidden>
-                <div class="button-text">Nhập serial</div>
-                <input id="serial-mobile" class="register-input" type="text" required="required" />
-                <input type="submit" class="form-button button-color w-button" onclick="SerialMobile()" value="Gửi" />
-            </div>
-            <div id="idcts" hidden>
-                <div class="button-text">Nhập CTS:</div>
-                <input id="idcts-passcode" class="register-input" type="text" required="required" />
-                <input type="submit" class="form-button button-color w-button" onclick="IdctsMobile()" value="Gửi" />
-            </div>
-
-
-
-            <div class="digital-certificate">
-                <div class="cert-text">Thông tin chứng thư số</div>
-                <div class="cert-info">
-                    <div class="info-field">
-                        <div class="cert-label">Tên chứng thư:</div>
-                        <div class="cert-input">Trần Văn Khanh</div>
-                    </div>
-                    <div class="info-field">
-                        <div class="cert-label">Số Serial:</div>
-                        <div class="cert-input">5402BC5ACE669C20150000000379</div>
-                    </div>
-                    <div class="info-field">
-                        <div class="cert-label">Thiết bị:</div>
-                        <div class="cert-input">PC-DE5Z 009</div>
-                    </div>
-                    <div class="info-field">
-                        <div class="cert-label">Device ID:</div>
-                        <div class="cert-input">HFNS-JSHEFHU-ZJSD-BHD</div>
-                    </div>
-                    <div class="info-field">
-                        <div class="cert-label">Ngày cấp:</div>
-                        <div class="cert-input">15:23 15/05/2019</div>
-                    </div>
-                    <div class="info-field">
-                        <div class="cert-label">Ngày hết hạn:</div>
-                        <div class="cert-input">15/05/2021</div>
-                    </div>
-                    <div class="info-field">
-                        <div class="cert-label">Đơn vị cấp:</div>
-                        <div class="cert-input">Công ty Cổ phần Công nghệ thẻ NACENCOMM</div>
-                    </div>
-                </div>
-                <a href="#" class="disable-cert w-inline-block">
-                    <img src="../images/Disable-Icon.png" loading="lazy"
-                        alt="">
-                    <div class="text-block-17">Ngắt kết nối</div>
+    <div class="container-fluid">
+        <div class="row row-margin">
+            <div class="col-sm-2">
+            <div class="setting-menu">
+                <div class="title-menu">cài đặt</div>
+                <a href="SettingAccount.aspx" class="menu-item-link w-inline-block">
+                    <div class="menu-item-text">Thiết lập tài khoản</div>
                 </a>
+                <a href="Electronic-Signature.aspx" class="menu-item-link w-inline-block">
+                    <div class="menu-item-text">Chữ ký điện tử</div>
+                </a>
+                <a href="DigitalSignture.aspx" class="menu-item-link w-inline-block">
+                    <div class="menu-item-text">Chữ ký số</div>
+                </a>
+                <a href="PassWord.aspx" aria-current="page" class="menu-item-link w-inline-block w--current">
+                    <div class="menu-item-text">Mật khẩu</div>
+                </a>
+                <a href="#" class="menu-item-link w-inline-block">
+                    <div class="menu-item-text">Gói dịch vụ</div>
+                </a>
+            </div>
+            </div>
+            <div class="col-sm-10">
+            <div class="setting-content">
+                <div class="title-body">Chữ ký số</div>
+                <div class="subtitle-body">
+                    Thiết lập trước phương thức ký số giúp đẩy nhanh quá trình xử lí văn bản, tài liệu
+                </div>
+<%--                <div class="add-signature-button">
+                    <div class="button-text">Chọn phương thức ký số:</div>
+                    <select class="sign-select" id="sign-method" onchange="myFunction()">
+                        <option value="">Chọn phương thức ký</option>
+                        <option value="2">Ký bằng USB Token</option>
+                        <option value="1">Ký bằng Mobile Sign Serial</option>
+                        <option value="3">Ký bằng Mobile Sign mã CTS</option>
+                    </select>
+                </div>
+
+                <div id="serial" hidden>
+                    <div class="button-text">Thiết lập ký USB token</div>
+                    <input type="submit" class="form-button button-color w-button" onclick="AddSerial()" value="Gửi" />
+                </div>
+
+                <div id="passregis" hidden>
+                    <div class="button-text">Nhập serial</div>
+                    <input id="serial-mobile" class="register-input" type="text" required="required" />
+                    <input type="submit" class="form-button button-color w-button" onclick="SerialMobile()" value="Gửi" />
+                </div>
+                <div id="idcts" hidden>
+                    <div class="button-text">Nhập CTS:</div>
+                    <input id="idcts-passcode" class="register-input" type="text" required="required" />
+                    <input type="submit" class="form-button button-color w-button" onclick="IdctsMobile()" value="Gửi" />
+                </div>--%>
+
+                    <div class="digital-signature-setting">
+                        <div class="title-input">Chọn phương thức ký:</div>
+                        <div class="signature-input">
+                                    <div style="margin-left: 0px;" class="radio-block">
+                                        <input id="sender" type="radio" name="signature" value="sender" />
+                                        <label for="sender" class="radio-label">Ký bằng USB Token</label>
+                                    </div>
+                                    <div class="radio-block">
+                                        <input id="recipient" type="radio" name="signature" value="recipient" />
+                                        <label for="recipient" class="radio-label">Ký bằng Mobile Sign</label>
+                                    </div>
+                        </div>
+                    </div>
+
+                    <div class="digital-signature-setting">
+                        <div class="title-input">Nhập mã:</div>
+                        <div class="signature-input">
+                                 <select style="margin-top: 0px;" id="day-custom" class="signature-select">
+                                    <option value="waiting-state">Chọn loại mã</option>
+                                    <option value="waiting-state">Serial</option>
+                                    <option value="waiting-state">Mã đăng ký</option>
+                                </select>
+                            <input type="text"
+                                class="code-input w-input" maxlength="256" name="name" data-name="Name"
+                                placeholder="Nhập mã tại đây" id="name" required="">
+                        </div>
+                    </div>
+
+                     <div class="signature-form-button">
+                        <a href="../multiple-signatures/upload-file.html" aria-current="page"
+                            class="back-button w-button w--current">Bỏ qua</a>
+                        <button type="submit" class="button-4 w-button">Xác nhận</button>
+                    </div>
+
+                <div class="digital-certificate">
+                    <div class="cert-text">Thông tin chứng thư số</div>
+                    <div class="cert-info">
+                        <div class="info-field">
+                            <div class="cert-label">Tên chứng thư:</div>
+                            <div class="cert-input">Trần Văn Khanh</div>
+                        </div>
+                        <div class="info-field">
+                            <div class="cert-label">Số Serial:</div>
+                            <div class="cert-input">5402BC5ACE669C20150000000379</div>
+                        </div>
+                        <div class="info-field">
+                            <div class="cert-label">Thiết bị:</div>
+                            <div class="cert-input">PC-DE5Z 009</div>
+                        </div>
+                        <div class="info-field">
+                            <div class="cert-label">Device ID:</div>
+                            <div class="cert-input">HFNS-JSHEFHU-ZJSD-BHD</div>
+                        </div>
+                        <div class="info-field">
+                            <div class="cert-label">Ngày cấp:</div>
+                            <div class="cert-input">15:23 15/05/2019</div>
+                        </div>
+                        <div class="info-field">
+                            <div class="cert-label">Ngày hết hạn:</div>
+                            <div class="cert-input">15/05/2021</div>
+                        </div>
+                        <div class="info-field">
+                            <div class="cert-label">Đơn vị cấp:</div>
+                            <div class="cert-input">Công ty Cổ phần Công nghệ thẻ NACENCOMM</div>
+                        </div>
+                    </div>
+                    <a href="#" class="disable-cert w-inline-block">
+                        <img src="../images/Disable-Icon.png" loading="lazy"
+                            alt="">
+                        <div class="text-block-17">Ngắt kết nối</div>
+                    </a>
+                </div>
+            </div>
             </div>
         </div>
     </div>

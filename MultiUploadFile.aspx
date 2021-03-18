@@ -125,9 +125,7 @@
                         <div class="div-block-7">
                             <div class="text-16 can-giua">
                                 Kéo và thả tài liệu trực tiếp từ thiết bị của bạn.<br>
-                                Hoặc bạn
-                                có
-                                thể tải lên tài liệu có định dạng .XLS, .XLSX
+                                Hoặc bạn có thể tải lên tài liệu có định dạng .Doc, .Docx
                             </div>
                         </div>
                         <a id="upload-file-btn" href="#" class="button-3 w-button">Tải lên</a>

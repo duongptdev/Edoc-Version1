@@ -272,193 +272,161 @@
                                             loading="lazy" alt="">
                                     </a>
                                 </div>
-                                <div class="file-info-table">
-                                    <div class="table-wrapper">
-                                        <table class="table-ui">
-                                            <colgroup>
-                                                <col width="30" />
-                                                <col width="50" />
-                                                <col width="100" />
-                                                <col width="200" />
-                                                <col width="300" />
-                                                <col width="250" />
-                                                <col width="150" />
-                                                <col width="150" />
-                                                <col width="130" />
-                                                <col width="130" />
-                                            </colgroup>
+                                            <div class="file-info-table">
+                <div class="table-wrapper">
+                    <table class="table-ui">
+                        <colgroup>
+                            <col width="20" />
+                            <col width="25" />
+                            <col width="120" />
+                            <col width="150" />
+                            <col width="130" />
+                            <col width="70" />
+                            <col width="200" />
+                        </colgroup>
 
-                                            <thead>
-                                                <tr>
-                                                    <th><input type="checkbox" /></th>
-                                                    <th>STT</th>
-                                                    <th>Thời gian</th>
-                                                    <th>Tên CBCNV</th>
-                                                    <th>Email</th>
-                                                    <th>Bộ phận</th>
-                                                    <th>Chức vụ</th>
-                                                    <th>Lương cơ bản</th>
-                                                    <th>Lương SP</th>
-                                                    <th>PC ăn trưa</th>
-                                                </tr>
-                                            </thead>
-                                            <tbody>
-                                                <tr>
-                                                    <td><input type="checkbox" /></td>
-                                                    <td>1</td>
-                                                    <td>30/ 01/2021</td>
-                                                    <td>
-                                                        <div class="person-name">
-                                                            <img class="name-icon" src="images/eye icon.png" alt="">
-                                                            <div>Phùng Huy Tâm</div>
-                                                        </div>
-                                                    </td>
-                                                    <td>tam@cavn.vn</td>
-                                                    <td>Ban Giám Đốc</td>
-                                                    <td>Giám đốc</td>
-                                                    <td>4,750,000</td>
-                                                    <td>1,000,000</td>
-                                                    <td>550,000</td>
-                                                </tr>
-                                                <tr>
-                                                    <td><input type="checkbox" /></td>
-                                                    <td>2</td>
-                                                    <td>30/ 01/2021</td>
-                                                    <td>
-                                                        <div class="person-name">
-                                                            <img class="name-icon" src="images/eye icon.png" alt="">
-                                                            <div>Đỗ Thị Chúc</div>
-                                                        </div>
-                                                    </td>
-                                                    <td>dochuc@cavn.vn</td>
-                                                    <td>Phòng Kế Toán</td>
-                                                    <td>Kế toán trưởng</td>
-                                                    <td>4,750,000</td>
-                                                    <td>1,000,000</td>
-                                                    <td>550,000</td>
-                                                </tr>
-                                                <tr>
-                                                    <td><input type="checkbox" /></td>
-                                                    <td>3</td>
-                                                    <td>30/ 01/2021</td>
-                                                    <td>
-                                                        <div class="person-name">
-                                                            <img class="name-icon" src="images/eye icon.png" alt="">
-                                                            <div>Đào Diệu Thúy</div>
-                                                        </div>
-                                                    </td>
-                                                    <td>thuydt@cavn.vn</td>
-                                                    <td>Phòng Hành Chính</td>
-                                                    <td>Thủ quỹ</td>
-                                                    <td>4,750,000</td>
-                                                    <td>1,000,000</td>
-                                                    <td>550,000</td>
-                                                </tr>
-                                                <tr>
-                                                    <td><input type="checkbox" /></td>
-                                                    <td>4</td>
-                                                    <td>30/ 01/2021</td>
-                                                    <td>
-                                                        <div class="person-name">
-                                                            <img class="name-icon" src="images/eye icon.png" alt="">
-                                                            <div>Nguyễn Trần Văn Khanh</div>
-                                                        </div>
-                                                    </td>
-                                                    <td>nguyentranvankhanh123@gmail.com</td>
-                                                    <td>Ban quản lí và phát triển dự án</td>
-                                                    <td>Nhân viên</td>
-                                                    <td>4,750,000</td>
-                                                    <td>1,000,000</td>
-                                                    <td>550,000</td>
-                                                </tr>
-                                                <tr>
-                                                    <td><input type="checkbox" /></td>
-                                                    <td>5</td>
-                                                    <td>30/ 01/2021</td>
-                                                    <td>
-                                                        <div class="person-name">
-                                                            <img class="name-icon" src="images/eye icon.png" alt="">
-                                                            <div>Nguyễn Trần Văn Khanh</div>
-                                                        </div>
-                                                    </td>
-                                                    <td>nguyentranvankhanh123@gmail.com</td>
-                                                    <td>Ban quản lí và phát triển dự án</td>
-                                                    <td>Nhân viên</td>
-                                                    <td>4,750,000</td>
-                                                    <td>1,000,000</td>
-                                                    <td>550,000</td>
-                                                </tr>
-                                                <tr>
-                                                    <td><input type="checkbox" /></td>
-                                                    <td>6</td>
-                                                    <td>30/ 01/2021</td>
-                                                    <td>
-                                                        <div class="person-name">
-                                                            <img class="name-icon" src="images/eye icon.png" alt="">
-                                                            <div>Nguyễn Trần Văn Khanh</div>
-                                                        </div>
-                                                    </td>
-                                                    <td>nguyentranvankhanh123@gmail.com</td>
-                                                    <td>Ban quản lí và phát triển dự án</td>
-                                                    <td>Nhân viên</td>
-                                                    <td>4,750,000</td>
-                                                    <td>1,000,000</td>
-                                                    <td>550,000</td>
-                                                </tr>
-                                                <tr>
-                                                    <td><input type="checkbox" /></td>
-                                                    <td>7</td>
-                                                    <td>30/ 01/2021</td>
-                                                    <td>
-                                                        <div class="person-name">
-                                                            <img class="name-icon" src="images/eye icon.png" alt="">
-                                                            <div>Nguyễn Trần Văn Khanh</div>
-                                                        </div>
-                                                    </td>
-                                                    <td>nguyentranvankhanh123@gmail.com</td>
-                                                    <td>Ban quản lí và phát triển dự án</td>
-                                                    <td>Nhân viên</td>
-                                                    <td>4,750,000</td>
-                                                    <td>1,000,000</td>
-                                                    <td>550,000</td>
-                                                </tr>
-                                                <tr>
-                                                    <td><input type="checkbox" /></td>
-                                                    <td>8</td>
-                                                    <td>30/ 01/2021</td>
-                                                    <td>
-                                                        <div class="person-name">
-                                                            <img class="name-icon" src="images/eye icon.png" alt="">
-                                                            <div>Nguyễn Trần Văn Khanh</div>
-                                                        </div>
-                                                    </td>
-                                                    <td>nguyentranvankhanh123@gmail.com</td>
-                                                    <td>Ban quản lí và phát triển dự án</td>
-                                                    <td>Nhân viên</td>
-                                                    <td>4,750,000</td>
-                                                    <td>1,000,000</td>
-                                                    <td>550,000</td>
-                                                </tr>
-                                            </tbody>
-                                        </table>
+                        <thead>
+                            <tr>
+                                <th><input type="checkbox" /></th>
+                                <th>STT</th>
+                                <th>Tên CBCNV</th>
+                                <th>Email</th>
+                                <th>Bộ phận</th>
+                                <th>Chức vụ</th>
+                                <th>-</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><input type="checkbox" /></td>
+                                <td>1</td>
+                                <td>
+                                    <div class="person-name">
+                                        <img class="name-icon" src="images/eye icon.png" alt="">
+                                        <div>Phùng Huy Tâm</div>
                                     </div>
-
-                                    <div class="pagination-table">
-                                        <div class="pagination-block">
-                                            <div class="pagination">
-                                                <a href="#"><img src="Content/images/Previous-Icon.png" alt=""></a>
-                                                <a href="#" class="active">1</a>
-                                                <a href="#">2</a>
-                                                <a href="#">3</a>
-                                                <a href="#">4</a>
-                                                <a href="#">5</a>
-                                                <a href="#">6</a>
-                                                <a href="#"><img src="Content/images/Next-Icon.png" alt=""></a>
-                                            </div>
-                                        </div>
-                                        <div class="page-count">Trang 1 trên 10 (90 bản ghi)</div>
+                                </td>
+                                <td>tam@cavn.vn</td>
+                                <td>Ban Giám Đốc</td>
+                                <td>Giám đốc</td>
+                                <td>-</td>
+                            </tr>
+                            <tr>
+                                <td><input type="checkbox" /></td>
+                                <td>2</td>
+                                <td>
+                                    <div class="person-name">
+                                        <img class="name-icon" src="images/eye icon.png" alt="">
+                                        <div>Đỗ Thị Chúc</div>
                                     </div>
-                                </div>
+                                </td>
+                                <td>dochuc@cavn.vn</td>
+                                <td>Phòng Kế Toán</td>
+                                <td>Kế toán trưởng</td>
+                                <td>-</td>
+                            </tr>
+                            <tr>
+                                <td><input type="checkbox" /></td>
+                                <td>3</td>
+                                <td>
+                                    <div class="person-name">
+                                        <img class="name-icon" src="images/eye icon.png" alt="">
+                                        <div>Đào Diệu Thúy</div>
+                                    </div>
+                                </td>
+                                <td>thuydt@cavn.vn</td>
+                                <td>Phòng Hành Chính</td>
+                                <td>Thủ quỹ</td>
+                                <td>-</td>
+                            </tr>
+                            <tr>
+                                <td><input type="checkbox" /></td>
+                                <td>4</td>
+                                <td>
+                                    <div class="person-name">
+                                        <img class="name-icon" src="images/eye icon.png" alt="">
+                                        <div>Nguyễn Trần Văn Khanh</div>
+                                    </div>
+                                </td>
+                                <td>nguyentranvankhanh123@gmail.com</td>
+                                <td>Ban quản lí và phát triển dự án</td>
+                                <td>Nhân viên</td>
+                                <td>-</td>
+                            </tr>
+                            <tr>
+                                <td><input type="checkbox" /></td>
+                                <td>5</td>
+                                <td>
+                                    <div class="person-name">
+                                        <img class="name-icon" src="images/eye icon.png" alt="">
+                                        <div>Nguyễn Trần Văn Khanh</div>
+                                    </div>
+                                </td>
+                                <td>nguyentranvankhanh123@gmail.com</td>
+                                <td>Ban quản lí và phát triển dự án</td>
+                                <td>Nhân viên</td>
+                                <td>-</td>
+                            </tr>
+                            <tr>
+                                <td><input type="checkbox" /></td>
+                                <td>6</td>
+                                <td>
+                                    <div class="person-name">
+                                        <img class="name-icon" src="images/eye icon.png" alt="">
+                                        <div>Nguyễn Trần Văn Khanh</div>
+                                    </div>
+                                </td>
+                                <td>nguyentranvankhanh123@gmail.com</td>
+                                <td>Ban quản lí và phát triển dự án</td>
+                                <td>Nhân viên</td>
+                                <td>-</td>
+                            </tr>
+                            <tr>
+                                <td><input type="checkbox" /></td>
+                                <td>7</td>
+                                <td>
+                                    <div class="person-name">
+                                        <img class="name-icon" src="images/eye icon.png" alt="">
+                                        <div>Nguyễn Trần Văn Khanh</div>
+                                    </div>
+                                </td>
+                                <td>nguyentranvankhanh123@gmail.com</td>
+                                <td>Ban quản lí và phát triển dự án</td>
+                                <td>Nhân viên</td>
+                                <td>-</td>
+                            </tr>
+                            <tr>
+                                <td><input type="checkbox" /></td>
+                                <td>8</td>
+                                <td>
+                                    <div class="person-name">
+                                        <img class="name-icon" src="images/eye icon.png" alt="">
+                                        <div>Nguyễn Trần Văn Khanh</div>
+                                    </div>
+                                </td>
+                                <td>nguyentranvankhanh123@gmail.com</td>
+                                <td>Ban quản lí và phát triển dự án</td>
+                                <td>Nhân viên</td>
+                                <td>-</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                                                                <div class="pagination-table">
+                    <div class="pagination-block">
+                        <div class="pagination">
+                            <a href="#"><img src="Content/images/Previous-Icon.png" alt=""></a>
+                            <a href="#" class="active">1</a>
+                            <a href="#">2</a>
+                            <a href="#">3</a>
+                            <a href="#">4</a>
+                            <a href="#">5</a>
+                            <a href="#">6</a>
+                            <a href="#"><img src="Content/images/Next-Icon.png" alt=""></a>
+                        </div>
+                    </div>
+                    <div class="page-count">Trang 1 trên 10 (90 bản ghi)</div>
+                </div>
                             </div>
                         </div>
                         <div class="footer-button w-clearfix">

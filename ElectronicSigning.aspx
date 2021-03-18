@@ -434,11 +434,11 @@
                                     <div class="state">
                                         <div class="name-text">Trạng thái</div>
                                     </div>
-                                </div>
-                                <div class="table-background" id="lichsulog">
+                                    </div>
+                                    <div class="table-background" id="lichsulog">
                                   
+                                    </div>
                                 </div>
-                            </div>
                             </div>
                         </div>
                     </div>

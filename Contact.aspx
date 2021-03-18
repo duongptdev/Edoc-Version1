@@ -14,6 +14,7 @@
     <link href="Content/css/normalize.css" rel="stylesheet" type="text/css">
     <link href="Content/css/webflow.css" rel="stylesheet" type="text/css">
     <link href="Content/css/edoc.webflow.css" rel="stylesheet" type="text/css">
+    <link href="Content/bootstrap.min.css" rel="stylesheet" />
     <!-- [if lt IE 9]><script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.min.js" type="text/javascript"></script><![endif] -->
     <script
         type="text/javascript">!function (o, c) { var n = c.documentElement, t = " w-mod-"; n.className += t + "js", ("ontouchstart" in o || o.DocumentTouch && c instanceof DocumentTouch) && (n.className += t + "touch") }(window, document);</script>
@@ -161,116 +162,123 @@
             </div>
         </div>
     </header>
-    <div class="w-layout-grid dashboard-grid">
-        <div id="w-node-7889c68f6827-595a19e4" class="menu-left">
-            <div class="title-menu">danh bạ</div>
-            <a href="#" class="menu-link w-inline-block">
-                <div class="item-menu-container">
-                    <div class="menu-text-link">Tất cả liên hệ</div>
-                </div>
-            </a>
-            <a href="#" class="menu-link w-inline-block">
-                <div class="item-menu-container space-between">
-                    <div class="item-left">
-                        <div class="menu-text-link">Nhóm</div>
+
+    <div class="container-fluid">
+        <div class="row row-margin">
+            <div class="col-sm-2">
+                <div id="w-node-7889c68f6827-595a19e4" class="menu-left contact-menu">
+                <div class="title-menu">Danh bạ</div>
+                <a href="#" class="menu-link w-inline-block">
+                    <div class="item-menu-container">
+                        <div class="menu-text-link">Tất cả liên hệ</div>
                     </div>
-                    <div class="item-right"><img src="Content/images/Group-15086_1.png" alt="" /></div>
-                </div>
-            </a>
-            <div class="add-folder-wrapper">
-                <a href="" class="add-folder-dropdown">
-                    <img style="margin-right: 8px;" src="Content/images/add-icon.png" alt="" />
-                    <div>Thêm nhóm</div>   
                 </a>
-            </div>
-        </div>
-        <div class="work-area">
-            <div class="heading-container">
-                <div class="heading-text">Tất cả liên hệ</div>
-                                    <div class="search-and-filter">
-                         <div class="search-block">
-                             
-                            <input type="search" class="search-input-block w-input" name="query" placeholder="Tìm kiếm tài liệu" id="search">
-                                <a href="" class="search-icon-button"><img src="Content/images/search-icon.png" alt=""></a>
+                <a href="#" class="menu-link w-inline-block">
+                    <div class="item-menu-container space-between">
+                        <div class="item-left">
+                            <div class="menu-text-link">Nhóm</div>
                         </div>
-
-                        <div class="divider-search"></div>
-                <a data-w-id="b7306d4b-9b2b-8819-9a89-2495b3b6303b" href="#" class="contact-button w-button">Thêm liên
-                    hệ</a>
+                        <div class="item-right"><img src="Content/images/Group-15086_1.png" alt="" /></div>
                     </div>
+                </a>
+                <div class="add-folder-wrapper">
+                    <a href="" class="add-folder-dropdown">
+                        <img style="margin-right: 8px;" src="Content/images/add-icon.png" alt="" />
+                        <div>Thêm nhóm</div>   
+                    </a>
+                </div>
             </div>
-            <div class="subtitle-heading">05 liên hệ</div>
-            <div class="contact-table">
-                        <table class="contact-table-ui">
+            </div>
+            <div class="col-sm-10">
+                <div class="work-area">
+                <div class="heading-container">
+                    <div class="heading-text">Tất cả liên hệ</div>
+                                        <div class="search-and-filter">
+                             <div class="search-block">
+                             
+                                <input type="search" class="search-input-block w-input" name="query" placeholder="Tìm kiếm tài liệu" id="search">
+                                    <a href="" class="search-icon-button"><img src="Content/images/search-icon.png" alt=""></a>
+                            </div>
 
-                            <colgroup>
-                                <col width="30" />
-                                <col width="150" />
-                                <col width="100" />
-                                <col width="100" />
-                                <col width="100" />
-                                <col width="100" />
-                            </colgroup>
+                            <div class="divider-search"></div>
+                    <a data-w-id="b7306d4b-9b2b-8819-9a89-2495b3b6303b" href="#" class="contact-button w-button">Thêm liên
+                        hệ</a>
+                        </div>
+                </div>
+                <div class="subtitle-heading">05 liên hệ</div>
+                <div class="contact-table">
+                            <table class="contact-table-ui">
 
-                            <thead style="border-top: 1px solid #B3BAC5;">
-                                <tr>
-                                    <th></th>
-                                    <th>Họ và tên</th>
-                                    <th>Địa chỉ Email</th>
-                                    <th>Số điện thoại</th>
-                                    <th>Nhóm</th>
-                                    <th></th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr>
-                                    <td><input type="checkbox" name="" id=""></td>
-                                    <td>
-                                        Nguyen Tran Van Khanh
-                                    </td>
-                                    <td>nguyenvankhanh123@gmail.com</td>
-                                    <td>+84 972 373 2115</td>
-                                    <td>NACENCOMM</td>
-                                    <td>
-                                                                            <div data-hover="" data-delay="0" class="w-dropdown">
-                                        <div class="dropdown-toggle-6 w-dropdown-toggle">
-                                            <img src="Content/images/Group-15086_1.png"
-                                                loading="lazy" alt="function">
+                                <colgroup>
+                                    <col width="30" />
+                                    <col width="150" />
+                                    <col width="100" />
+                                    <col width="100" />
+                                    <col width="100" />
+                                    <col width="100" />
+                                </colgroup>
+
+                                <thead style="border-top: 1px solid #B3BAC5;">
+                                    <tr>
+                                        <th></th>
+                                        <th>Họ và tên</th>
+                                        <th>Địa chỉ Email</th>
+                                        <th>Số điện thoại</th>
+                                        <th>Nhóm</th>
+                                        <th></th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td><input type="checkbox" name="" id=""></td>
+                                        <td>
+                                            Nguyen Tran Van Khanh
+                                        </td>
+                                        <td>nguyenvankhanh123@gmail.com</td>
+                                        <td>+84 972 373 2115</td>
+                                        <td>NACENCOMM</td>
+                                        <td>
+                                                                                <div data-hover="" data-delay="0" class="w-dropdown">
+                                            <div class="dropdown-toggle-6 w-dropdown-toggle">
+                                                <img src="Content/images/Group-15086_1.png"
+                                                    loading="lazy" alt="function">
+                                            </div>
+                                            <nav class="w-dropdown-list">
+                                                <a id="contact-function-link" href="#" class="w-dropdown-link">Chỉnh sửa</a>
+                                                <a id="contact-function-link" href="#" class="w-dropdown-link add-group">Thêm vào nhóm</a>
+                                                <a href="#" class="w-dropdown-link">Xoá liên hệ</a>
+                                            </nav>
                                         </div>
-                                        <nav class="w-dropdown-list">
-                                            <a id="contact-function-link" href="#" class="w-dropdown-link">Chỉnh sửa</a>
-                                            <a id="contact-function-link" href="#" class="w-dropdown-link add-group">Thêm vào nhóm</a>
-                                            <a href="#" class="w-dropdown-link">Xoá liên hệ</a>
-                                        </nav>
-                                    </div>
-                                    </td>
-                                </tr>
+                                        </td>
+                                    </tr>
 
-                                <tr>
-                                    <td><input type="checkbox" name="" id=""></td>
-                                    <td>
-                                        Nguyen Tran Van Khanh
-                                    </td>
-                                    <td>nguyenvankhanh123@gmail.com</td>
-                                    <td>+84 972 373 2115</td>
-                                    <td>NACENCOMM</td>
-                                    <td>
-                                                                            <div data-hover="" data-delay="0" class="w-dropdown">
-                                        <div class="dropdown-toggle-6 w-dropdown-toggle">
-                                            <img src="Content/images/Group-15086_1.png"
-                                                loading="lazy" alt="function">
+                                    <tr>
+                                        <td><input type="checkbox" name="" id=""></td>
+                                        <td>
+                                            Nguyen Tran Van Khanh
+                                        </td>
+                                        <td>nguyenvankhanh123@gmail.com</td>
+                                        <td>+84 972 373 2115</td>
+                                        <td>NACENCOMM</td>
+                                        <td>
+                                                                                <div data-hover="" data-delay="0" class="w-dropdown">
+                                            <div class="dropdown-toggle-6 w-dropdown-toggle">
+                                                <img src="Content/images/Group-15086_1.png"
+                                                    loading="lazy" alt="function">
+                                            </div>
+                                            <nav class="w-dropdown-list">
+                                                <a id="contact-function-link" href="#" class="w-dropdown-link">Chỉnh sửa</a>
+                                                <a id="contact-function-link" href="#" class="w-dropdown-link add-group">Thêm vào nhóm</a>
+                                                <a href="#" class="w-dropdown-link">Xoá liên hệ</a>
+                                            </nav>
                                         </div>
-                                        <nav class="w-dropdown-list">
-                                            <a id="contact-function-link" href="#" class="w-dropdown-link">Chỉnh sửa</a>
-                                            <a id="contact-function-link" href="#" class="w-dropdown-link add-group">Thêm vào nhóm</a>
-                                            <a href="#" class="w-dropdown-link">Xoá liên hệ</a>
-                                        </nav>
-                                    </div>
-                                    </td>
-                                </tr>
-                            </tbody>
-                        </table>
-                    </div>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+            </div>
+            </div>
         </div>
     </div>
     <script src="https://d3e54v103j8qbb.cloudfront.net/js/jquery-3.5.1.min.dc5e7f18c8.js?site=5fc9e8d6d24a3a09aec5cdc3"

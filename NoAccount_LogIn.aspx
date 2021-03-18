@@ -79,7 +79,7 @@
             <ClientSideEvents CallbackComplete="LoginComp" />
         </dx:ASPxCallback>
 
-        <div class="container">
+        <div class="container-fluid">
             <div class="card">
                 <div class="card-content">
                     <div class="content-container">

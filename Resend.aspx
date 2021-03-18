@@ -21,7 +21,7 @@
 </head>
 <body>
      <form id="form1" runat="server">
-  <div class="container">
+  <div class="container-fluid">
     <div class="center-content">
       <div class="heading-card">Email của bạn đã nhận link kích hoạt!</div>
       <div class="subtitle-card center">Có vẻ chúng tôi đã gửi link kích hoạt đến Email <a href="#" class="link">

@@ -7,7 +7,7 @@
 
 <head>
     <meta charset="utf-8">
-    <title>Set New Password</title>
+    <title>Forgot Password</title>
     <meta content="width=device-width, initial-scale=1" name="viewport">
     <meta content="Webflow" name="generator">
     <link href="Content/css/normalize.css" rel="stylesheet" type="text/css">
@@ -21,7 +21,7 @@
 </head>
 
 <body>
-    <div class="container">
+    <div class="container-fluid">
         <div class="card password-card">
             <div class="card-content">
                 <div class="content-container top-password">

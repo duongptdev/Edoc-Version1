@@ -147,7 +147,7 @@ body {
     align-items: stretch;
 }
 
-.container {
+/*.container {
     position: fixed;
     left: 0%;
     top: 5%;
@@ -162,7 +162,7 @@ body {
     -webkit-align-items: center;
     -ms-flex-align: center;
     align-items: center;
-}
+}*/
 
 .grid {
     -ms-grid-columns: 1.5fr 1fr;
@@ -205,6 +205,7 @@ body {
     display: flex;
     width: 1040px;
     position: relative;
+    margin-top: 50px;
     margin-right: auto;
     margin-left: auto;
     -webkit-box-orient: horizontal;
@@ -432,7 +433,7 @@ body {
     display: -webkit-flex;
     display: -ms-flexbox;
     display: flex;
-    margin-top: 20px;
+    margin: 20px 0px;
     -webkit-box-pack: center;
     -webkit-justify-content: center;
     -ms-flex-pack: center;
@@ -954,6 +955,10 @@ body {
     grid-template-rows: auto;
 }
 
+.row.row-margin {
+    margin-top: 44px;
+}
+
 .nav-logo-link {
     display: -webkit-box;
     display: -webkit-flex;
@@ -1077,7 +1082,7 @@ body {
     display: -webkit-flex;
     display: -ms-flexbox;
     display: flex;
-    width: 232px;
+    padding-left: 10px;
     -webkit-box-orient: vertical;
     -webkit-box-direction: normal;
     -webkit-flex-direction: column;
@@ -1089,12 +1094,16 @@ body {
     align-items: stretch;
 }
 
+.menu-left.contact-menu {
+    padding-left: 20px;
+}
+
 .menu-left.add-margin {
     margin-right: 64px;
 }
 
 .work-area {
-    margin-right: 40px;
+    margin: 0 20px;
 }
 
 .work-area.max-width {
@@ -2115,6 +2124,33 @@ body {
     text-align: center;
 }
 
+.content-template-form {
+    text-align: center;
+}
+
+.template-form-body {
+    padding: 32px 84px;
+}
+
+.title-template-form {
+    font-family: "Helvetica neue", sans-serif;
+    color: #253858;
+    font-size: 16px;
+    font-weight: 500;
+}
+
+.subtitle-template-form {
+    font-family: "Helvetica neue", sans-serif;
+    color: #42526E;
+    font-size: 14px;
+    font-weight: 400;
+    margin-top: 12px;
+}
+
+.create-template-form {
+    padding: 56px 10px 0 10px;
+}
+
 .voided-form-body {
     padding: 32px 24px;
 }
@@ -2216,6 +2252,13 @@ body {
     justify-content: flex-end;
     margin-bottom: 32px;
     padding-right: 42px;
+}
+
+.signature-form-button {
+    width: 100%;
+    display: flex;
+    justify-content: flex-end;
+    margin-top: 64px;
 }
 
 .right-contact-button {
@@ -4334,7 +4377,7 @@ body {
     display: -webkit-flex;
     display: -ms-flexbox;
     display: flex;
-    margin-right: 64px;
+    padding-left: 20px;
     -webkit-box-orient: vertical;
     -webkit-box-direction: normal;
     -webkit-flex-direction: column;
@@ -4347,11 +4390,37 @@ body {
 }
 
 .setting-content {
-    padding-right: 40px;
-    -webkit-box-flex: 1;
-    -webkit-flex: 1;
-    -ms-flex: 1;
-    flex: 1;
+    width: 510px;
+}
+
+.digital-signature-setting {
+    margin-top: 36px;
+}
+
+.set-signature-wrapper {
+    width: 402px;
+}
+
+.title-input {
+    font-family: "Helvetica neue", sans-serif;
+    color: #505F79;
+    font-size: 13px;
+    font-weight: 500;
+}
+
+.signature-input {
+    display: flex;
+    align-items: center;
+    margin-top: 20px;
+}
+
+.code-input {
+    margin-left: 12px;
+    height: auto;
+    margin-bottom: 0px;
+    padding: 12px;
+    border: 1px solid #7A869A;
+    border-radius: 2px;
 }
 
 .menu-item-link {
@@ -4941,6 +5010,13 @@ body {
     background-repeat: no-repeat;*/
 }
 
+.signature-select {
+    margin-top: 12px;
+    padding: 12px;
+    border: 1px solid #7A869A;
+    border-radius: 2px;
+}
+
 .sender-radio {
     margin-top: 12px;
     display: flex;
@@ -4949,7 +5025,7 @@ body {
 
 .radio-block {
     display: flex;
-    align-items: center;
+    justify-content: center;
     margin-left: 28px;
 }
 
@@ -5007,8 +5083,7 @@ body {
     display: -ms-flexbox;
     display: flex;
     width: 100%;
-    margin-top: 48px;
-    margin-bottom: 36px;
+    margin: 36px 0;
     -webkit-box-pack: start;
     -webkit-justify-content: flex-start;
     -ms-flex-pack: start;

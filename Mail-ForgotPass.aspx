@@ -19,7 +19,7 @@
 </head>
 
 <body>
-    <div class="container">
+    <div class="container-fluid">
         <div class="card password-card">
             <div class="card-content">
                 <div class="content-container top-password">
@@ -30,7 +30,7 @@
                     <div class="email-form w-form">
                     
                             <label for="Email" class="form-label">Email*</label><input type="text" class="form-field w-input" autofocus="true"
-                                name="OTP-password" placeholder="Nhập Email của bản"
+                                name="OTP-password" placeholder="Nhập Email của bạn"
                                 title="Vui lòng nhập đúng mã xác minh" id="otp-password" required="">
                     </div><input type="submit" value="Xác nhận" class="form-button button-color button-width w-button">
                   

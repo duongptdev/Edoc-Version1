@@ -19,7 +19,7 @@
 </head>
 
 <body>
-    <div class="container">
+    <div class="container-fluid">
         <div class="card password-card">
             <div class="card-content">
                 <div class="content-container top-password">

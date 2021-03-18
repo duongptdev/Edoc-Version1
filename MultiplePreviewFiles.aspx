@@ -162,9 +162,9 @@
             </div>
             <div class="file-check-info">
                 <div class="check-content">
-                    <div class="good-info">Thông tin hợp lệ: <span class="success-info">78/90</span></div>
+                    <div class="good-info">Thông tin hợp lệ: <span class="success-info">90/90</span></div>
                     <div class="check-divider"></div>
-                    <div class="wrong-info-text">Thông tin không hợp lệ: <span class="failed-info">12/90</span></div>
+                    <div class="wrong-info-text">Thông tin không hợp lệ: <span class="failed-info">0/90</span></div>
                     <div class="check-divider"></div>
                     <a href="#" class="view-all-file w-inline-block"><img src="Content/images/eye-icon.png" loading="lazy"
                             alt="">
@@ -180,37 +180,30 @@
                 <div class="table-wrapper">
                     <table class="table-ui">
                         <colgroup>
-                            <col width="30" />
-                            <col width="50" />
-                            <col width="100" />
+                            <col width="20" />
+                            <col width="25" />
+                            <col width="120" />
+                            <col width="150" />
+                            <col width="130" />
+                            <col width="70" />
                             <col width="200" />
-                            <col width="300" />
-                            <col width="250" />
-                            <col width="150" />
-                            <col width="150" />
-                            <col width="130" />
-                            <col width="130" />
                         </colgroup>
 
                         <thead>
                             <tr>
                                 <th><input type="checkbox" /></th>
                                 <th>STT</th>
-                                <th>Thời gian</th>
                                 <th>Tên CBCNV</th>
                                 <th>Email</th>
                                 <th>Bộ phận</th>
                                 <th>Chức vụ</th>
-                                <th>Lương cơ bản</th>
-                                <th>Lương SP</th>
-                                <th>PC ăn trưa</th>
+                                <th>-</th>
                             </tr>
                         </thead>
                         <tbody>
                             <tr>
                                 <td><input type="checkbox" /></td>
                                 <td>1</td>
-                                <td>30/ 01/2021</td>
                                 <td>
                                     <div class="person-name">
                                         <img class="name-icon" src="images/eye icon.png" alt="">
@@ -220,14 +213,11 @@
                                 <td>tam@cavn.vn</td>
                                 <td>Ban Giám Đốc</td>
                                 <td>Giám đốc</td>
-                                <td>4,750,000</td>
-                                <td>1,000,000</td>
-                                <td>550,000</td>
+                                <td>-</td>
                             </tr>
                             <tr>
                                 <td><input type="checkbox" /></td>
                                 <td>2</td>
-                                <td>30/ 01/2021</td>
                                 <td>
                                     <div class="person-name">
                                         <img class="name-icon" src="images/eye icon.png" alt="">
@@ -237,14 +227,11 @@
                                 <td>dochuc@cavn.vn</td>
                                 <td>Phòng Kế Toán</td>
                                 <td>Kế toán trưởng</td>
-                                <td>4,750,000</td>
-                                <td>1,000,000</td>
-                                <td>550,000</td>
+                                <td>-</td>
                             </tr>
                             <tr>
                                 <td><input type="checkbox" /></td>
                                 <td>3</td>
-                                <td>30/ 01/2021</td>
                                 <td>
                                     <div class="person-name">
                                         <img class="name-icon" src="images/eye icon.png" alt="">
@@ -254,14 +241,11 @@
                                 <td>thuydt@cavn.vn</td>
                                 <td>Phòng Hành Chính</td>
                                 <td>Thủ quỹ</td>
-                                <td>4,750,000</td>
-                                <td>1,000,000</td>
-                                <td>550,000</td>
+                                <td>-</td>
                             </tr>
                             <tr>
                                 <td><input type="checkbox" /></td>
                                 <td>4</td>
-                                <td>30/ 01/2021</td>
                                 <td>
                                     <div class="person-name">
                                         <img class="name-icon" src="images/eye icon.png" alt="">
@@ -271,14 +255,11 @@
                                 <td>nguyentranvankhanh123@gmail.com</td>
                                 <td>Ban quản lí và phát triển dự án</td>
                                 <td>Nhân viên</td>
-                                <td>4,750,000</td>
-                                <td>1,000,000</td>
-                                <td>550,000</td>
+                                <td>-</td>
                             </tr>
                             <tr>
                                 <td><input type="checkbox" /></td>
                                 <td>5</td>
-                                <td>30/ 01/2021</td>
                                 <td>
                                     <div class="person-name">
                                         <img class="name-icon" src="images/eye icon.png" alt="">
@@ -288,14 +269,11 @@
                                 <td>nguyentranvankhanh123@gmail.com</td>
                                 <td>Ban quản lí và phát triển dự án</td>
                                 <td>Nhân viên</td>
-                                <td>4,750,000</td>
-                                <td>1,000,000</td>
-                                <td>550,000</td>
+                                <td>-</td>
                             </tr>
                             <tr>
                                 <td><input type="checkbox" /></td>
                                 <td>6</td>
-                                <td>30/ 01/2021</td>
                                 <td>
                                     <div class="person-name">
                                         <img class="name-icon" src="images/eye icon.png" alt="">
@@ -305,14 +283,11 @@
                                 <td>nguyentranvankhanh123@gmail.com</td>
                                 <td>Ban quản lí và phát triển dự án</td>
                                 <td>Nhân viên</td>
-                                <td>4,750,000</td>
-                                <td>1,000,000</td>
-                                <td>550,000</td>
+                                <td>-</td>
                             </tr>
                             <tr>
                                 <td><input type="checkbox" /></td>
                                 <td>7</td>
-                                <td>30/ 01/2021</td>
                                 <td>
                                     <div class="person-name">
                                         <img class="name-icon" src="images/eye icon.png" alt="">
@@ -322,14 +297,11 @@
                                 <td>nguyentranvankhanh123@gmail.com</td>
                                 <td>Ban quản lí và phát triển dự án</td>
                                 <td>Nhân viên</td>
-                                <td>4,750,000</td>
-                                <td>1,000,000</td>
-                                <td>550,000</td>
+                                <td>-</td>
                             </tr>
                             <tr>
                                 <td><input type="checkbox" /></td>
                                 <td>8</td>
-                                <td>30/ 01/2021</td>
                                 <td>
                                     <div class="person-name">
                                         <img class="name-icon" src="images/eye icon.png" alt="">
@@ -339,9 +311,7 @@
                                 <td>nguyentranvankhanh123@gmail.com</td>
                                 <td>Ban quản lí và phát triển dự án</td>
                                 <td>Nhân viên</td>
-                                <td>4,750,000</td>
-                                <td>1,000,000</td>
-                                <td>550,000</td>
+                                <td>-</td>
                             </tr>
                         </tbody>
                     </table>

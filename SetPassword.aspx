@@ -21,7 +21,7 @@
 </head>
 <body>
     <form id="form1" runat="server">
-        <div class="container">
+        <div class="container-fluid">
             <div class="card">
                 <div class="card-content">
                     <div class="content-container">
