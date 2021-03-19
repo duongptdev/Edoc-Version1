@@ -40,9 +40,9 @@
         <div class="contact-form">
             <div class="heading-modal">
                 <div class="contact-text">Danh bạ</div>
-                <div class="close-button">
+                <a href="#" class="close-button" onclick="closeContactModal()">
                     <img src="Content/images/Icons-Close-16px.svg" loading="lazy" alt="Close Modal">
-                </div>
+                </a>
             </div>
             <div class="contact-form-body">
                 <div class="contact-form-menu">
@@ -61,7 +61,7 @@
                         <form action="/search" class="search-block w-form">
                             <input type="search" class="search-input-block w-input" name="query"
                                 placeholder="Tìm kiếm tài liệu" id="search" required="">
-                                <a href="" class="search-icon-button"><img src="/images/search-icon.png" alt=""></a>
+                                <a href="" class="search-icon-button"><img src="Content/images/search-icon.png" alt=""></a>
                         </form>
                     </div>
                     <div class="contact-table">
@@ -69,7 +69,7 @@
 
                             <colgroup>
                                 <col width="30" />
-                                <col width="150" />
+                                <col width="160" />
                                 <col width="100" />
                                 <col width="100" />
                                 <col width="100" />
@@ -86,7 +86,7 @@
                             </thead>
                             <tbody>
                                 <tr>
-                                    <td><input type="radio" name="" id=""></td>
+                                    <td><input type="radio" name="contact" id=""></td>
                                     <td>
                                         Nguyen Tran Van Khanh
                                     </td>
@@ -96,7 +96,7 @@
                                 </tr>
 
                                 <tr>
-                                    <td><input type="radio" name="" id=""></td>
+                                    <td><input type="radio" name="contact" id=""></td>
                                     <td>
                                         Nguyen Tran Van Khanh
                                     </td>
@@ -252,7 +252,7 @@
                                                     <div class="name-field">
                                                         <input id="name1" type="text" name="namenn" class="text-field-3 w-input"
                                                             placeholder="Nhập tên người nhận" />
-                                                        <a id="contact-button" href="#" class="eye-icon w-inline-block">
+                                                        <a href="#" class="eye-icon w-inline-block" onclick="showContactModal()">
                                                             <img
                                                                 src="Content/images/Contact-Icon.png" loading="lazy" alt=""
                                                                 class="eye-image" />
@@ -338,19 +338,14 @@
         <script type="text/javascript">
 
             function showContactModal() {
-
-                var contactButton = document.querySelector("#contact-button");
                 var contactModal = document.querySelector(".add-contact-modal.hidden-block");
-                var closeContactModal = document.querySelector(".close-button");
+                contactModal.classList.remove("hidden-block");
 
-                contactButton.addEventListener("click", function () {
-                    contactModal.classList.remove("hidden-block");
-                });
+            }
 
-                closeContactModal.addEventListener("click", function () {
-                    contactModal.classList.add("hidden-block");
-                });
-
+            function closeContactModal() {
+                var contactModal = document.querySelector(".add-contact-modal");
+                contactModal.classList.add("hidden-block");
             }
 
             $(document).ready(function () {

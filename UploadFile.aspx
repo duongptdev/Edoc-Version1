@@ -25,21 +25,16 @@
     <script src="Scripts/jquery-3.3.1.min.js"></script>
     <script>
 
-            (function voidedRequestClickHandle() {
-
-                var renameButton = document.querySelector(".w-dropdown-link.rename-file");
+            function showRenameModal() {
                 var renameModal = document.querySelector(".rename-background-modal.hidden-block");
+                renameModal.classList.remove("hidden-block");
 
-                var closeRenameBtn = document.querySelector("#voided-close");
+            }
 
-                renameButton.addEventListener("click", function () {
-                    renameModal.classList.remove("hidden-block");
-                });
-
-                closeRenameBtn.addEventListener("click", function () {
-                    renameModal.classList.add("hidden-block");
-                });
-            })();
+            function closeRenameModal() {
+                var renameModal = document.querySelector(".rename-background-modal");
+                renameModal.classList.add("hidden-block");
+            }
 
         $(document).ready(function () {
             var name = sessionStorage.getItem("name");
@@ -104,9 +99,9 @@
         <div class="voided-form">
             <div class="heading-modal">
                 <div class="contact-text">Đổi tên</div>
-                <div id="voided-close" class="close-button">
+                <a href="#" class="close-button" onclick="closeRenameModal()">
                     <img src="Content/images/Icons-Close-16px.svg" loading="lazy" alt="">
-                </div>
+                </a>
             </div>
             <div class="voided-form-body">
                              
@@ -335,7 +330,7 @@
                                     </div>
                                     <nav class="w-dropdown-list">
 
-                                        <a href="#" id="renamefile" class="w-dropdown-link rename-file">Đổi tên tài liệu</a>
+                                        <a href="#" id="renamefile" class="w-dropdown-link" onclick="showRenameModal()">Đổi tên tài liệu</a>
                                         <a href="UploadFile.aspx" onclick="window.location.href='UploadFile.aspx'" class="w-dropdown-link">Tải lên bản thay thế</a>
                                         <a href="#" class="w-dropdown-link">Xem tài liệu</a>
                                         <a href="UploadFile.aspx" class="w-dropdown-link">Xóa tài liệu</a>

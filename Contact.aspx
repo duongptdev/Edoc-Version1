@@ -127,7 +127,47 @@
             </div>
         </div>
         <div class="nav-right">
-            <div class="nav-notification"><img src="Content/images/Mask-Group-653.png" loading="lazy" alt="Notification"></div>
+                            <a href="#" class="nav-notification" onclick="showNotificationblock()">
+                <img src="Content/images/Mask-Group-653.png" loading="lazy" alt="Notification">
+                  </a>
+                <div class="show-notification">
+                      <div class="news-card">
+                        <div class="news-label">
+                          <div class="news-label-text">Thông báo</div>
+                          <a href="#" class="read-all-button w-inline-block">
+                            <div>Đọc tất cả</div>
+                          </a>
+                        </div>
+                        <div class="news-divider"></div>
+                        <a href="#" class="news-item w-inline-block"><img style="padding-top: 6px;" src="Content/images/Sign-Request.svg" loading="lazy" alt="" class="new-item-icon">
+                          <div class="news-text-block">
+                            <div class="content-item"><span class="medium-text">nguyentranvankhanh123@gmail.com</span> <span class="change-color">yêu cầu ký</span> “Hợp<br>đồng dịch vụ VMI-NACENCOMM 13.7.20”</div>
+                            <div class="date-item">5 phút trước</div>
+                          </div>
+                        </a>
+                        <div class="news-divider"></div>
+                        <a href="#" class="news-item w-inline-block"><img style="padding-top: 6px;" src="Content/images/Reject-Request.svg" loading="lazy" alt="" class="new-item-icon">
+                          <div class="news-text-block">
+                            <div class="content-item read-state"><span class="medium-text">nguyentranvankhanh123@gmail.com</span> <span class="change-color">yêu cầu ký</span> “Hợp<br>đồng dịch vụ VMI-NACENCOMM 13.7.20”</div>
+                            <div class="date-item">5 phút trước</div>
+                          </div>
+                        </a>
+                        <div class="news-divider"></div>
+                        <a href="#" class="news-item w-inline-block"><img style="padding-top: 6px;" src="Content/images/Setting-Request.svg" loading="lazy" alt="" class="new-item-icon">
+                          <div class="news-text-block">
+                            <div class="content-item read-state"><span class="medium-text">nguyentranvankhanh123@gmail.com</span> <span class="change-color">yêu cầu ký</span> “Hợp<br>đồng dịch vụ VMI-NACENCOMM 13.7.20”</div>
+                            <div class="date-item">5 phút trước</div>
+                          </div>
+                        </a>
+                        <div class="news-divider"></div>
+                        <a href="#" class="news-item w-inline-block"><img style="padding-top: 6px;" src="Content/images/Sign-Successful.svg" loading="lazy" alt="" class="new-item-icon">
+                          <div class="news-text-block">
+                            <div class="content-item read-state"><span class="medium-text">nguyentranvankhanh123@gmail.com</span> <span class="change-color">yêu cầu ký</span> “Hợp<br>đồng dịch vụ VMI-NACENCOMM 13.7.20”</div>
+                            <div class="date-item">5 phút trước</div>
+                          </div>
+                        </a>
+                      </div>
+                    </div>
             <div class="nav-divider"></div>
             <div class="nav-user">
                 <div class="user-avatar">
@@ -286,6 +326,11 @@
         crossorigin="anonymous"></script>
     <script src="Scripts/js/webflow.js" type="text/javascript"></script>
     <script src="Scripts/js/e-dropdown.js"></script>
+    <script>
+                function showNotificationblock() {
+                $(".show-notification").toggle();
+        }
+    </script>
     <!-- [if lte IE 9]><script src="https://cdnjs.cloudflare.com/ajax/libs/placeholders/3.0.2/placeholders.min.js"></script><![endif] -->
 </body>
 

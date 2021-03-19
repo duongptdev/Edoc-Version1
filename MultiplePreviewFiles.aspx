@@ -206,7 +206,7 @@
                                 <td>1</td>
                                 <td>
                                     <div class="person-name">
-                                        <img class="name-icon" src="images/eye icon.png" alt="">
+                                        <img class="name-icon" src="Content/images/eye icon.png" alt="">
                                         <div>Phùng Huy Tâm</div>
                                     </div>
                                 </td>
@@ -220,7 +220,7 @@
                                 <td>2</td>
                                 <td>
                                     <div class="person-name">
-                                        <img class="name-icon" src="images/eye icon.png" alt="">
+                                        <img class="name-icon" src="Content/images/eye icon.png" alt="">
                                         <div>Đỗ Thị Chúc</div>
                                     </div>
                                 </td>
@@ -234,7 +234,7 @@
                                 <td>3</td>
                                 <td>
                                     <div class="person-name">
-                                        <img class="name-icon" src="images/eye icon.png" alt="">
+                                        <img class="name-icon" src="Content/images/eye icon.png" alt="">
                                         <div>Đào Diệu Thúy</div>
                                     </div>
                                 </td>
@@ -248,7 +248,7 @@
                                 <td>4</td>
                                 <td>
                                     <div class="person-name">
-                                        <img class="name-icon" src="images/eye icon.png" alt="">
+                                        <img class="name-icon" src="Content/images/eye icon.png" alt="">
                                         <div>Nguyễn Trần Văn Khanh</div>
                                     </div>
                                 </td>
@@ -262,7 +262,7 @@
                                 <td>5</td>
                                 <td>
                                     <div class="person-name">
-                                        <img class="name-icon" src="images/eye icon.png" alt="">
+                                        <img class="name-icon" src="Content/images/eye icon.png" alt="">
                                         <div>Nguyễn Trần Văn Khanh</div>
                                     </div>
                                 </td>
@@ -276,7 +276,7 @@
                                 <td>6</td>
                                 <td>
                                     <div class="person-name">
-                                        <img class="name-icon" src="images/eye icon.png" alt="">
+                                        <img class="name-icon" src="Content/images/eye icon.png" alt="">
                                         <div>Nguyễn Trần Văn Khanh</div>
                                     </div>
                                 </td>
@@ -290,7 +290,7 @@
                                 <td>7</td>
                                 <td>
                                     <div class="person-name">
-                                        <img class="name-icon" src="images/eye icon.png" alt="">
+                                        <img class="name-icon" src="Content/images/eye icon.png" alt="">
                                         <div>Nguyễn Trần Văn Khanh</div>
                                     </div>
                                 </td>
@@ -304,7 +304,7 @@
                                 <td>8</td>
                                 <td>
                                     <div class="person-name">
-                                        <img class="name-icon" src="images/eye icon.png" alt="">
+                                        <img class="name-icon" src="Content/images/eye icon.png" alt="">
                                         <div>Nguyễn Trần Văn Khanh</div>
                                     </div>
                                 </td>

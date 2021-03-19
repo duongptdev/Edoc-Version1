@@ -293,7 +293,7 @@
                                 <th>Email</th>
                                 <th>Bộ phận</th>
                                 <th>Chức vụ</th>
-                                <th>-</th>
+                                <th>Trạng thái</th>
                             </tr>
                         </thead>
                         <tbody>
@@ -302,117 +302,157 @@
                                 <td>1</td>
                                 <td>
                                     <div class="person-name">
-                                        <img class="name-icon" src="images/eye icon.png" alt="">
+                                        <img class="name-icon" src="Content/images/eye icon.png" alt="">
                                         <div>Phùng Huy Tâm</div>
                                     </div>
                                 </td>
                                 <td>tam@cavn.vn</td>
                                 <td>Ban Giám Đốc</td>
                                 <td>Giám đốc</td>
-                                <td>-</td>
+                                <td>
+                                     <div class="person-name">
+                                        <img class="name-icon" src="Content/images/state-multisign.svg" alt="">
+                                        <div class="state-multi-text">Đang chờ</div>
+                                    </div>
+                                </td>
                             </tr>
                             <tr>
                                 <td><input type="checkbox" /></td>
                                 <td>2</td>
                                 <td>
                                     <div class="person-name">
-                                        <img class="name-icon" src="images/eye icon.png" alt="">
+                                        <img class="name-icon" src="Content/images/eye icon.png" alt="">
                                         <div>Đỗ Thị Chúc</div>
                                     </div>
                                 </td>
                                 <td>dochuc@cavn.vn</td>
                                 <td>Phòng Kế Toán</td>
                                 <td>Kế toán trưởng</td>
-                                <td>-</td>
+                                <td>
+                                                                         <div class="person-name">
+                                        <img class="name-icon" src="Content/images/state-multisign.svg" alt="">
+                                        <div class="state-multi-text">Đang chờ</div>
+                                    </div>
+                                </td>
                             </tr>
                             <tr>
                                 <td><input type="checkbox" /></td>
                                 <td>3</td>
                                 <td>
                                     <div class="person-name">
-                                        <img class="name-icon" src="images/eye icon.png" alt="">
+                                        <img class="name-icon" src="Content/images/eye icon.png" alt="">
                                         <div>Đào Diệu Thúy</div>
                                     </div>
                                 </td>
                                 <td>thuydt@cavn.vn</td>
                                 <td>Phòng Hành Chính</td>
                                 <td>Thủ quỹ</td>
-                                <td>-</td>
+                                <td>
+                                                                         <div class="person-name">
+                                        <img class="name-icon" src="Content/images/state-multisign.svg" alt="">
+                                        <div class="state-multi-text">Đang chờ</div>
+                                    </div>
+                                </td>
                             </tr>
                             <tr>
                                 <td><input type="checkbox" /></td>
                                 <td>4</td>
                                 <td>
                                     <div class="person-name">
-                                        <img class="name-icon" src="images/eye icon.png" alt="">
+                                        <img class="name-icon" src="Content/images/eye icon.png" alt="">
                                         <div>Nguyễn Trần Văn Khanh</div>
                                     </div>
                                 </td>
                                 <td>nguyentranvankhanh123@gmail.com</td>
                                 <td>Ban quản lí và phát triển dự án</td>
                                 <td>Nhân viên</td>
-                                <td>-</td>
+                                <td>
+                                                                         <div class="person-name">
+                                        <img class="name-icon" src="Content/images/state-multisign.svg" alt="">
+                                        <div class="state-multi-text">Đang chờ</div>
+                                    </div>
+                                </td>
                             </tr>
                             <tr>
                                 <td><input type="checkbox" /></td>
                                 <td>5</td>
                                 <td>
                                     <div class="person-name">
-                                        <img class="name-icon" src="images/eye icon.png" alt="">
+                                        <img class="name-icon" src="Content/images/eye icon.png" alt="">
                                         <div>Nguyễn Trần Văn Khanh</div>
                                     </div>
                                 </td>
                                 <td>nguyentranvankhanh123@gmail.com</td>
                                 <td>Ban quản lí và phát triển dự án</td>
                                 <td>Nhân viên</td>
-                                <td>-</td>
+                                <td>
+                                                                         <div class="person-name">
+                                        <img class="name-icon" src="Content/images/state-multisign.svg" alt="">
+                                        <div class="state-multi-text">Đang chờ</div>
+                                    </div>
+                                </td>
                             </tr>
                             <tr>
                                 <td><input type="checkbox" /></td>
                                 <td>6</td>
                                 <td>
                                     <div class="person-name">
-                                        <img class="name-icon" src="images/eye icon.png" alt="">
+                                        <img class="name-icon" src="Content/images/eye icon.png" alt="">
                                         <div>Nguyễn Trần Văn Khanh</div>
                                     </div>
                                 </td>
                                 <td>nguyentranvankhanh123@gmail.com</td>
                                 <td>Ban quản lí và phát triển dự án</td>
                                 <td>Nhân viên</td>
-                                <td>-</td>
+                                <td>
+                                                                         <div class="person-name">
+                                        <img class="name-icon" src="Content/images/state-multisign.svg" alt="">
+                                        <div class="state-multi-text">Đang chờ</div>
+                                    </div>
+                                </td>
                             </tr>
                             <tr>
                                 <td><input type="checkbox" /></td>
                                 <td>7</td>
                                 <td>
                                     <div class="person-name">
-                                        <img class="name-icon" src="images/eye icon.png" alt="">
+                                        <img class="name-icon" src="Content/images/eye icon.png" alt="">
                                         <div>Nguyễn Trần Văn Khanh</div>
                                     </div>
                                 </td>
                                 <td>nguyentranvankhanh123@gmail.com</td>
                                 <td>Ban quản lí và phát triển dự án</td>
                                 <td>Nhân viên</td>
-                                <td>-</td>
+                                <td>
+                                                                         <div class="person-name">
+                                        <img class="name-icon" src="Content/images/state-multisign.svg" alt="">
+                                        <div class="state-multi-text">Đang chờ</div>
+                                    </div>
+                                </td>
                             </tr>
                             <tr>
                                 <td><input type="checkbox" /></td>
                                 <td>8</td>
                                 <td>
                                     <div class="person-name">
-                                        <img class="name-icon" src="images/eye icon.png" alt="">
+                                        <img class="name-icon" src="Content/images/eye icon.png" alt="">
                                         <div>Nguyễn Trần Văn Khanh</div>
                                     </div>
                                 </td>
                                 <td>nguyentranvankhanh123@gmail.com</td>
                                 <td>Ban quản lí và phát triển dự án</td>
                                 <td>Nhân viên</td>
-                                <td>-</td>
+                                <td>
+                                                                         <div class="person-name">
+                                        <img class="name-icon" src="Content/images/state-multisign.svg" alt="">
+                                        <div class="state-multi-text">Đang chờ</div>
+                                    </div>
+                                </td>
                             </tr>
                         </tbody>
                     </table>
                 </div>
-                                                                <div class="pagination-table">
+                <div class="pagination-table">
                     <div class="pagination-block">
                         <div class="pagination">
                             <a href="#"><img src="Content/images/Previous-Icon.png" alt=""></a>

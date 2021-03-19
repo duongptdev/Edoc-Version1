@@ -98,6 +98,13 @@ body {
     line-height: 20px;
 }
 
+.state-multi-text {
+    font-family: "Helvetica neue", sans-serif;
+    color: #4C9AFF;
+    font-size: 13px;
+    font-weight: 500;
+}
+
 .utility-page-wrap {
     display: -webkit-box;
     display: -webkit-flex;
@@ -2994,7 +3001,8 @@ body {
     color: #253858;
     font-size: 13px;
     width: 100%;
-    padding-left: 0px;
+    padding-left: 10px;
+    text-align: left;
 }
 
 .margin-icon {
@@ -4394,6 +4402,11 @@ body {
 }
 
 .digital-signature-setting {
+    margin-top: 36px;
+    display: none;
+}
+
+.select-method-setting {
     margin-top: 36px;
 }
 
@@ -5801,6 +5814,7 @@ body {
     font-family: "Helvetica neue", sans-serif;
     color: #97a0af;
     font-size: 10px;
+    margin-top: 6px;
 }
 
 .change-color {
@@ -6077,9 +6091,11 @@ th:nth-child(2) {
 td {
     border-right: 1px solid #b4bac4;
     text-align: left;
-    padding-left: 8px;
-    padding-top: 8px;
-    padding-bottom: 8px;
+    padding: 14px 24px;
+}
+
+th:nth-child(2) {
+    padding-left: 14px;
 }
 
 td:nth-child(2) {
@@ -6090,11 +6106,19 @@ td:last-child {
     border: none;
 }
 
+td:first-child {
+    padding-left: 16px;
+}
+
+th:first-child {
+    padding-left: 16px;
+}
+
 th {
     border-right: 1px solid #b4bac4;
     text-align: left;
     background-color: #ebecf0;
-    padding: 14px 8px;
+    padding: 16px 24px;
 }
 
 th:last-child {

@@ -252,6 +252,11 @@ input[type="reset"] {
 button[disabled],
 html input[disabled] {
   cursor: default;
+  color: #B3BAC5;
+}
+
+button:focus {
+    outline: none;
 }
 /**
  * Remove inner padding and border in Firefox 4+.

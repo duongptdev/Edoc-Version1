@@ -46,7 +46,9 @@
         var trangky = [];
 
         function Getptky() {
+
             sessionStorage.setItem("ptky", "0");
+            //$("#digi-sign").prop('disabled', !$("#digi-sign").prop("disabled"))
             ptsign.push(0);
             var info = sessionStorage.getItem("signInfo");
             infosign.push(info);
@@ -56,7 +58,9 @@
             trangky.push(signpage);
         }
         function Getpthuck() {
+
             sessionStorage.setItem("ptky", "1");
+            //$("#elec-sign").prop('disabled', !$("#elec-sign").prop("disabled"))    
             $("#btnTiepTuc").removeAttr("disabled").removeClass("disable-button");
             ptsign.push(1);
             var info = sessionStorage.getItem("signInfo");
@@ -536,14 +540,14 @@
                     <div class="function-divider"></div>
                 </div>
                 <div class="function-button">
-                    <a href="#" class="signature-button w-button" onclick="Getpthuck()">
+                    <button type="button" id="digi-sign" class="signature-button w-button" onclick="Getpthuck()">
                         <img src="Content/images/Icons- D-Signature.png" class="margin-icon" alt="icon">
                         Chữ ký số
-                    </a>
-                    <a href="#" class="signature-button w-button" onclick="Getptky()">
+                    </button>
+                    <button type="button" id="elec-sign" class="signature-button w-button" onclick="Getptky()">
                         <img src="Content/images/Icons- E-Signature.png" class="margin-icon" alt="icon">
                         Chữ ký điện tử
-                    </a>
+                    </button>
                 </div>
                 <div class="sign-hint">Hướng dẫn: Chọn và khoanh vùng trường ký vào khu vực ký mong muốn</div>
             </div>

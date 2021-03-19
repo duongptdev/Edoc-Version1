@@ -8,6 +8,19 @@
     <script src="Scripts/jquery-3.3.1.min.js"></script>
     <script src="Scripts/js/e-dropdown.js"></script>
     <script>
+
+            function showMSSetting() {
+
+                
+                var msRadioButton = document.querySelector("#ms-sign");
+                var msCodeBlock = document.querySelector(".digital-signature-setting");
+
+                if (msRadioButton.checked) {
+                    msCodeBlock.style.display = 'block';
+                } else msCodeBlock.style.display = 'none';
+
+            }
+
         function myFunction() {
             var value = $("#sign-method").val();
             if (value == 1) {
@@ -140,16 +153,16 @@
                     <input type="submit" class="form-button button-color w-button" onclick="IdctsMobile()" value="Gửi" />
                 </div>--%>
 
-                    <div class="digital-signature-setting">
+                    <div class="select-method-setting">
                         <div class="title-input">Chọn phương thức ký:</div>
                         <div class="signature-input">
                                     <div style="margin-left: 0px;" class="radio-block">
-                                        <input id="sender" type="radio" name="signature" value="sender" />
-                                        <label for="sender" class="radio-label">Ký bằng USB Token</label>
+                                        <input id="usb-sign" type="radio" name="signature" value="usb-sign" onclick="showMSSetting()"/>
+                                        <label for="usb-sign" class="radio-label">Ký bằng USB Token</label>
                                     </div>
                                     <div class="radio-block">
-                                        <input id="recipient" type="radio" name="signature" value="recipient" />
-                                        <label for="recipient" class="radio-label">Ký bằng Mobile Sign</label>
+                                        <input id="ms-sign" type="radio" name="signature" value="ms-sign" onclick="showMSSetting()"/>
+                                        <label for="ms-sign" class="radio-label">Ký bằng Mobile Sign</label>
                                     </div>
                         </div>
                     </div>

@@ -1,9 +1,4 @@
 // JavaScript source code
-function showNotificationblock() {
-    $(".nav-notification").click(function () {
-        $(".show-notification").toggle();
-    });
-}
 
 (function showUserMenu() {
 
