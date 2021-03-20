@@ -66,6 +66,24 @@
         </div>
     </div>
 
+    <div class="delete-background-modal hidden-block">
+        <div class="voided-form">
+            <div class="heading-modal">
+                <div class="contact-text"></div>
+                <div id="delete-close" class="close-button">
+                    <img src="Content/images/Icons-Close-16px.svg" loading="lazy" alt="Close Modal">
+                </div>
+            </div>
+            <div class="delete-form-body">
+                <div>
+                    <div class="delete-modal-text">Thông tin liên hệ sẽ bị xóa.<br />
+                            Bạn có chắc chắn muốn tiếp tục?</div>
+                    <button type="submit" class="button-4 add-width w-button">Tiếp tục</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
     <div style="opacity:0" class="background-modal">
         <div class="modal-form add-contact-width">
             <div class="heading-modal">
@@ -286,7 +304,7 @@
                                             <nav class="w-dropdown-list">
                                                 <a id="contact-function-link" href="#" class="w-dropdown-link">Chỉnh sửa</a>
                                                 <a id="contact-function-link" href="#" class="w-dropdown-link add-group">Thêm vào nhóm</a>
-                                                <a href="#" class="w-dropdown-link">Xoá liên hệ</a>
+                                                <a href="#" class="w-dropdown-link" onclick="showDeleteAlert()">Xoá liên hệ</a>
                                             </nav>
                                         </div>
                                         </td>
@@ -327,6 +345,19 @@
     <script src="Scripts/js/webflow.js" type="text/javascript"></script>
     <script src="Scripts/js/e-dropdown.js"></script>
     <script>
+
+        function showDeleteAlert() {
+
+                var deleteModal = document.querySelector(".delete-background-modal.hidden-block");
+                var closeDeleteBtn = document.querySelector("#delete-close");
+
+                deleteModal.classList.remove("hidden-block");
+
+                closeDeleteBtn.addEventListener("click", function () {
+                    deleteModal.classList.add("hidden-block");
+                });
+        }
+
                 function showNotificationblock() {
                 $(".show-notification").toggle();
         }

@@ -24,6 +24,18 @@
     <link href="Content/images/webclip.png" rel="apple-touch-icon">
     <script src="Scripts/jquery-3.3.1.min.js"></script>
     <script>
+        function showAlertModal() {
+
+                var deleteModal = document.querySelector(".delete-background-modal.hidden-block");
+
+                var closeDeleteBtn = document.querySelector("#delete-close");
+
+                deleteModal.classList.remove("hidden-block");
+
+                closeDeleteBtn.addEventListener("click", function () {
+                    deleteModal.classList.add("hidden-block");
+                });
+        }
 
             function showRenameModal() {
                 var renameModal = document.querySelector(".rename-background-modal.hidden-block");
@@ -124,12 +136,36 @@
         </div>
     </div>
 
+    <div class="delete-background-modal hidden-block">
+        <div class="voided-form">
+            <div class="heading-modal">
+                <div class="contact-text"></div>
+                <div id="delete-close" class="close-button">
+                    <img src="Content/images/Icons-Close-16px.svg" loading="lazy" alt="Close Modal">
+                </div>
+            </div>
+            <div class="delete-form-body">
+                <div>
+                    <div class="delete-modal-text">Bạn có muốn lưu văn bản trước khi thoát?</div>
+                    <div class="cancel-text-form">Mọi chỉnh sửa của bạn sẽ mất nếu bạn không lưu văn bản trước khi thoát</div>
+                                     <div class="cancel-form-button">
+                    <a href="../multiple-signatures/upload-file.html" aria-current="page"
+                        class="back-button w-button w--current">Bỏ qua</a>
+                    <button type="submit" class="button-4 w-button">Lưu và thoát</button>
+                </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
     <form id="form1" runat="server">
         <header id="nav" class="sticky-nav">
             <div class="close">
-                <a href="Index.aspx" class="back-to-home w-inline-block">
+                <a href="#" class="back-to-home w-inline-block" onclick="showAlertModal()">
                     <img src="Content/images/Icons-Close-16px.svg"
-                        loading="lazy" alt=""></a>
+                        loading="lazy" alt="">
+
+                </a>
             </div>
             <div class="step-tab">
                 <div class="done---step">
@@ -331,9 +367,9 @@
                                     <nav class="w-dropdown-list">
 
                                         <a href="#" id="renamefile" class="w-dropdown-link" onclick="showRenameModal()">Đổi tên tài liệu</a>
-                                        <a href="UploadFile.aspx" onclick="window.location.href='UploadFile.aspx'" class="w-dropdown-link">Tải lên bản thay thế</a>
+                                        <a onclick="window.location.href='UploadFile.aspx'" class="w-dropdown-link">Tải lên bản thay thế</a>
                                         <a href="#" class="w-dropdown-link">Xem tài liệu</a>
-                                        <a href="UploadFile.aspx" class="w-dropdown-link">Xóa tài liệu</a>
+                                        <a class="w-dropdown-link">Xóa tài liệu</a>
 
                                     </nav>
                                 </div>

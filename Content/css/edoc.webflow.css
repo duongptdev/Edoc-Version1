@@ -1964,6 +1964,12 @@ body {
     margin-bottom: 40px;
 }
 
+.cancel-form-button {
+    display: flex;
+    justify-content: flex-end;
+    margin-top: 64px;
+}
+
 .rename-form-button {
     display: flex;
     justify-content: flex-end;
@@ -2168,6 +2174,14 @@ body {
     font-size: 12px;
     margin-top: 12px;
     margin-bottom: 32px;
+}
+
+.cancel-text-form {
+    font-family: "Helvetica neue", sans-serif;
+    color: #253858;
+    font-size: 13px;
+    font-weight: 400;
+    margin-top: 12px;
 }
 
 .folder-hint-text {
@@ -2523,6 +2537,7 @@ body {
     font-family: "Helvetica neue", sans-serif;
     color: #253858;
     font-size: 13px;
+    font-weight: 500;
 }
 
 .div-block-17 {
