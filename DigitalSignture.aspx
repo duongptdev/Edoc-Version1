@@ -9,9 +9,12 @@
     <script src="Scripts/js/e-dropdown.js"></script>
     <script>
 
+        $(function() {
+            $("#day-custom").selectmenu();
+        });
+
             function showMSSetting() {
 
-                
                 var msRadioButton = document.querySelector("#ms-sign");
                 var msCodeBlock = document.querySelector(".digital-signature-setting");
 
@@ -170,11 +173,13 @@
                     <div class="digital-signature-setting">
                         <div class="title-input">Nhập mã:</div>
                         <div class="signature-input">
-                                 <select style="margin-top: 0px;" id="day-custom" class="signature-select">
-                                    <option value="waiting-state">Chọn loại mã</option>
-                                    <option value="waiting-state">Serial</option>
-                                    <option value="waiting-state">Mã đăng ký</option>
+                            <div style="width: 180px;">
+                                 <select class="filter-select" id="day-custom" name="day-custom">
+                                    <option value="">Chọn loại mã</option>
+                                    <option value="serial">Serial</option>
+                                    <option value="register-code">Mã đăng ký</option>
                                 </select>
+                            </div>
                             <input type="text"
                                 class="code-input w-input" maxlength="256" name="name" data-name="Name"
                                 placeholder="Nhập mã tại đây" id="name" required="">

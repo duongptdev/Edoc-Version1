@@ -11,7 +11,7 @@
     <meta content="Digital Signing" property="twitter:title">
     <meta content="width=device-width, initial-scale=1" name="viewport">
     <meta content="Webflow" name="generator">
-    <link href="Content/css/normalize.css" rel="stylesheet" type="text/css">
+<%--    <link href="Content/css/normalize.css" rel="stylesheet" type="text/css">--%>
     <link href="Content/css/webflow.css" rel="stylesheet" type="text/css">
     <link href="Content/css/edoc.webflow.css" rel="stylesheet" type="text/css">
     <script src="https://ajax.googleapis.com/ajax/libs/webfont/1.6.26/webfont.js" type="text/javascript"></script>
@@ -35,21 +35,25 @@
                 <div class="digital-content">
                     <div class="sign-method">
                         <div class="selection-label">Chọn phương thức ký số:</div>
-                        <select class="sign-select" id="sign-method">
-                            <option value="">Chọn phương thức ký</option>
-                            <option value="usb-token">Ký bằng USB Token</option>
-                            <option value="mobile-sign">Ký bằng Mobile Sign</option>
-                        </select>
+
+                            <select class="digital-filter-select" name="sign-method" id="sign-method">
+                                <option value="">Chọn phương thức ký</option>
+                                <option value="usb-token">Ký bằng USB Token</option>
+                                <option value="mobile-sign">Ký bằng Mobile Sign</option>
+                            </select>
+
                     </div>
-                    <div class="digital-cert-icate">
+                    <div class="digital-cert">
                         <div class="selection-label">Nhập mã đăng ký:</div>
-                        <input id="register-passcode" class="register-input" type="text">
+                        <input id="register-passcode" class="register-input" type="text" placeholder="Nhập mã đăng ký">
                     </div>
-                    <div class="digital-cert-icate">
+                    <div class="digital-cert">
                         <div class="selection-label">Chứng thư số:</div>
-                        <select class="sign-select" id="digital-cert">
-                            <option value="digital-certificate">5402BC5ACE669C20150000000379</option>
-                        </select>
+
+                            <select class="digital-filter-select" name="digital-cert" id="digital-cert">
+                                <option value="digital-certificate">5402BC5ACE669C20150000000379</option>
+                            </select>
+
                     </div>
                     <div id="usb-token" class="usb-token">
                         <div class="certificate-text">
@@ -724,6 +728,7 @@
         type="text/javascript" integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0="
         crossorigin="anonymous"></script>
     <script src="Scripts/js/webflow.js" type="text/javascript"></script>
+    <script src="Scripts/jquery-3.3.1.min.js"></script>
     <script src="Scripts/js/e-dropdown.js"></script>
     <script>
 

@@ -263,11 +263,11 @@
                         </div>
                 </div>
 
-                                <div class="filter-dropdown">
+                 <div class="filter-dropdown">
                         <div class="state-filter">
                             <div class="state-filter-text">Trạng thái</div>
-                            <select class="filter-select">
-                                <option value="waiting-state">Chờ ký</option>
+                            <select class="filter-select" name="filter-select" id="filter-select">
+                                <option value="waiting-state" selected="selected">Chờ ký</option>
                                 <option value="finish-state">Ký hoàn tất</option>
                                 <option value="reject-state">Từ chối</option>
                                 <option value="voided-state">Thu hồi</option>
@@ -292,12 +292,12 @@
                         </div>
                         <div class="date-filter">
                             <div class="state-filter-text">Thời gian</div>
-                            <select id="day-custom" class="filter-select">
-                                <option value="waiting-state">Tất cả</option>
-                                <option value="waiting-state">1 tháng trước</option>
-                                <option value="waiting-state">3 tháng trước</option>
-                                <option value="waiting-state">6 tháng trước</option>
-                                <option value="finish-state">Tuỳ chỉnh</option>
+                            <select class="filter-select" id="day-custom" name="day-custom">
+                                <option value="all-state">Tất cả</option>
+                                <option value="one-month-state">1 tháng trước</option>
+                                <option value="three-month-state">3 tháng trước</option>
+                                <option value="six-month-state">6 tháng trước</option>
+                                <option value="custom-state">Tuỳ chỉnh</option>
                             </select>
                         </div>
                              <div class="date-custom">
@@ -371,11 +371,12 @@
         type="text/javascript" integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0="
         crossorigin="anonymous"></script>
     <script src="Scripts/js/webflow.js" type="text/javascript"></script>
+    <script src="Scripts/jquery-3.3.1.min.js"></script>
     <script src="Scripts/js/e-dropdown.js"></script>
     <script>
 
-                function showNotificationblock() {
-                $(".show-notification").toggle();
+        function showNotificationblock() {
+           $(".show-notification").toggle();
         }
 
             (function deleteRequestClickHandle() {
@@ -398,11 +399,10 @@
             (function showCustomDay() {
 
                 var dateSelection = document.querySelector("#day-custom");
-
                 var dateCustomBlock = document.querySelector(".date-custom");
 
                 dateSelection.addEventListener('change', function () {
-                    var style = this.value == 'finish-state' ? 'flex' : 'none';
+                    var style = this.value == 'custom-state' ? 'flex' : 'none';
                     dateCustomBlock.style.display = style;
 
                 });

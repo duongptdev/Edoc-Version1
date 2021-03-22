@@ -17,6 +17,7 @@
     <link href="Content/css/normalize.css" rel="stylesheet" type="text/css">
     <link href="Content/css/webflow.css" rel="stylesheet" type="text/css">
     <link href="Content/css/edoc.webflow.css" rel="stylesheet" type="text/css">
+    <link href="Content/bootstrap.min.css" rel="stylesheet" />
     <!-- [if lt IE 9]><script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.min.js" type="text/javascript"></script><![endif] -->
     <script
         type="text/javascript">!function (o, c) { var n = c.documentElement, t = " w-mod-"; n.className += t + "js", ("ontouchstart" in o || o.DocumentTouch && c instanceof DocumentTouch) && (n.className += t + "touch") }(window, document);</script>
@@ -522,57 +523,52 @@
             </div>
             </div>
         </header>
-        <div class="add-sign-body">
-            <div class="function-signature">
-                <form action="review-and-send.html" class="function-container">
-                    <div class="dropdown-container">
-                        <div class="w-dropdown">
-                            <div class="dropdown-toggle-4 w-dropdown-toggle">
-                                <select class="dropdown-text" name="signer" id="signer">
-                                </select>
-                            </div>
-                        </div>
+        <div class="container-fluid">
+            <div class="row row-margin">
+                <div style="padding-left: 50px;" class="col-sm-2">
+                    <form action="review-and-send.html" class="function-container">
+                        <select class="filter-select" name="signer" id="signer"></select>
+                        <button id="selection-input" type="submit" class="w-hidden">Tiếp tục</button>
+                    </form>
+                    <div class="function-text">
+                        <div class="function-title">Gán trường ký</div>
+                        <div class="function-divider"></div>
                     </div>
-                    <button id="selection-input" type="submit" class="w-hidden">Tiếp tục</button>
-                </form>
-                <div class="function-text">
-                    <div class="function-title">Gán trường ký</div>
-                    <div class="function-divider"></div>
+                    <div class="function-button">
+                        <button type="button" id="digi-sign" class="signature-button w-button" onclick="Getpthuck()">
+                            <img src="Content/images/Icons- D-Signature.png" class="margin-icon" alt="icon">
+                            Chữ ký số
+                        </button>
+                        <button type="button" id="elec-sign" class="signature-button w-button" onclick="Getptky()">
+                            <img src="Content/images/Icons- E-Signature.png" class="margin-icon" alt="icon">
+                            Chữ ký điện tử
+                        </button>
+                    </div>
+                    <div class="sign-hint">Hướng dẫn: Chọn và khoanh vùng trường ký vào khu vực ký mong muốn</div>
                 </div>
-                <div class="function-button">
-                    <button type="button" id="digi-sign" class="signature-button w-button" onclick="Getpthuck()">
-                        <img src="Content/images/Icons- D-Signature.png" class="margin-icon" alt="icon">
-                        Chữ ký số
-                    </button>
-                    <button type="button" id="elec-sign" class="signature-button w-button" onclick="Getptky()">
-                        <img src="Content/images/Icons- E-Signature.png" class="margin-icon" alt="icon">
-                        Chữ ký điện tử
-                    </button>
+                <div class="col-sm-10">
+
+                    <div style="width: 100%;">
+                        <%--   <div style="float: left">
+                            <img src="Content/images/icons8-info-40.png" style="height: 32px" />
+                            Bấm và giữ chuột để chọn vùng ký! <a href="#" onclick="SignDoc()">Bấm vào đây để ký văn bản</a>
+                            <%--  &nbsp;&nbsp;&nbsp;<a href="#" onclick="RefreshDoc()">Xem văn bản đã ký</a>
+                        </div>--%>
+
+                        <table style="width: 100%">
+                            <tr>
+                                <td style="width: 100px">
+                                    <dx:ASPxButton ID="btnSign" runat="server" Text="Sign" OnClick="btnSign_Click" ClientVisible="false" />
+                                </td>
+                                <td></td>
+                            </tr>
+                        </table>
+                    </div>
+
+
+                    <div id="viewer1" style="width: 100%; height: 1000px;"></div>
+                    <%-- <iframe id="Iframe1" runat="server" width="100%" height="1000px"></iframe>--%>
                 </div>
-                <div class="sign-hint">Hướng dẫn: Chọn và khoanh vùng trường ký vào khu vực ký mong muốn</div>
-            </div>
-            <div class="pdf-viewer">
-
-                <div style="width: 100%; padding-bottom: 10px">
-                    <%--   <div style="float: left">
-                        <img src="Content/images/icons8-info-40.png" style="height: 32px" />
-                        Bấm và giữ chuột để chọn vùng ký! <a href="#" onclick="SignDoc()">Bấm vào đây để ký văn bản</a>
-                        <%--  &nbsp;&nbsp;&nbsp;<a href="#" onclick="RefreshDoc()">Xem văn bản đã ký</a>
-                    </div>--%>
-
-                    <table style="width: 100%">
-                        <tr>
-                            <td style="width: 100px">
-                                <dx:ASPxButton ID="btnSign" runat="server" Text="Sign" OnClick="btnSign_Click" ClientVisible="false" />
-                            </td>
-                            <td></td>
-                        </tr>
-                    </table>
-                </div>
-
-
-                <div id="viewer1" style="width: 100%; height: 1000px;"></div>
-                <%-- <iframe id="Iframe1" runat="server" width="100%" height="1000px"></iframe>--%>
             </div>
         </div>
         <div class="footer-button">

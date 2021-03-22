@@ -513,8 +513,8 @@
                     <div class="filter-dropdown">
                         <div class="state-filter">
                             <div class="state-filter-text">Trạng thái</div>
-                            <select class="filter-select">
-                                <option value="waiting-state">Chờ ký</option>
+                            <select class="filter-select" name="filter-select" id="filter-select">
+                                <option value="waiting-state" selected="selected">Chờ ký</option>
                                 <option value="finish-state">Ký hoàn tất</option>
                                 <option value="reject-state">Từ chối</option>
                                 <option value="voided-state">Thu hồi</option>
@@ -539,12 +539,12 @@
                         </div>
                         <div class="date-filter">
                             <div class="state-filter-text">Thời gian</div>
-                            <select id="day-custom" class="filter-select">
-                                <option value="waiting-state">Tất cả</option>
-                                <option value="waiting-state">1 tháng trước</option>
-                                <option value="waiting-state">3 tháng trước</option>
-                                <option value="waiting-state">6 tháng trước</option>
-                                <option value="finish-state">Tuỳ chỉnh</option>
+                            <select id="day-custom" class="filter-select" name="day-custom">
+                                <option value="all-state">Tất cả</option>
+                                <option value="one-month-state">1 tháng trước</option>
+                                <option value="three-month-state">3 tháng trước</option>
+                                <option value="six-month-state">6 tháng trước</option>
+                                <option value="custom-state">Tuỳ chỉnh</option>
                             </select>
                             <div class="date-custom">
                                 <div class="from-to-block">
@@ -850,7 +850,76 @@
                 <div class="work-area">
                     <div class="heading-container">
                         <div class="heading-text">Cùng bắt đầu với ca2.Sign!</div>
+                        <%--<div class="search-and-filter">
+                            <div class="search-block">
+
+                                <input type="search" class="search-input-block w-input" name="query" placeholder="Tìm kiếm tài liệu" id="search">
+                                <a href="" class="search-icon-button">
+                                    <img src="Content/images/search-icon.png" alt=""></a>
+                            </div>
+
+                            <div class="divider-search"></div>
+                            <div id="filter-button" class="filter-block">
+                                <img src="Content/images/Filter Icon.png" loading="lazy" alt="" class="filter-icon">
+                                <div class="filter-text">Bộ lọc</div>
+                            </div>
+                        </div>--%>
                     </div>
+
+                    <%--<div class="filter-dropdown">
+                        <div class="state-filter">
+                            <div class="state-filter-text">Trạng thái</div>
+                            <select name="filter-select" id="filter-select">
+                                <option value="waiting-state" selected="selected">Chờ ký</option>
+                                <option value="finish-state">Ký hoàn tất</option>
+                                <option value="reject-state">Từ chối</option>
+                                <option value="voided-state">Thu hồi</option>
+                                <option value="delete-state">Đã xoá</option>
+                                <option value="draft-state">Nháp</option>
+                            </select>
+                        </div>
+                        <div class="sender-filter">
+                            <div class="state-filter-text">Người gửi</div>
+                            <div class="sender-radio">
+                                <input id="all" type="radio" name="filter" value="all" />
+                                <label for="all" class="radio-label">Tất cả</label>
+                                <div class="radio-block">
+                                    <input id="sender" type="radio" name="filter" value="sender" />
+                                    <label for="sender" class="radio-label">Gửi từ tôi</label>
+                                </div>
+                                <div class="radio-block">
+                                    <input id="recipient" type="radio" name="filter" value="recipient" />
+                                    <label for="recipient" class="radio-label">Gửi từ người khác</label>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="date-filter">
+                            <div class="state-filter-text">Thời gian</div>
+                            <select id="day-custom" class="filter-select">
+                                <option value="waiting-state">Tất cả</option>
+                                <option value="waiting-state">1 tháng trước</option>
+                                <option value="waiting-state">3 tháng trước</option>
+                                <option value="waiting-state">6 tháng trước</option>
+                                <option value="finish-state">Tuỳ chỉnh</option>
+                            </select>
+                            <div class="date-custom">
+                                <div class="from-to-block">
+                                    <div class="state-filter-text">Từ ngày</div>
+                                    <input class="date-input" type="date" name="from" value="" />
+                                </div>
+                                <div class="date-divider"></div>
+                                <div class="from-to-block">
+                                    <div class="state-filter-text">Đến ngày</div>
+                                    <input class="date-input" type="date" name="to" value="" />
+                                </div>
+                            </div>
+                        </div>
+                        <div class="button-filter">
+                            <a href="" aria-current="page" class="back-button w-button w--current">Bỏ qua</a>
+                            <button type="submit" class="button-4 w-button">Áp dụng</button>
+                        </div>
+                    </div>--%>
+
                     <div class="ad-card">
                         <div class="image-card">
 
@@ -953,19 +1022,19 @@
                 });
             })();
 
-            (function showCustomDay() {
+            function showCustomDay() {
 
                 var dateSelection = document.querySelector("#day-custom");
 
                 var dateCustomBlock = document.querySelector(".date-custom");
 
                 dateSelection.addEventListener('change', function () {
-                    var style = this.value == 'finish-state' ? 'flex' : 'none';
+                    var style = this.value == 'custom-state' ? 'flex' : 'none';
                     dateCustomBlock.style.display = style;
 
                 });
 
-            })();
+            }
 
             $(document).ready(function () {
                 $("#flip").click(function () {

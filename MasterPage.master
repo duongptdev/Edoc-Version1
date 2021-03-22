@@ -58,7 +58,7 @@
         <header id="nav" class="sticky-nav">
             <div class="nav-left">
                 <div class="logo-container">
-                    <a href="index.html" aria-current="page" class="nav-logo-link w-inline-block w--current">
+                    <a href="Index.aspx" aria-current="page" class="nav-logo-link w-inline-block w--current">
                         <img
                             src="Content/images/Logo.png" alt="Logo" class="nav-logo" /></a>
                 </div>
