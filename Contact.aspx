@@ -111,15 +111,41 @@
                             class="form-button button-color add-width w-button">
                     </div>
                 </form>
-                <div class="w-form-done">
-                    <div>Thank you! Your submission has been received!</div>
-                </div>
-                <div class="w-form-fail">
-                    <div>Oops! Something went wrong while submitting the form.</div>
-                </div>
             </div>
         </div>
     </div>
+
+    <div class="edit-background-modal hidden-block">
+        <div class="modal-form add-contact-width">
+            <div class="heading-modal">
+                <div class="title-modal">Chỉnh sửa liên hệ</div>
+                <div data-w-id="364e1923-9d43-5395-460f-ad19efcd0897" class="close-edit-button"><img
+                        src="Content/images/Path-30115.png" loading="lazy" alt="Close Modal"></div>
+            </div>
+            <div class="add-contact-form w-form">
+                <form id="email-form" name="email-form" data-name="Email Form" method="post">
+                    <div class="name-field"><label for="name" class="field-label">Họ và tên*</label><input type="text"
+                            class="text-field w-input" maxlength="256" name="name" data-name="Name"
+                            placeholder="Nhập họ và tên" id="name" required=""></div>
+                    <div class="name-field"><label for="Email" class="field-label">Email*</label><input type="email"
+                            class="text-field w-input" maxlength="256" name="Email" data-name="Email"
+                            placeholder="Nhập Email" id="Email" required=""></div>
+                    <div class="name-field"><label for="Company" class="field-label">Tên Công ty</label><input
+                            type="text" class="text-field w-input" maxlength="256" name="Company" data-name="Company"
+                            placeholder="Nhập tên công ty" id="Company"></div>
+                    <div class="name-field add-margin"><label for="Phone" class="field-label">Số điện
+                            thoại</label><input type="tel" class="text-field w-input" maxlength="256" name="Phone"
+                            data-name="Phone" placeholder="Nhập số điện thoại" id="Phone"></div>
+                    <div class="two-button">
+                        <a data-w-id="9f68cfc0-9335-39b2-174e-0dc57e3b6817" href="#" class="ghost-button w-button">Bỏ
+                            qua</a><input type="submit" value="Xác nhận" data-wait=""
+                            class="form-button button-color add-width w-button">
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
     <header id="nav" class="sticky-nav">
         <div class="nav-left">
             <div class="logo-container">
@@ -302,7 +328,7 @@
                                                     loading="lazy" alt="function">
                                             </div>
                                             <nav class="w-dropdown-list">
-                                                <a id="contact-function-link" href="#" class="w-dropdown-link">Chỉnh sửa</a>
+                                                <a id="contact-function-link" href="#" class="w-dropdown-link" onclick="showEditModal()">Chỉnh sửa</a>
                                                 <a id="contact-function-link" href="#" class="w-dropdown-link add-group">Thêm vào nhóm</a>
                                                 <a href="#" class="w-dropdown-link" onclick="showDeleteAlert()">Xoá liên hệ</a>
                                             </nav>
@@ -345,6 +371,19 @@
     <script src="Scripts/js/webflow.js" type="text/javascript"></script>
     <script src="Scripts/js/e-dropdown.js"></script>
     <script>
+
+        function showEditModal() {
+
+            var modalBlock = document.querySelector(".edit-background-modal.hidden-block");
+            var closeModalButton = document.querySelector(".close-edit-button");
+
+            modalBlock.classList.remove("hidden-block");
+
+            closeModalButton.addEventListener("click", function () {
+                modalBlock.classList.add("hidden-block");
+            });
+
+        }
 
         function showDeleteAlert() {
 
