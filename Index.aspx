@@ -379,7 +379,7 @@
                                 loading="lazy"
                                 alt=""
                                 class="image-10" />
-                            <div class="all-text">Chờ ký</div>
+                            <div class="all-text">Đang chờ</div>
                         </a>
                         <%--       <div>
                             <dx:ASPxButton ID="btnKyht" runat="server" Text="Ký hoàn tất" OnClick="btnKyht_Click" CssClass="bg-white link-state draft-item w-inline-block" BackColor="White">
@@ -660,6 +660,39 @@
                                         <div class="card-state wait-state">
                                             <img src="Content/images/Group-14876.svg" loading="lazy" alt="" class="icon-state" />
                                             <div class="text-state wait-text">Chờ ký</div>
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <div data-hover="" data-delay="0" class="w-dropdown">
+                                            <div class="dropdown-toggle-6 w-dropdown-toggle">
+                                                <img src="Content/images/Group-15086_1.png"
+                                                    loading="lazy" alt="function">
+                                            </div>
+                                            <nav class="w-dropdown-list">
+                                                <a href="#" class="w-dropdown-link">Ký tài liệu</a>
+                                                <a href="#" class="w-dropdown-link add-folder">Thêm vào thư mục</a>
+                                                <a id="voided-file" href="#" class="w-dropdown-link">Thu hồi tài liệu</a>
+                                                <a href="#" class="w-dropdown-link">Tải xuống</a>
+                                                <a id="deleted-file" href="#" class="w-dropdown-link">Xoá</a>
+                                            </nav>
+                                        </div>
+                                    </td>
+                                </tr>
+
+                                <tr>
+                                    <td><input type="checkbox" name="" id=""></td>
+                                    <td>
+                                        <div class="file-name-index">Hợp đồng dịch vụ VMI-NACENCOMM 13.7.20.docx</div>                     
+                                        <div class="user-name-index">Từ: Nguyễn Trần Văn Khanh</div>
+                                    </td>
+                                    <td>
+                                        <div class="day-created-index">07/12/2020</div>
+                                        <div class="user-name-index">03:32:35 PM</div>
+                                    </td>
+                                    <td>
+                                        <div class="card-state wait-state">
+                                            <img src="Content/images/Group-14876.svg" loading="lazy" alt="" class="icon-state" />
+                                            <div class="text-state wait-text">Chờ người khác</div>
                                         </div>
                                     </td>
                                     <td>
